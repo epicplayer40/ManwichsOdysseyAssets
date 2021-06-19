@@ -1,0 +1,53 @@
+
+$lod 20
+{
+	replacemodel "Combine_Scanner_reference.smd" "Combine_Scanner_reference_lod1.smd"
+	nofacial
+}
+$lod 35
+{
+	replacemodel "Combine_Scanner_reference.smd" "Combine_Scanner_reference_lod2.smd"
+	nofacial
+}
+$lod 65
+{
+	replacemodel "Combine_Scanner_reference.smd" "Combine_Scanner_reference_lod3.smd"
+	replacebone "Scanner.Tail" "Scanner.Body"
+	replacebone "Scanner.Dynamo" "Scanner.Body"
+	replacebone "Scanner.Antenna_L" "Scanner.Body"
+	replacebone "Scanner.Antenna_R" "Scanner.Body"
+	replacebone "Scanner.Eye" "Scanner.Neck"
+	replacebone "Scanner.Shield1" "Scanner.Neck"
+	replacebone "Scanner.Shield2" "Scanner.Neck"
+	replacebone "Scanner.Shield3" "Scanner.Neck"
+	replacebone "Scanner.Shield4" "Scanner.Neck"
+	nofacial
+}
+$lod 80
+{
+	replacemodel "Combine_Scanner_reference.smd" "Combine_Scanner_reference_lod4.smd"
+	replacebone "Scanner.Tail" "Scanner.Body"
+	replacebone "Scanner.Dynamo" "Scanner.Body"
+	replacebone "Scanner.Antenna_L" "Scanner.Body"
+	replacebone "Scanner.Antenna_R" "Scanner.Body"
+	replacebone "Scanner.Eye" "Scanner.Neck"
+	replacebone "Scanner.Shield1" "Scanner.Neck"
+	replacebone "Scanner.Shield2" "Scanner.Neck"
+	replacebone "Scanner.Shield3" "Scanner.Neck"
+	replacebone "Scanner.Shield4" "Scanner.Neck"
+	nofacial
+}
+$shadowlod
+{
+	replacemodel "Combine_Scanner_reference.smd" "Combine_Scanner_reference_lod5.smd"
+	replacebone "Scanner.Tail" "Scanner.Body"
+	replacebone "Scanner.Dynamo" "Scanner.Body"
+	replacebone "Scanner.Antenna_L" "Scanner.Body"
+	replacebone "Scanner.Antenna_R" "Scanner.Body"
+	replacebone "Scanner.Eye" "Scanner.Neck"
+	replacebone "Scanner.Shield1" "Scanner.Neck"
+	replacebone "Scanner.Shield2" "Scanner.Neck"
+	replacebone "Scanner.Shield3" "Scanner.Neck"
+	replacebone "Scanner.Shield4" "Scanner.Neck"
+	nofacial
+}

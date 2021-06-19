@@ -1,0 +1,64 @@
+
+$collisionjoints "combine_scanner_physics.smd"
+{
+	$mass 12
+	$inertia 5
+	$damping 0.01
+	$rotdamping 1.5
+	$rootbone "scanner.body"
+
+
+	$jointconstrain "Scanner.Shield3" x limit 0 0 0.2
+	$jointconstrain "Scanner.Shield3" y limit 0 0 0
+	$jointconstrain "Scanner.Shield3" z limit -19 57 0.2
+
+	$jointconstrain "Scanner.Shield2" x limit 0 0 0
+	$jointconstrain "Scanner.Shield2" y limit 0 0 0
+	$jointconstrain "Scanner.Shield2" z limit -19 57 0.2
+
+	$jointconstrain "Scanner.Shield1" x limit 0 0 0
+	$jointconstrain "Scanner.Shield1" y limit 0 0 0
+	$jointconstrain "Scanner.Shield1" z limit -19 57 0.2
+
+	$jointconstrain "Scanner.Tail" x limit 0 0 0
+	$jointconstrain "Scanner.Tail" y limit 0 0 0
+	$jointconstrain "Scanner.Tail" z limit -41 86 0.2
+
+	$jointconstrain "Scanner.Shield4" x limit 0 0 0
+	$jointconstrain "Scanner.Shield4" y limit 0 0 0
+	$jointconstrain "Scanner.Shield4" z limit -19 57 0.2
+}
+
+$collisiontext
+{
+	break 
+	{
+		"model"		"Gibs/Scanner_Gib01"
+		"health"		"0"
+		"fadetime"		"30"
+	}
+	break 
+	{
+		"model"		"Gibs/Scanner_Gib02"
+		"health"		"0"
+		"fadetime"		"30"
+	}
+	break 
+	{
+		"model"		"Gibs/Scanner_Gib03"
+		"health"		"0"
+		"fadetime"		"30"
+	}
+	break 
+	{
+		"model"		"Gibs/Scanner_Gib04"
+		"health"		"0"
+		"fadetime"		"30"
+	}
+	break 
+	{
+		"model"		"Gibs/Scanner_Gib05"
+		"health"		"0"
+		"fadetime"		"30"
+	}
+}

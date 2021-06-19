@@ -1,0 +1,13 @@
+
+$definebone "Scanner.Body" "" 0.037434 -0.061469 3.760653 0 -89.999982 89.999982 0 0 0 0 0 0
+$definebone "Scanner.Tail" "Scanner.Body" -6.139686 0.433004 0.037434 0 0 0 0 0 0 0 0 0
+$definebone "Scanner.Dynamo" "Scanner.Body" 0 0 0 0 0 0 0 0 0 0 0 0
+$definebone "Scanner.Antenna_L" "Scanner.Body" 4.573255 -3.302918 -10 0 0 0 0 0 0 0 0 0
+$definebone "Scanner.Antenna_R" "Scanner.Body" 4.573255 -3.302918 10.074868 0 0 0 0 0 0 0 0 0
+$definebone "Scanner.Neck" "Scanner.Body" 9.394416 -3.118351 0.028813 0 0 0 0 0 0 0 0 0
+$definebone "Scanner.Eye" "Scanner.Neck" 4.516993 0 0 89.999982 0 0 0 0 0 0 0 0
+$definebone "Scanner.Shield1" "Scanner.Neck" 4.017007 2.837835 -3.15817 31.71864 140.664905 -147.799488 0 0 0 0 0 0
+$definebone "Scanner.Shield2" "Scanner.Neck" 4.017007 -3.133961 -2.864547 32.930862 -141.616951 -34.943149 0 0 0 0 0 0
+$definebone "Scanner.Shield3" "Scanner.Neck" 4.017007 -3.133961 2.88179 -32.930862 -141.616951 34.943149 0 0 0 0 0 0
+$definebone "Scanner.Shield4" "Scanner.Neck" 4.017007 2.837835 3.175412 -31.71864 140.664905 147.799488 0 0 0 0 0 0
+
