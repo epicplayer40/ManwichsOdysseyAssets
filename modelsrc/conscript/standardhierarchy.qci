@@ -1,0 +1,33 @@
+$heirarchy "Bip01" ""
+$heirarchy "Bip01 Pelvis" "Bip01"
+$root "Bip01"
+$heirarchy "Bip01 L Clavicle" "Bip01 Neck" 
+$heirarchy "Bip01 R Clavicle" "Bip01 Neck" 
+$heirarchy "Bip01 L Thigh" "Bip01 Spine" 
+$heirarchy "Bip01 R Thigh" "Bip01 Spine" 
+
+
+// ani bones
+$bonesaveframe "Bip01" position rotation
+$bonesaveframe "Bip01 Pelvis" position rotation
+$bonesaveframe "Bip01 Spine" rotation
+$bonesaveframe "Bip01 Spine1" rotation
+$bonesaveframe "Bip01 Spine2" rotation
+$bonesaveframe "Bip01 Spine3" rotation
+$bonesaveframe "Bip01 Neck" rotation
+$bonesaveframe "Bip01 Head" rotation
+$bonesaveframe "Bip01 R Clavicle" rotation
+$bonesaveframe "Bip01 R UpperArm" rotation
+$bonesaveframe "Bip01 R Forearm" rotation
+$bonesaveframe "Bip01 R Hand" rotation
+$bonesaveframe "Bip01 L Clavicle" rotation
+$bonesaveframe "Bip01 L UpperArm" rotation
+$bonesaveframe "Bip01 L Forearm" rotation
+$bonesaveframe "Bip01 L Hand" rotation
+$bonesaveframe "Bip01 R Thigh" rotation
+$bonesaveframe "Bip01 R Calf" rotation
+$bonesaveframe "Bip01 R Foot" rotation
+$bonesaveframe "Bip01 L Thigh" rotation
+$bonesaveframe "Bip01 L Calf" rotation
+$bonesaveframe "Bip01 L Foot" rotation
+$bonemerge "ValveBiped.Bip01_R_Hand"
