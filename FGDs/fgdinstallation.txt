@@ -1,0 +1,2 @@
+Place these where your existing halflife2.fgd is (Normally "Source SDK Base 2013 Singleplayer\bin")
+Add manod.fgd as the only Game Data file in your mod configuration

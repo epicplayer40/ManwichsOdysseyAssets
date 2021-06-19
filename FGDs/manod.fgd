@@ -1,0 +1,773 @@
+// Manwich's Odyssey FGD file
+
+@include "base.fgd"
+@include "halflife1source.fgd"
+@include "halflife2.fgd"
+
+////////////
+//Misc Stuff//
+////////////
+
+@PointClass base(Angles, BaseNPCMaker) iconsprite("editor/npc_maker.vmt") = npc_maker_dynamic : "Dynamic NPC Maker"
+[
+	spawnflags(Flags) = 
+	[
+		16 : "Fade Corpse" : 0
+	]
+
+	NPCType(npcclass) : "Class name of spawned NPC"
+	NPCTargetname(string) : "Childrens' Name"
+	NPCSquadname(string) : "Childrens' Squad Name"
+	NPCHintGroup(string) : "Childrens' Hint Group"
+	NPCChance(integer) : "NPC Chance" : 50 : "X in 100 chance to spawn this NPC when triggered"
+	
+	additionalequipment(choices) : "Weapons" : "0" =
+	[
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_stunstick" : "Stun Stick"
+		"weapon_katana" : "Katana"
+		"weapon_pistol" : "Pistol"
+		"weapon_silenced_pistol" : "Silenced Pistol"
+		"weapon_357" : "357"
+		"weapon_uzi" : "Uzi"
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (Silenced MP5k)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun"
+		"weapon_shotgun" : "Shotgun"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun"
+		"weapon_ar1" : "AR1"
+		"weapon_ar2" : "AR2"
+		"weapon_oicw" : "OICW"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"weapon_rpg" : "RPG"
+		"0" : "Nothing"
+	]
+]
+
+@PointClass base(Angles, BaseNPCMaker) iconsprite("editor/npc_maker.vmt") = npc_maker_random : "Random NPC Maker"
+[
+	spawnflags(Flags) = 
+	[
+		16 : "Fade Corpse" : 0
+	]
+
+	NPCTargetname(string) : "Childrens' Name"
+	NPCSquadname(string) : "Childrens' Squad Name"
+	NPCHintGroup(string) : "Childrens' Hint Group"
+	NPCChance(integer) : "NPC Chance" : 50 : "X in 100 chance to spawn this NPC when triggered"
+	
+	additionalequipment(choices) : "Weapons" : "0" =
+	[
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_stunstick" : "Stun Stick"
+		"weapon_katana" : "Katana"
+		"weapon_pistol" : "Pistol"
+		"weapon_silenced_pistol" : "Silenced Pistol"
+		"weapon_357" : "357"
+		"weapon_uzi" : "Uzi"
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (Silenced MP5k)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun"
+		"weapon_shotgun" : "Shotgun"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun"
+		"weapon_ar1" : "AR1"
+		"weapon_ar2" : "AR2"
+		"weapon_oicw" : "OICW"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"weapon_rpg" : "RPG"
+		"0" : "Nothing"
+	]
+
+	NPC01(npcclass) : "NPC 1"
+	NPC02(npcclass) : "NPC 2"
+	NPC03(npcclass) : "NPC 3"
+	NPC04(npcclass) : "NPC 4"
+	NPC05(npcclass) : "NPC 5"
+	NPC06(npcclass) : "NPC 6"
+	NPC07(npcclass) : "NPC 7"
+	NPC08(npcclass) : "NPC 8"
+	NPC_Chance01(integer) : "NPC_Chance 1"
+	NPC_Chance02(integer) : "NPC_Chance 2"
+	NPC_Chance03(integer) : "NPC_Chance 3"
+	NPC_Chance04(integer) : "NPC_Chance 4"
+	NPC_Chance05(integer) : "NPC_Chance 5"
+	NPC_Chance06(integer) : "NPC_Chance 6"
+	NPC_Chance07(integer) : "NPC_Chance 7"
+	NPC_Chance08(integer) : "NPC_Chance 8"
+]
+
+////////////
+//Weapons//
+////////////
+
+@PointClass base(Weapon) studio("models/weapons/w_katana.mdl") = weapon_katana : "Katana" []
+@PointClass base(Weapon) studio("models/weapons/w_silenced_pistol.mdl") = weapon_silenced_pistol : "Silenced Pistol" []
+@PointClass base(Weapon) studio("models/weapons/w_flaregun.mdl") = weapon_flaregun : "Flaregun" []
+@PointClass base(Weapon) studio("models/weapons/w_uzi.mdl") = weapon_uzi : "Uzi" []
+@PointClass base(Weapon) studio("models/weapons/w_mp5k.mdl") = weapon_smg2 : "Silenced MP5k" []
+@PointClass base(Weapon) studio("models/weapons/w_smg_mp5.mdl") = weapon_mp5 : "MP5" []
+@PointClass base(Weapon) studio("models/weapons/w_p90.mdl") = weapon_p90 : "P90" []
+@PointClass base(Weapon) studio("models/weapons/w_AR1.mdl") = weapon_ar1 : "Select-Fire AK47" []
+@PointClass base(Weapon) studio("models/weapons/w_AR2.mdl") = weapon_oicw : "OICW Assault Rifle" []
+@PointClass base(Weapon) studio("models/weapons/w_tommygun.mdl") = weapon_tommygun : "Tommy Gun that can launch molotovs" []
+@PointClass base(Weapon) studio("models/weapons/w_m60.mdl") = weapon_hmg1 : "M60 Machine Gun" []
+@PointClass base(Weapon) studio("models/weapons/w_dbarrel.mdl") = weapon_dbarrel : "Double-Barrel Shotgun" []
+@PointClass base(Weapon) studio("models/weapons/w_garand.mdl") = weapon_garand : "M1 Garand" []
+@PointClass base(Weapon) studio("models/weapons/w_sniper.mdl") = weapon_sniperrifle : "Sniper Rifle" []
+@PointClass base(Weapon) studio("models/weapons/w_smg1.mdl") = weapon_immolator : "Immolator" []
+@PointClass base(Weapon) studio("models/weapons/w_guardgun.mdl") = weapon_cguard : "Combine Guard Gun" []
+
+//////////////////
+//HL1-based NPCs//
+//////////////////
+
+//@NPCClass base(HumanGruntNPC) studio("models/fgrunt.mdl") = monster_human_grunt_ally : "Human Grunt (Resistance)" []
+//@NPCClass base(HumanGruntNPC) studio("models/cgrunt.mdl") = monster_human_grunt_combine : "Human Grunt (Combine)" []
+
+@NPCClass base(BaseNPC) studio("models/apache.mdl" ) = monster_apache_ally : "Friendly Apache"
+[
+	spawnflags(Flags) = 
+	[
+		8 : "NoWreckage"	: 0
+		64 : "Start Inactive" : 0
+	]
+]
+
+@NPCClass base(BaseNPC) studio("models/hassault03.mdl") = monster_human_assault : "Ally minigunner who follows the player and can deal a lot of damage, based on the Combine Guard" [
+	model(choices) : "Model" : "" : "If random, picks a random model from 01 to 05" = 
+	[
+		"" : "Random"
+		"models/hassault01.mdl" : "Red Guy"
+		"models/hassault02.mdl" : "Gasmask Citizen Guy"
+		"models/hassault03.mdl" : "Brown Guy"
+		"models/hassault04.mdl" : "Blue Guy"
+		"models/hassault05.mdl" : "Green Guy"
+	]
+]
+
+@NPCClass base(BaseNPC) studio("models/hgang_minigun.mdl") = monster_thresh_assault : "Minigunner who is allied to the Combine" []
+
+@NPCClass base(BaseNPC) studio("models/monster_metropolice.mdl") = monster_metropolice : "Allied to the Combine and attacks with his MP5K rapidly dealing damage, very deadly at close/mid range, based on HL1 Barney" []
+
+@NPCClass base(BaseNPC) studio("models/squad_gasdude.mdl") = monster_gasdude : "High-HP Gasmask Citizen ally based on HL1 Barney, shoots his MP5K and can follow the player" []
+@NPCClass base(BaseNPC) studio("models/ashdude.mdl") = monster_ashdude : "Tanky Gasmask Citizen ally with a shotgun and chainsaw and is very strong, based on the Bullsquid" []
+
+@NPCClass base(BaseNPC) studio("models/strooper.mdl") = monster_shocktrooper : "Race X Shocktrooper who shoots electric bolts and throws acid balls, based on HL1 Grunts" [
+
+	spawnflags(Flags) =
+	[
+		32 : "SquadLeader" : 0
+	]
+
+]
+
+@NPCClass base(BaseNPC) studio("models/shockroach.mdl") = monster_shockroach : "Race X Shockroach" []
+
+@NPCClass base(BaseNPC) studio("models/gonome.mdl") = monster_gonome : "Zombie Assassin (despite what the entity name implies), based on the Bullsquid" []
+
+@NPCClass base(BaseNPC) studio("models/plastic_soldier.mdl") = monster_green_soldier : "Green Plastic Soldier, allied to Conscripts and the player" []
+@NPCClass base(BaseNPC) studio("models/plastic_soldier.mdl") = monster_tan_soldier : "Tan Plastic Soldier, allied to Team1" []
+@NPCClass base(BaseNPC) studio("models/plastic_soldier.mdl") = monster_blue_soldier : "Blue Plastic Soldier, allied to Team3" []
+@NPCClass base(BaseNPC) studio("models/plastic_soldier.mdl") = monster_grey_soldier : "Grey Plastic Soldier, allied to Team2" []
+@NPCClass base(BaseNPC) studio("models/plastic_soldier.mdl") = monster_red_soldier : "Red Plastic Soldier, allied to Team4" []
+@NPCClass base(BaseNPC) studio("models/plastic_soldier.mdl") = monster_red_soldier_follow : "Red Companion Soldier" []
+@NPCClass base(BaseNPC) studio("models/plastic_soldier.mdl") = monster_green_soldier_follow : "Green Companion Soldier" []
+@NPCClass base(BaseNPC) studio("models/plastic_soldier.mdl") = monster_grey_soldier_follow : "Grey Companion Soldier" []
+@NPCClass base(BaseNPC) studio("models/plastic_soldier.mdl") = monster_blue_soldier_follow : "Blue Companion Soldier" []
+
+//////////////////
+//HL2-based NPCs//
+//////////////////
+
+@NPCClass base(BaseCombine) studio("models/Combine_Soldier.mdl") = npc_combine_s : "Combine Soldier"
+[
+	input Assault(string) : "Start an assault. Parameter passed in should be the name of the rally point."
+	input EnableJetpack(void) : "Turn on jetpack (Jetpack soldiers only)"
+	input DisableJetpack(void) : "Turn off jetpack (Jetpack soldiers only)"
+
+	model(choices) : "Model" : "models/combine_soldier.mdl" : "Regular Soldier" = 
+	[
+		"models/combine_soldier.mdl" : "Regular Soldier"
+		"models/combine_soldier_prisonguard.mdl" : "Nova Prospekt Soldier"
+		"models/combine_super_soldier.mdl" : "Elite Soldier"
+		"models/combine_jetpack_soldier.mdl" : "Jetpack Soldier"
+	]
+
+	tacticalvariant(choices) : "Tactical Variant" : "0" =
+	[
+		"0" : "Normal Tactics"
+		"1" : "Pressure the enemy (Keep advancing)"
+		"2" : "Pressure until within 30ft, then normal"
+	]
+	
+	usemarch(choices) : "Walk Easy" : "0" : "When true, will use a variety of more casual walking animations instead of the standard walk. For use in crowds. WARNING: this animation only has a north component. For use under very special circumstances only." =
+	[
+		"0" : "No"
+		"2" : "Yes"
+	]
+
+	jetpackenabledonspawn(Choices) : "Spawn Flying (Jetpack Soldiers Only)" : 0 =
+	[
+		"0" : "No"
+		"1" : "Yes"
+	]
+
+	additionalequipment(choices) : "Weapons" : "weapon_smg1" =
+	[
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (Silenced MP5k)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun"
+		"weapon_shotgun" : "Shotgun"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun"
+		"weapon_ar1" : "AR1"
+		"weapon_ar2" : "AR2"
+		"weapon_oicw" : "OICW"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"weapon_rpg" : "RPG"
+		"0" : "Nothing"
+	]
+]
+
+@NPCClass base(BaseNPC,RappelNPC) studio("models/Police.mdl") = npc_metropolice : "MetroPolice"
+[
+	additionalequipment(choices) : "Weapons" : "weapon_pistol" =
+	[
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_stunstick" : "Stun Stick"
+		"weapon_katana" : "Katana"
+		"weapon_pistol" : "Pistol"
+		"weapon_silenced_pistol" : "Silenced Pistol"
+		"weapon_357" : "357 (Elite Metrocop)"
+		"weapon_uzi" : "Uzi"
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (2002 Metrocop)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun (2001 Metropolice)"
+		"weapon_shotgun" : "Shotgun (2001 Metropolice)"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun (2001 Metropolice)"
+		"weapon_ar1" : "AR1 (2002 Metrocop)"
+		"weapon_ar2" : "AR2 (Elite Metrocop)"
+		"weapon_oicw" : "OICW (2002 Metrocop)"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"0"  : "Nothing"
+	]
+
+	manhacks(Choices) : "Number of Manhacks" : 0 =
+	[
+		0 : "None"
+		1 : "1"
+		2 : "2"
+	]
+
+	weapondrawn(Choices) : "Pistol starts drawn" : 0 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	spawnflags(Flags) =
+	[
+		131072 : "Simple cops" : 0
+		262144 : "Rappel (UNCHECK THIS IF IT IS CHECKED!)" : 0
+		524288 : "Always stitch" : 0
+		1048576 : "No chatter" : 0
+		2097152 : "Arrest enemies" : 0
+		4194304 : "No far stitching" : 0
+		8388608 : "Prevent manhack toss" : 0
+		16777216: "Allowed to respond to thrown objects" : 0
+		33554432: "Mid-range attacks (halfway between normal + long-range)" : 0
+	]
+	  
+	// Inputs
+	input EnableManhackToss(void) : "Enables manhack toss (which had been disabled by the spawnflag)"
+	input SetPoliceGoal(string) : "Causes the NPC to police the area defined by an ai_goal_police"
+	input ActivateBaton(void) : "Set the baton to active"
+
+	// Outputs
+	output OnStunnedPlayer(void) : "Fires when the player is hit by a stunstick by this NPC."
+]
+
+@NPCClass base(BaseNPC,RappelNPC) studio("models/Police_ally.mdl") = npc_metropolice_ally : "Metropolice NPC that is allied to the player with a different model, based on Metropolice"
+[
+	additionalequipment(choices) : "Weapons" : "weapon_pistol" =
+	[
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_stunstick" : "Stun Stick"
+		"weapon_katana" : "Katana"
+		"weapon_pistol" : "Pistol"
+		"weapon_silenced_pistol" : "Silenced Pistol"
+		"weapon_357" : "357 (Elite Metrocop)"
+		"weapon_uzi" : "Uzi"
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (2002 Metrocop)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun (2001 Metropolice)"
+		"weapon_shotgun" : "Shotgun (2001 Metropolice)"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun (2001 Metropolice)"
+		"weapon_ar1" : "AR1 (2002 Metrocop)"
+		"weapon_ar2" : "AR2 (Elite Metrocop)"
+		"weapon_oicw" : "OICW (2002 Metrocop)"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"0"  : "Nothing"
+	]
+
+	manhacks(Choices) : "Number of Manhacks" : 0 =
+	[
+		0 : "None"
+		1 : "1"
+	]
+
+	weapondrawn(Choices) : "Pistol starts drawn" : 0 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+	
+	spawnflags(Flags) =
+	[
+		131072 : "Simple cops" : 0
+		262144 : "Rappel (UNCHECK THIS IF IT IS CHECKED!)" : 0
+		524288 : "Always stitch" : 0
+		1048576 : "No chatter" : 0
+		2097152 : "Arrest enemies" : 0
+		4194304 : "No far stitching" : 0
+		8388608 : "Prevent manhack toss" : 0
+		16777216: "Allowed to respond to thrown objects" : 0
+		33554432: "Mid-range attacks (halfway between normal + long-range)" : 0
+	]
+	  
+	// Inputs
+	input EnableManhackToss(void) : "Enables manhack toss (which had been disabled by the spawnflag)"
+]
+
+@NPCClass base(BaseNPC,Parentname, TalkNPC, PlayerCompanion ) studio() = npc_citizen : "Citizen"
+[
+
+	spawnflags(Flags) =
+	[
+		65536 : "Follow player on spawn" : 0
+		131072 : "Medic" : 0
+		262144 : "Random Head" : 1
+		524288 : "Ammo Resupplier" : 0
+		1048576 : "Not Commandable" : 0
+		2097152 : "Don't use Speech Semaphore - OBSOLETE" : 0
+		4194304 : "Random male head" : 0
+		8388608 : "Random female head" : 0
+		16777216 : "Use RenderBox in ActBusies" : 0
+	]
+
+	additionalequipment(choices) : "Weapons" : "0" =
+	[
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_stunstick" : "Stun Stick"
+		"weapon_katana" : "Katana"
+		"weapon_pistol" : "Pistol"
+		"weapon_silenced_pistol" : "Silenced Pistol"
+		"weapon_357" : "357"
+		"weapon_uzi" : "Uzi"
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (Silenced MP5k)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun"
+		"weapon_shotgun" : "Shotgun"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun"
+		"weapon_ar1" : "AR1"
+		"weapon_ar2" : "AR2"
+		"weapon_oicw" : "OICW"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"weapon_rpg" : "RPG"
+		"0" : "Nothing"
+	]
+
+	ammosupply(choices) : "Ammo to Resupply (if spawnflag set)" : "SMG1" =
+	[
+		"Pistol" : "Pistol"
+		"SMG1" : "SMG1"
+		"SMG1_Grenade" : "SMG1 Grenade"
+		"AR2" : "AR2"
+		"Buckshot" : "Shotgun"
+		"RPG_Round" : "RPG"
+		"Grenade" : "Grenade"
+		"XBowBolt" : "Crossbow Bolt"
+	]
+	ammoamount(integer) : "Amount of ammo to give" : 1
+
+	citizentype(choices) : "Type" : "Default" =
+	[
+		0 : "Default"	 
+		1 : "Downtrodden"
+		2 : "Refugee"
+		3 : "Rebel"
+		4 : "Unique"
+	]
+
+	expressiontype(choices) : "Expression Type" : "Random" =
+	[
+		0 : "Random"
+		1 : "Scared"
+		2 : "Normal"
+		3 : "Angry"
+	]
+
+	//!!!BUGBUG - don't ship with these names
+	//!!!FIXME - don't ship with these names
+	model(choices) : "Model" : "models/humans/group01/male_01.mdl" =
+	[
+		"models/humans/group01/male_01.mdl" : "Male 1"
+		"models/humans/group01/male_02.mdl" : "Male 2"
+		"models/humans/group01/male_03.mdl" : "Male 3"
+		"models/humans/group01/male_04.mdl" : "Male 4"
+		"models/humans/group01/male_05.mdl" : "Male 5"
+		"models/humans/group01/male_06.mdl" : "Male 6"
+		"models/humans/group01/male_07.mdl" : "Male 7"
+		"models/humans/group01/male_08.mdl" : "Male 8"
+		"models/humans/group01/male_09.mdl" : "Male 9"
+		"models/humans/group01/female_01.mdl" : "Female 1"
+		"models/humans/group01/female_02.mdl" : "Female 2"
+		"models/humans/group01/female_03.mdl" : "Female 3"
+		"models/humans/group01/female_04.mdl" : "Female 4"
+		"models/humans/group01/female_06.mdl" : "Female 5"
+		"models/humans/group01/female_07.mdl" : "Female 6"
+		"models/humans/male_cheaple.mdl" : "Cheaple Male 1"
+		"models/epicplayer_citizen.mdl" : "Gasmask Citizen"
+		"models/odessa.mdl" : "Odessa. DO NOT USE."
+	]
+
+	ExpressionOverride(string) : "Facial expression override"
+
+	notifynavfailblocked(choices) : "Fire output when Nav is blocked?" : 0 =
+	[
+		0 : "No"
+		1 : "Yes"
+	]
+
+	neverleaveplayersquad(choices) : "Permanent squad member?" : 0 : "A permanent squad member cannot leave the player's squad unless killed or explicity removed by entity I/O. Only use this if you're sure you want to override the default AI." =
+	[
+		0 : "No. This is default behavior."
+		1 : "Yes, stay in squad until death."
+	]
+
+	denycommandconcept(string) : "Deny command speech concept" : "" : "If you want your citizens to squad with the player but not obey commands the player gives to move the squad, put a concept here and this citizen will speak the concept instead of obeying the order."
+
+    //Inputs
+	input RemoveFromPlayerSquad(void) : "Remove from player squad, instantly."
+	input SetExpressionOverride(string) : "Set facial expression override"
+
+	input StartPatrolling(void) : "Patrol whenever I'm idle or alert."
+	input StopPatrolling(void) : "Stop patrolling when I'm idle or alert."
+	input SetCommandable(void) : "Make a previously uncommandable citizen commandable"
+	input SetMedicOn(void) : "Set the medic flag on. Will not change the model or skin of the citizen."
+	input SetMedicOff(void) : "Set the medic flag off. Will not change the model or skin of the citizen."
+	input SetAmmoResupplierOn(void) : "Set the ammo-resupplier flag on. Will not change the model or skin of the citizen."
+	input SetAmmoResupplierOff(void) : "Set the ammo-resupplier flag off. Will not change the model or skin of the citizen."
+
+	// Outputs
+	output OnJoinedPlayerSquad(void) : "Fires when joins player squad"
+	output OnLeftPlayerSquad(void) : "Fires when leaves player squad"
+	output OnFollowOrder(void) : "Fires when ordered to follow player"
+	output OnStationOrder(void) : "Fires when ordered to a location by player"
+	output OnPlayerUse(void) : "Fires when a player +USEs the citizen"
+	output OnNavFailBlocked(void) : "Fires when this Citizen's movement fails because he/she is blocked."
+]
+
+@NPCClass base(TalkNPC, BaseNPC, PlayerCompanion) studio("models/cvance.mdl") = npc_vance : "Captain Vance, based on HL2 Barney"
+[
+	additionalequipment(choices) : "Weapons" : "weapon_pistol" =
+	[
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_stunstick" : "Stun Stick"
+		"weapon_katana" : "Katana"
+		"weapon_pistol" : "Pistol"
+		"weapon_silenced_pistol" : "Silenced Pistol"
+		"weapon_357" : "357"
+		"weapon_uzi" : "Uzi"
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (Silenced MP5k)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun"
+		"weapon_shotgun" : "Shotgun"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun"
+		"weapon_ar1" : "AR1"
+		"weapon_ar2" : "AR2"
+		"weapon_oicw" : "OICW"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"weapon_rpg" : "RPG"
+		"0" : "Nothing"
+	]
+
+	ExpressionOverride(string) : "Facial expression override"
+	input SetExpressionOverride(string) : "Set facial expression override"
+
+	// Outputs
+	output OnPlayerUse(void) : "Fires when a player +USEs Captain Vance"
+]
+
+@NPCClass base(BaseCombine) studio("models/Cigbine.mdl") = npc_cigbine : "Cigbine, a friendly Combine soldier who has a lot of health and is a main character"
+[
+	input Assault(string) : "Start an assault. Parameter passed in should be the name of the rally point."
+
+	tacticalvariant(choices) : "Tactical Variant" : "0" =
+	[
+		"0" : "Normal Tactics"
+		"1" : "Pressure the enemy (Keep advancing)"
+		"2" : "Pressure until within 30ft, then normal"
+	]
+
+	additionalequipment(choices) : "Weapons" : "weapon_oicw" =
+	[
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (Silenced MP5k)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun"
+		"weapon_shotgun" : "Shotgun"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun"
+		"weapon_ar1" : "AR1"
+		"weapon_ar2" : "AR2"
+		"weapon_oicw" : "OICW"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"weapon_rpg" : "RPG"
+		"0" : "Nothing"
+	]
+
+	NumGrenades(choices) : "Number of Grenades" : "999999" =
+	[
+		"0" : "None"
+		"1" : "1"
+		"2" : "2"
+		"3" : "3"
+		"4" : "4"
+		"5" : "5"
+		"999999" : "Unlimited"
+	]
+]
+
+@BaseClass base(BaseNPC) = ConscriptNPC
+[
+	additionalequipment(choices) : "Weapons" : "weapon_oicw" =
+	[
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_stunstick" : "Stun Stick"
+		"weapon_katana" : "Katana"
+		"weapon_pistol" : "Pistol"
+		"weapon_silenced_pistol" : "Silenced Pistol"
+		"weapon_357" : "357"
+		"weapon_uzi" : "Uzi"
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (Silenced MP5k)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun"
+		"weapon_shotgun" : "Shotgun"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun"
+		"weapon_ar1" : "AR1"
+		"weapon_ar2" : "AR2"
+		"weapon_oicw" : "OICW"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"weapon_rpg" : "RPG"
+		"0" : "Nothing"
+	]
+	
+	AIPersonality(Choices) : "AI Personality" : 0 =
+	[
+		0 : "Random"
+		10 : "Balanced"
+		20 : "Cautious"
+		30 : "Aggressive"
+	]
+
+	model(choices) : "Model" : "random" : "Conscript Model" = 
+	[
+		"models/Conscript.mdl" : "Animal"
+		"random" : "Random Conscript Head"
+		"models/conscripts/male_01.mdl" : "Male 1"
+		"models/conscripts/male_02.mdl" : "Male 2"
+		"models/conscripts/male_03.mdl" : "Male 3"
+		"models/conscripts/male_04.mdl" : "Male 4"
+		"models/conscripts/male_05.mdl" : "Male 5"
+		"models/conscripts/male_06.mdl" : "Male 6"
+		"models/conscripts/male_07.mdl" : "Male 7"
+		"models/conscripts/male_08.mdl" : "Male 8"
+		"models/conscripts/male_09.mdl" : "Male 9"
+		"models/conscripts/female_01.mdl" : "Female 1"
+		"models/conscripts/female_02.mdl" : "Female 2"
+		"models/conscripts/female_03.mdl" : "Female 3"
+		"models/conscripts/female_04.mdl" : "Female 4"
+		"models/conscripts/female_06.mdl" : "Female 5"
+		"models/conscripts/female_07.mdl" : "Female 6"
+	]
+	
+	input SetReadinessLow(void) : "Set readiness to calmest state (Bored)"
+	input SetReadinessMedium(void) : "Set readiness to moderate (Alert)"
+	input SetReadinessHigh(void) : "Set readiness to highest. (Combat imminent)"
+	input LockReadiness(float) : "Lock readiness at current setting for x seconds -1 = forever, 0 = unlock now"
+
+	ExpressionOverride(string) : "Facial expression override"
+	input SetExpressionOverride(string) : "Set facial expression override"
+]
+
+@NPCClass base(ConscriptNPC) studio("models/conscripts/male_02.mdl") = npc_conscript : "Conscript" []
+@NPCClass base(ConscriptNPC) studio("models/conscripts/male_03.mdl") = npc_conscript_combine : "Conscript allied to the Combine" 
+[
+	model(choices) : "Model" : "random" : "Conscript Model" = 
+	[
+		"models/Conscript.mdl" : "Animal"
+		"models/ffl_soldier.mdl" : "FFL Soldier"
+		"random" : "Random Conscript Head"
+		"models/conscripts/male_01.mdl" : "Male 1"
+		"models/conscripts/male_02.mdl" : "Male 2"
+		"models/conscripts/male_03.mdl" : "Male 3"
+		"models/conscripts/male_04.mdl" : "Male 4"
+		"models/conscripts/male_05.mdl" : "Male 5"
+		"models/conscripts/male_06.mdl" : "Male 6"
+		"models/conscripts/male_07.mdl" : "Male 7"
+		"models/conscripts/male_08.mdl" : "Male 8"
+		"models/conscripts/male_09.mdl" : "Male 9"
+		"models/conscripts/female_01.mdl" : "Female 1"
+		"models/conscripts/female_02.mdl" : "Female 2"
+		"models/conscripts/female_03.mdl" : "Female 3"
+		"models/conscripts/female_04.mdl" : "Female 4"
+		"models/conscripts/female_06.mdl" : "Female 5"
+		"models/conscripts/female_07.mdl" : "Female 6"
+	]
+]
+@NPCClass base(ConscriptNPC) studio("models/conscripts/male_04.mdl") = npc_conscript_wasteland : "Conscript allied to Team1" []
+
+@NPCClass base(BaseNPC) studio("models/gascit.mdl") = npc_gascit : "Gasmask citizen who can throw molotovs, roll during combat and can use a lot of weapons, seems to be based on the Conscript"
+[
+	additionalequipment(choices) : "Weapons" : "weapon_pistol" =
+	[
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_stunstick" : "Stun Stick"
+		"weapon_katana" : "Katana"
+		"weapon_pistol" : "Pistol"
+		"weapon_silenced_pistol" : "Silenced Pistol"
+		"weapon_357" : "357"
+		"weapon_uzi" : "Uzi"
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (Silenced MP5k)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun"
+		"weapon_shotgun" : "Shotgun"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun"
+		"weapon_ar1" : "AR1"
+		"weapon_ar2" : "AR2"
+		"weapon_oicw" : "OICW"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"0" : "Nothing"
+	]
+]
+
+@NPCClass base(BaseNPC) studio("models/hongo_rebel.mdl") = npc_hongorebel : "Hongo Rebel, an ally who uses standard HL2 human animations and will follow you, based on the Conscript"
+[
+	additionalequipment(choices) : "Weapons" : "weapon_ar1" =
+	[
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_stunstick" : "Stun Stick"
+		"weapon_katana" : "Katana"
+		"weapon_pistol" : "Pistol"
+		"weapon_silenced_pistol" : "Silenced Pistol"
+		"weapon_357" : "357"
+		"weapon_uzi" : "Uzi"
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (Silenced MP5k)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun"
+		"weapon_shotgun" : "Shotgun"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun"
+		"weapon_ar1" : "AR1"
+		"weapon_ar2" : "AR2"
+		"weapon_oicw" : "OICW"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"weapon_rpg" : "RPG"
+		"0" : "Nothing"
+	]
+
+	input SetReadinessLow(void) : "Set readiness to calmest state (Bored)"
+	input SetReadinessMedium(void) : "Set readiness to moderate (Alert)"
+	input SetReadinessHigh(void) : "Set readiness to highest. (Combat imminent)"
+	input LockReadiness(float) : "Lock readiness at current setting for x seconds -1 = forever, 0 = unlock now"
+
+	ExpressionOverride(string) : "Facial expression override"
+	input SetExpressionOverride(string) : "Set facial expression override"
+]
+
+@NPCClass base(BaseNPC) studio("models/cremator_npc.mdl") = npc_cremator : "Cremator" []
+@NPCClass base(BaseNPC) studio("models/alien_suppressor.mdl") = npc_alien_suppressor : "Acts like a Cremator but uses a different model and is allied to Team2" []
+@NPCClass base(BaseNPC) studio("models/combine_guard.mdl") = npc_combineguard : "Combine Guard" []
+
+
+@NPCClass base(BaseNPC) studio("models/addon/wretch.mdl") = npc_wretch : "Wretch, strong enemy that will rush at the player when without a weapon and will attack from range when given a gun, not recommended for use with single-fire weapons like the shotgun, based on the Fast Zombie" 
+[
+	additionalequipment(choices) : "Weapons" : "0" =
+	[
+		"weapon_crowbar"  : "Crowbar"
+		"weapon_stunstick" : "Stun Stick"
+		"weapon_katana" : "Katana"
+		"weapon_pistol" : "Pistol"
+		"weapon_silenced_pistol" : "Silenced Pistol"
+		"weapon_357" : "357"
+		"weapon_uzi" : "Uzi"
+		"weapon_smg1" : "SMG1"
+		"weapon_smg2" : "SMG2 (Silenced MP5k)"
+		"weapon_mp5" : "MP5"
+		"weapon_p90" : "P90"
+		"weapon_tommygun" : "Tommy Gun"
+		"weapon_shotgun" : "Shotgun"
+		"weapon_dbarrel" : "Double-Barrelled Shotgun"
+		"weapon_ar1" : "AR1"
+		"weapon_ar2" : "AR2"
+		"weapon_oicw" : "OICW"
+		"weapon_hmg1" : "M60"
+		"weapon_garand" : "M1 Garand"
+		"weapon_annabelle" : "Grigori's Shotgun"
+		"weapon_sniperrifle" : "Sniper Rifle"
+		"weapon_rpg" : "RPG"
+		"0" : "Nothing"
+	]
+]
