@@ -1,0 +1,16 @@
+$texturegroup "skinfamilies"
+{
+	{ "conscript_flak_jacket" "gloves_cl"        "conscript_pants" "conscript_sleeve" "conscript_part" "conscript_belt" "helmet_cl"        }
+	{ "combine_flak_jacket"   "combine_gloves"   "combine_pants"   "combine_sleeve"   "combine_part"   "combine_belt"   "combine_helmet"   }
+	{ "wasteland_flak_jacket" "wasteland_gloves" "wasteland_pants" "wasteland_sleeve" "wasteland_part" "wasteland_belt" "wasteland_helmet" }
+}
+
+$attachment "mouth" "Bip01 Head" 0.8 -5.8 -0.15 rotate 0 -80 -90
+$attachment "anim_attachment_RH" "ValveBiped.Bip01_R_Hand" 0 0 0 rotate -90 -90 0
+$eyeposition 0 0 67
+
+$controller 0 "Bip01 Head" XR -60 60
+
+$poseparameter "XR" -50 50 loop 0
+
+$includemodel "conscript_animations.mdl"

@@ -1,0 +1,62 @@
+$surfaceprop "flesh"
+
+$collisionjoints "Conscript_physics.smd" {
+	$mass "105.000000"
+	$rootbone "Bip01 Pelvis"
+	$inertia "5.000000"
+	$damping "0.010000"
+	$rotdamping "1.500000"
+
+	$jointconstrain "Bip01 Pelvis" x limit -60.000000 60.000000 1.000000
+	$jointconstrain "Bip01 Pelvis" y limit -25.000000 25.000000 1.000000
+	$jointconstrain "Bip01 Pelvis" z limit -25.000000 15.000000 1.000000
+
+	$jointconstrain "Bip01 Spine2" x limit -60 60
+	$jointconstrain "Bip01 Spine2" y limit -25 25
+	$jointconstrain "Bip01 Spine2" z limit -25 15
+
+	$jointmassbias "Bip01 L UpperArm" 2
+	$jointmassbias "Bip01 R UpperArm" 2
+	$jointconstrain "Bip01 R UpperArm" y limit -45 76
+	$jointconstrain "Bip01 R UpperArm" z limit -73.00 40.00
+
+	$jointmassbias "Bip01 L Thigh" 2
+	$jointmassbias "Bip01 R Thigh" 2
+	$jointconstrain "Bip01 R Thigh" x limit -25 20
+	$jointconstrain "Bip01 R Thigh" y limit -40 20
+	$jointconstrain "Bip01 R Thigh" z limit -37 63
+
+
+	$jointconstrain "Bip01 R Calf" z limit -95 4
+
+	$jointmassbias "Bip01 L Forearm" 3
+	$jointmassbias "Bip01 R Forearm" 3
+	$jointconstrain "Bip01 R Forearm" z limit -120 4
+
+	$jointconstrain "Bip01 L Thigh" x limit -25 20
+	$jointconstrain "Bip01 L Thigh" y limit -20 40
+	$jointconstrain "Bip01 L Thigh" z limit -37 63
+
+	$jointconstrain "Bip01 L Calf" z limit -95 4
+
+	$jointconstrain "Bip01 L Foot" z limit -15 35
+	$jointconstrain "Bip01 R Foot" z limit -15 35
+
+	$jointconstrain "Bip01 L UpperArm" y limit -76 30
+	$jointconstrain "Bip01 L UpperArm" z limit -73.00 40.00
+
+	$jointconstrain "Bip01 L Forearm" z limit -120 4
+
+	$jointmassbias "Bip01 L Hand" 2
+	$jointmassbias "Bip01 R Hand" 2
+	$jointconstrain "Bip01 L Hand" z limit -35 60
+
+	$jointrotdamping "Bip01 Head" 5
+	$jointconstrain "Bip01 Head" x limit -20 20
+	$jointconstrain "Bip01 Head" y limit -25 25
+	$jointconstrain "Bip01 Head" z limit -13 30
+
+	$jointconstrain "Bip01 R Hand" z limit -35 60
+
+
+}
