@@ -10,13 +10,13 @@ $eyeposition 0 0 67
 $cdmaterials "models\FFL\"
 $cdmaterials "models\humans\male\group01\"
 
-$bbox -5.965 -18.626 0.145 10.697 12.907 71.925
-
 $Attachment "mouth" "Bip01 Head" 0.8 -5.8 -0.15 rotate 0 -80 -90
 $Attachment "anim_attachment_RH" "ValveBiped.Bip01_R_Hand" 0 0 0 rotate -90 -90 0
 
 $controller 0 "Bip01 Head" XR -60 60
 
+$include DefineBones.qci
+$include conscript_hitbox.qci
 $include conscript_ragdoll_fixed.qci
 $includemodel Conscript_Animations.mdl
 
