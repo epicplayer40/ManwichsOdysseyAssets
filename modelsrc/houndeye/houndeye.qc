@@ -1,11 +1,11 @@
 // HL2 Houndeye Remake rigged to HL1 skeleton and anims
-// Made by The One Epicplayer
+// Model by JosephtheKP, QC edits, mesh edits and rigging by The One Epicplayer
 
 $modelname "houndeye.mdl"
 
 $bodygroup "studio"
 {
-	studio "houndeye_hl1skeleton.smd"
+	studio "houndeye_new.smd"
 }
 
 
@@ -16,6 +16,8 @@ $contents "solid"
 $eyeposition 0 0 27
 
 $cdmaterials "models\houndeye\"
+
+$lockbonelengths
 
 $sequence idle1 houndeye_anims\idle1 ACT_IDLE 1
 $sequence idle2 houndeye_anims\idle2 ACT_IDLE 20 loop
