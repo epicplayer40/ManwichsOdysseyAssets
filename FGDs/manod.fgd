@@ -576,7 +576,7 @@
 	]
 ]
 
-@BaseClass base(BaseNPC) = ConscriptNPC
+@BaseClass base(BaseNPC,Parentname) = ConscriptNPC
 [
 	additionalequipment(choices) : "Weapons" : "weapon_oicw" =
 	[
