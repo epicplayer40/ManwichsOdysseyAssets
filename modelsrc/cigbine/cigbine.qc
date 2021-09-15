@@ -22,7 +22,7 @@ $attachment "mouth" "ValveBiped.Bip01_Head1" 0.3 -5.7 0 rotate 0 -80 -90
 $attachment "chest" "ValveBiped.Bip01_Spine2" 5 4 0 rotate 0 90 90
 $attachment "forward" "ValveBiped.Bip01_Head1" 3 -3 0 rotate 0 -80 -90
 $attachment "anim_attachment_RH" "ValveBiped.Bip01_R_Hand" 0 0 0 rotate -90 -90 0
-$attachment "anim_attachment_LH" "ValveBiped.Bip01_L_Hand" 0 0 0 rotate -90 -90 0
+$attachment "anim_attachment_LH" "ValveBiped.Bip01_L_Hand" 4 -0.855 -1 rotate 90 90 0
 $attachment "anim_attachment_head" "ValveBiped.Bip01_Head1" 0 0 0 rotate -90 -90 0
 $attachment "lefthand" "ValveBiped.Bip01_L_Hand" 0 0 0 rotate 0 0 0
 
@@ -55,6 +55,36 @@ $ikchain "lfoot" "ValveBiped.Bip01_L_Foot" knee 0.707 -0.707 0
 
 $ikautoplaylock "rfoot" 1 0.1
 $ikautoplaylock "lfoot" 1 0.1
+
+//==================== CIGBINE ANIMATIONS =============================================
+
+$weightlist upperbody "Valvebiped.bip01_pelvis" 1.0 "ValveBiped.Bip01_R_Thigh" 0.0 "ValveBiped.Bip01_L_Thigh" 0.0 
+
+$sequence pickup "Weapon_pickup" fps 30 activity ACT_PICKUP_GROUND 1 { event 2040 13 }
+
+$animation "a_WalkEasy_S" combine_soldier_anims\a_WalkEasy_S.smd fps 28 loop walkframe 30 LX LY
+$animation a_WalkEasy_SE combine_soldier_anims\a_WalkEasy_SE.smd fps 29 loop walkframe 27 LX LY
+$animation "a_WalkEasy_E" combine_soldier_anims\a_WalkEasy_E.smd fps 29 loop walkframe 30 LX LY
+$animation "a_WalkEasy_NE" combine_soldier_anims\a_WalkEasy_NE.smd fps 31 loop walkframe 30 LX LY
+$animation "a_WalkEasy_N" combine_soldier_anims\a_WalkEasy_N.smd loop walkframe 30 LX LY
+$animation "a_WalkEasy_NW" combine_soldier_anims\a_WalkEasy_NW.smd fps 29 loop walkframe 30 LX LY
+$animation "a_WalkEasy_W" combine_soldier_anims\a_WalkEasy_W.smd fps 28 loop walkframe 30 LX LY
+$animation "a_WalkEasy_SW" combine_soldier_anims\a_WalkEasy_SW.smd fps 29 loop walkframe 27 LX LY
+
+
+$sequence "layer_walk_unarmed" combine_soldier_anims\layer_walk_unarmed {
+	weightlist upperbody
+	hidden
+	worldspace
+	loop
+}
+
+
+$sequence WalkNoWeapon_all {
+	a_WalkEasy_S a_WalkEasy_SE a_WalkEasy_E a_WalkEasy_NE a_WalkEasy_N a_WalkEasy_NW a_WalkEasy_W a_WalkEasy_SW a_WalkEasy_S
+	blendwidth 9 blend move_yaw -180 180 addlayer layer_walk_unarmed ACT_WALK 1
+	fps 28 loop walkframe 30 LX LY
+}
 
 //$includemodel barney_animations.mdl
 //$includemodel humans\male_shared.mdl
