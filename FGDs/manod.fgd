@@ -574,6 +574,8 @@
 		"5" : "5"
 		"999999" : "Unlimited"
 	]
+
+	output OnWeaponPickup(void) : "Fires when Cigbine picks a weapon off the ground or a gun rack."
 ]
 
 @BaseClass base(BaseNPC,Parentname) = ConscriptNPC
