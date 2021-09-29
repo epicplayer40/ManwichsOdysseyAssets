@@ -1,0 +1,45 @@
+defaultflex frame 39		// baseline mouth closed expression
+
+		// Already in eyelid lines: flex "upper_right" frame 1
+		// Already in eyelid lines: flex "upper_right" frame 2
+		// Already in eyelid lines: flex "lower_right" frame 3
+		// Already in eyelid lines: flex "lower_right" frame 4
+		// Already in eyelid lines: flex "upper_left" frame 5
+		// Already in eyelid lines: flex "upper_left" frame 6
+		// Already in eyelid lines: flex "lower_left" frame 7
+		// Already in eyelid lines: flex "lower_left" frame 8
+		flex "AU1R" frame 9
+		flex "AU1L" frame 10
+		flex "AU2R" frame 11
+		flex "AU2L" frame 12
+		flex "AU4R" frame 13
+		flex "AU4L" frame 14
+		flex "AU6R" frame 15
+		flex "AU6L" frame 16
+		flex "AU9R" frame 17
+		flex "AU9L" frame 18
+		flex "AU38" frame 19
+		flex "AU10R" frame 20
+		flex "AU10L" frame 21
+		flex "AU12R" frame 22
+		flex "AU12R" frame 23
+		flex "AU12L" frame 24
+		flex "AU12L" frame 25
+		flex "AU15" frame 26
+		flex "AU17R" frame 27
+		flex "AU17L" frame 28
+		flex "AU25R" frame 29
+		flex "AU25L" frame 30
+		flex "AU18R" frame 31
+		flex "AU18L" frame 32
+		flex "AU22R" frame 33
+		flex "AU22L" frame 34
+		flex "AU20R" frame 35
+		flex "AU20L" frame 36
+		flex "AU32" frame 37
+		flex "AU24" frame 38
+		flex "AU31" frame 39
+		flex "AU26R" frame 40
+		flex "AU26L" frame 41
+		flex "AU27R" frame 42
+		flex "AU27L" frame 43

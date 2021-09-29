@@ -1,0 +1,44 @@
+$controller 0 "bip01 head" XR -30 30
+
+//$poseparameter "XR"
+$poseparameter "aim_pitch"
+//$poseparameter "aim_yaw"
+
+$surfaceprop "flesh"
+
+$sequence Idle01 ihvtest_anims\Idle01.smd ACT_IDLE 1 loop
+$sequence Idle02 ihvtest_anims\Idle02.smd ACT_IDLE 2 loop
+$sequence Walk mp5cit_Walk.smd ACT_WALK 1 loop LX {
+	{ event 6004 2 "NPC_Citizen" }
+	{ event 6005 17 "NPC_Citizen" }
+}
+$sequence Run mp5cit_Run.smd ACT_RUN 1 loop LX {
+	{ event 6004 6 "NPC_Citizen" }
+	{ event 6005 16 "NPC_Citizen" }
+}
+
+$sequence shoot mp5cit_usesmg frame 31 34 ACT_RANGE_ATTACK1 1 loop {
+	addlayer Aim_all
+	{ event 3 0 } 
+	{ event 6001 0 "0" }
+	{ event AE_NPC_MUZZLEFLASH 0 "SMG1 MUZZLE" }
+}
+
+//$sequence reload reload	FPS 20 ACT_ARM 1 { event 2 7 }
+$sequence draw mp5cit_usesmg frame 0 30 ACT_ARM 1 { event 2 15 }
+$sequence flinch_small mp5cit_usesmg frame 37 42 ACT_SMALL_FLINCH 1
+
+$animation aim_ref mp5cit_usesmg frame 34 34
+$animation aim_straight mp5cit_usesmg frame 34 34 subtract aim_ref 0
+$animation aim_down mp5cit_usesmg frame 35 35 subtract aim_ref 0
+$animation aim_up mp5cit_usesmg frame 36 37 subtract aim_ref 0
+
+$sequence Aim_all  {
+	aim_up
+	aim_straight
+	aim_down
+	blendwidth 3
+	blend aim_pitch -45 45
+	delta
+	hidden
+}
