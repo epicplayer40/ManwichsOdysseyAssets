@@ -124,7 +124,7 @@
 @PointClass base(Weapon) studio("models/weapons/w_dbarrel.mdl") = weapon_dbarrel : "Double-Barrel Shotgun" []
 @PointClass base(Weapon) studio("models/weapons/w_garand.mdl") = weapon_garand : "M1 Garand" []
 @PointClass base(Weapon) studio("models/weapons/w_sniper.mdl") = weapon_sniperrifle : "Sniper Rifle" []
-@PointClass base(Weapon) studio("models/weapons/w_smg1.mdl") = weapon_immolator : "Immolator" []
+@PointClass base(Weapon) studio("models/weapons/w_immolator.mdl") = weapon_immolator : "Immolator" []
 @PointClass base(Weapon) studio("models/weapons/w_guardgun.mdl") = weapon_cguard : "Combine Guard Gun" []
 
 //////////////////
@@ -574,8 +574,6 @@
 		"5" : "5"
 		"999999" : "Unlimited"
 	]
-
-	output OnWeaponPickup(void) : "Fires when Cigbine picks a weapon off the ground or a gun rack."
 ]
 
 @BaseClass base(BaseNPC,Parentname) = ConscriptNPC
