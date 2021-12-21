@@ -315,6 +315,7 @@ $Sequence barnaclecrunch barnaclecrunch 	ACT_BARNACLE_CHOMP 1 fps 5
 $Sequence barnaclechew  barnaclechew 		ACT_BARNACLE_CHEW 1 loop fps 5
 
 $Sequence Sm_flinch 	Sm_flinch 	ACT_SMALL_FLINCH 1
+$Sequence Cower			Jump_Land	ACT_COWER 1					fps 10
 $Sequence ragdoll ragdoll ACT_DIERAGDOLL 1
 
 //==================  CROUCHING ANIMATIONS  =============================================
