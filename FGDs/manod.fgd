@@ -106,6 +106,8 @@
 	NPC_Chance08(integer) : "NPC_Chance 8"
 ]
 
+@PointClass base(Item) studio("models/items/vest.mdl") = item_vest : "Conscript Vest that gives the player 100 armor" []
+
 ////////////
 //Weapons//
 ////////////
