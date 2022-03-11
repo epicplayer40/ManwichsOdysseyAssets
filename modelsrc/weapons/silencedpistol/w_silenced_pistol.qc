@@ -22,7 +22,9 @@ $sequence attack_viewmodel w_silenced_pistol_reference ACT_VM_PRIMARYATTACK -1 {
 
 $sequence attack_npc idle01 ACT_RANGE_ATTACK_PISTOL 1 frame 0 1 snap {
 	{ event 3014 1 }
-	{ event AE_NPC_MUZZLEFLASH 0 "PISTOL MUZZLE" }
+//	{ event AE_NPC_MUZZLEFLASH 0 "PISTOL MUZZLE" }
+	{ event 6001 0 "0" }
+	{ event 6001 0 "0" }
 	{ event 6001 0 "0" }
 }
 
