@@ -9,7 +9,7 @@ $body studio w_p90
 $surfaceprop "weapon"
 
 $attachment "muzzle" "ValveBiped.Weapon_bone" 12.12 -0.2 -1.5 rotate 9.02 -0.33 -91.94
-$attachment "1" "ValveBiped.Weapon_bone" -6 0 5.5 rotate -80 0 0
+$attachment "1" "ValveBiped.Weapon_bone" -2.5 0 5.5 rotate -80 0 0
 
 $definebone "ValveBiped" "" 0 0 0 0 0 89.999982 0 0 0 0 0 0
 $definebone "ValveBiped.Bip01_R_Hand" "ValveBiped" 0.267086 -2.58952 10.171795 78.841283 -102.773508 -9.262035 0 0 0 0 0 0
