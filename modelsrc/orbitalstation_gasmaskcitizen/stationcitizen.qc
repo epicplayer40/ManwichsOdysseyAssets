@@ -90,4 +90,6 @@ $include ragdoll.qci
 $includemodel barney_animations.mdl
 $includemodel humans\male_shared.mdl
 $includemodel humans\male_ss.mdl
+$includemodel humans\male_gestures.mdl
+$includemodel humans\male_postures.mdl
 $includemodel Police_ss.mdl

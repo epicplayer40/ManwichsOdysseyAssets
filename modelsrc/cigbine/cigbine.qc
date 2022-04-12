@@ -90,4 +90,6 @@ $sequence WalkNoWeapon_all {
 //$includemodel humans\male_shared.mdl
 $includeModel combine_soldier_anims.mdl
 $includemodel humans\male_ss.mdl
+$includemodel humans\male_gestures.mdl
+$includemodel humans\male_postures.mdl
 $includemodel Police_ss.mdl
