@@ -16,6 +16,8 @@ $PoseParameter "XR" -50 50 loop 0
 
 $includemodel "conscript_ss.mdl" //Per Epic's request
 
+$weightlist chestonly Bip01 0.0 "Bip01 Spine1" 1.0 "Bip01 L Clavicle" 0.0 "Bip01 R Clavicle" 0.0
+
 $pushd "conscript_animations"
 
 //=======================  IDLE ANIMATIONS  =============================================
@@ -315,6 +317,25 @@ $Sequence barnaclecrunch barnaclecrunch 	ACT_BARNACLE_CHOMP 1 fps 5
 $Sequence barnaclechew  barnaclechew 		ACT_BARNACLE_CHEW 1 loop fps 5
 
 $Sequence Sm_flinch 	Sm_flinch 	ACT_SMALL_FLINCH 1
+
+$Sequence flinch_head 	flinch_head 		ACT_FLINCH_HEAD 1 fps 12
+$Sequence flinch_chest 	flinch_chest 		ACT_FLINCH_CHEST 1
+$Sequence flinch_gut 	flinch_gut 			ACT_FLINCH_STOMACH 1
+$Sequence flinch_leftarm flinch_lefthand 	ACT_FLINCH_LEFTARM 1
+$Sequence flinch_rightarm flinch_righthand 	ACT_FLINCH_RIGHTARM 1
+$Sequence flinch_leftleg flinch_leftleg 	ACT_FLINCH_LEFTLEG 1
+$Sequence flinch_leftleg2 flinch_leftleg 	ACT_FLINCH_LEFTLEG 1 fps 23
+$Sequence flinch_rightleg flinch_rightleg 	ACT_FLINCH_RIGHTLEG 1
+$Sequence flinch_rightleg2 flinch_rightleg 	ACT_FLINCH_RIGHTLEG 1 fps 23
+
+$Sequence flinch_gesture_head 	flinch_head					ACT_GESTURE_FLINCH_HEAD 1 subtract flinch_gesture_head 1 fps 20 weightlist chestonly delta
+$Sequence flinch_gesture_chest 	flinch_chest				ACT_GESTURE_FLINCH_CHEST 1 subtract flinch_gesture_chest 1 weightlist chestonly delta
+$Sequence flinch_gesture_gut 	flinch_gesture_gut			ACT_GESTURE_FLINCH_STOMACH 1 subtract flinch_gesture_gut 1 delta
+$Sequence flinch_gesture_leftarm flinch_gesture_lefthand 	ACT_GESTURE_FLINCH_LEFTARM 1 subtract flinch_gesture_leftarm 1 delta
+$Sequence flinch_gesture_rightarm flinch_gesture_righthand 	ACT_GESTURE_FLINCH_RIGHTARM 1 subtract flinch_gesture_rightarm 1 delta
+$Sequence flinch_gesture_leftleg flinch_gesture_leftleg 	ACT_GESTURE_FLINCH_LEFTLEG 1 subtract flinch_gesture_leftleg 1 delta
+$Sequence flinch_gesture_rightleg flinch_gesture_rightleg 	ACT_GESTURE_FLINCH_RIGHTLEG 1 subtract flinch_gesture_rightleg 1 delta
+
 $Sequence Cower			Jump_Land	ACT_COWER 1					fps 10
 $Sequence ragdoll ragdoll ACT_DIERAGDOLL 1
 
