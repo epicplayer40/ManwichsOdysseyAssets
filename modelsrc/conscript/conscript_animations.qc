@@ -157,6 +157,18 @@ $Sequence Die_fast4 	Die_simple4 ACT_DIESIMPLE 1 {
 	{ event AE_NPC_RAGDOLL 15 }
 }
 
+$Sequence Die_fall_left cs_anims/Fall_Left 	ACT_DIESIMPLE 1 	fps 30 {
+	{ event 2001 43 }
+	{ event AE_NPC_RAGDOLL 49 }
+	walkframe 7 LX LY
+	walkframe 25 X Y
+	walkframe 40 LX LY
+}
+
+$Sequence Die_gut cs_anims/Gut 				ACT_DIESIMPLE 1 	fps 30 {
+	{ event AE_NPC_RAGDOLL 32 }
+}
+
 //=====================  FIRING ANIMATIONS  =============================================
 
 $Sequence shootgun2 {
