@@ -330,63 +330,6 @@
 	output OnStunnedPlayer(void) : "Fires when the player is hit by a stunstick by this NPC."
 ]
 
-@NPCClass base(BaseNPC,RappelNPC) studio("models/Police_ally.mdl") = npc_metropolice_ally : "Metropolice NPC that is allied to the player with a different model, based on Metropolice"
-[
-	additionalequipment(choices) : "Weapons" : "weapon_pistol" =
-	[
-		"weapon_crowbar"  : "Crowbar"
-		"weapon_stunstick" : "Stun Stick"
-		"weapon_katana" : "Katana"
-		"weapon_pistol" : "Pistol"
-		"weapon_silenced_pistol" : "Silenced Pistol"
-		"weapon_357" : "357 (Elite Metrocop)"
-		"weapon_uzi" : "Uzi"
-		"weapon_smg1" : "SMG1"
-		"weapon_smg2" : "SMG2 (2002 Metrocop)"
-		"weapon_mp5" : "MP5"
-		"weapon_p90" : "P90"
-		"weapon_tommygun" : "Tommy Gun (2001 Metropolice)"
-		"weapon_shotgun" : "Shotgun (2001 Metropolice)"
-		"weapon_dbarrel" : "Double-Barrelled Shotgun (2001 Metropolice)"
-		"weapon_ar1" : "AR1 (2002 Metrocop)"
-		"weapon_ar2" : "AR2 (Elite Metrocop)"
-		"weapon_oicw" : "OICW (2002 Metrocop)"
-		"weapon_hmg1" : "M60"
-		"weapon_garand" : "M1 Garand"
-		"weapon_annabelle" : "Grigori's Shotgun"
-		"weapon_sniperrifle" : "Sniper Rifle"
-		"0"  : "Nothing"
-	]
-
-	manhacks(Choices) : "Number of Manhacks" : 0 =
-	[
-		0 : "None"
-		1 : "1"
-	]
-
-	weapondrawn(Choices) : "Pistol starts drawn" : 0 =
-	[
-		0 : "No"
-		1 : "Yes"
-	]
-	
-	spawnflags(Flags) =
-	[
-		131072 : "Simple cops" : 0
-		262144 : "Rappel (UNCHECK THIS IF IT IS CHECKED!)" : 0
-		524288 : "Always stitch" : 0
-		1048576 : "No chatter" : 0
-		2097152 : "Arrest enemies" : 0
-		4194304 : "No far stitching" : 0
-		8388608 : "Prevent manhack toss" : 0
-		16777216: "Allowed to respond to thrown objects" : 0
-		33554432: "Mid-range attacks (halfway between normal + long-range)" : 0
-	]
-	  
-	// Inputs
-	input EnableManhackToss(void) : "Enables manhack toss (which had been disabled by the spawnflag)"
-]
-
 @NPCClass base(BaseNPC,Parentname, TalkNPC, PlayerCompanion ) studio() = npc_citizen : "Citizen"
 [
 
@@ -519,6 +462,22 @@
 	output OnStationOrder(void) : "Fires when ordered to a location by player"
 	output OnPlayerUse(void) : "Fires when a player +USEs the citizen"
 	output OnNavFailBlocked(void) : "Fires when this Citizen's movement fails because he/she is blocked."
+]
+
+@NPCClass base(BaseNPC) studio("models/Zombie/Classic.mdl") = npc_zombie : "Zombie"
+[
+	model(choices) : "Model" : "random" : "Random Generic Zombie" = 
+	[
+		"random" : "Random Generic Zombie"
+		"models/zombie/classic.mdl" : "Normal"
+		"models/zombie/classic_2002.mdl" : "Fat"
+		"models/zombie/classic_2003.mdl" : "Leak"
+		"models/zombie/classic_gasmaskcitizen.mdl" : "Gasmask Citizen"
+		"models/zombie/classic_conscript.mdl" : "Conscript"
+		"models/zombie/classic_worker.mdl" : "City 17 Worker"
+		"models/zombie/classic_frozen.mdl" : "Frozen"
+		
+	]
 ]
 
 @NPCClass base(TalkNPC, BaseNPC, PlayerCompanion) studio("models/cvance.mdl") = npc_vance : "Captain Vance, based on HL2 Barney"
