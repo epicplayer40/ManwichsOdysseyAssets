@@ -297,6 +297,21 @@ $Sequence draw23 		draw23 			ACT_ARM 1 				{ event 2 0 }
 $Sequence draw 			draw 			ACT_ARM 1 				{ event 2 7 }
 $Sequence disarm disarm ACT_DISARM 1 { event 4 0 }
 
+$Sequence alyx_zombie_fight1 di_zombie_fight1 ACT_DI_ALYX_ZOMBIE_MELEE 1 {
+	{ event AE_NPC_WEAPON_FIRE 63 "0" }
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 63 "ACT_RANGE_ATTACK1" }
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 65 "ACT_RANGE_ATTACK1" }
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 67 "ACT_RANGE_ATTACK1" }
+}
+
+$Sequence alyx_zombie_fight2 di_zombie_fight2 ACT_DI_ALYX_ZOMBIE_MELEE 1 {
+	{ event AE_NPC_WEAPON_FIRE 74 "0" }
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 74 "ACT_RANGE_ATTACK1" }
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 76 "ACT_RANGE_ATTACK1" }	
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 77 "ACT_RANGE_ATTACK1" }
+
+}
+
 //=======================  MISC ANIMATIONS  =============================================
 
 $Sequence turn_left 	turn_left 		ACT_TURN_LEFT 1
@@ -415,3 +430,20 @@ $Sequence anidle anidle
 $Sequence anshout anshout
 
 $popd
+
+$keyvalues
+{
+	dynamic_interactions 
+	{
+		"conscript_v_zombie_180deg_64"		 
+		{
+			"trigger"			"auto_in_combat"
+			"origin_relative"			"64 0 0"
+			"angles_relative"			"0 180 0"
+			"activity"			"ACT_DI_ALYX_ZOMBIE_MELEE"
+			"delay"			"10.0"
+			"needs_weapon"			"ME"
+			"weapon_mine"			"weapon_oicw"
+		}
+	}
+}
