@@ -2,6 +2,7 @@
 //Model by Fonz
 
 $modelname	"props_citadel\ConsulStatue.mdl"
+$scale 5
 $body Statue	"ConsulStatue.smd"
 $staticprop
 $surfaceprop	solidmetal
