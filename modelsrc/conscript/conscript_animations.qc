@@ -124,17 +124,17 @@ $Sequence Die_simple 	Die_simple 	ACT_DIESIMPLE 1 			fps 50 {
 	{ event AE_NPC_RAGDOLL 37 }
 	LX LY
 }
-$Sequence Die_simple2 	Die_simple2 ACT_DIESIMPLE 2 {
+$Sequence Die_simple2 	Die_simple2 ACT_DIE_GUTSHOT 2 {
 	{ event 2001 8 }
 	{ event AE_NPC_RAGDOLL 14 }
 	LX
 }
-$Sequence Die_simple3 	Die_simple3 ACT_DIESIMPLE 2 {
+$Sequence Die_simple3 	Die_simple3 ACT_DIE_BACKSHOT 2 {
 	{ event 2001 26 }
 	{ event AE_NPC_RAGDOLL 55 }
 	LX LY
 }
-$Sequence Die_simple4 	Die_simple4 ACT_DIESIMPLE 2 {
+$Sequence Die_simple4 	Die_simple4 ACT_DIE_GUTSHOT 2 {
 	{ event 2001 23 }
 	{ event AE_NPC_RAGDOLL 20 }
 }
@@ -148,7 +148,7 @@ $Sequence Die_fast2 	Die_simple3 ACT_DIESIMPLE 1 			fps 50 {
 	{ event AE_NPC_RAGDOLL 44 }
 	LX LY
 }
-$Sequence Die_fast3 	Die_simple3 ACT_DIESIMPLE 1 {
+$Sequence Die_fast3 	Die_simple3 ACT_DIE_HEADSHOT 1 {
 //	frame 0 10
 	{ event AE_NPC_RAGDOLL 15 }
 }
@@ -156,8 +156,13 @@ $Sequence Die_fast4 	Die_simple4 ACT_DIESIMPLE 1 {
 //	frame 0 10
 	{ event AE_NPC_RAGDOLL 15 }
 }
+$Sequence Die_fast5 	di_zombie_fight1 ACT_DIE_HEADSHOT 1 fps 25 {
+	frame 13 36
+	{ event AE_NPC_RAGDOLL 20 }
+	walkframe 22 LX
+}
 
-$Sequence Die_fall_left cs_anims/Fall_Left 	ACT_DIESIMPLE 1 	fps 30 {
+$Sequence Die_fall_left cs_anims/Fall_Left 	ACT_DIE_GUTSHOT 1 	fps 30 {
 	{ event 2001 43 }
 	{ event AE_NPC_RAGDOLL 49 }
 	walkframe 7 LX LY
@@ -165,7 +170,7 @@ $Sequence Die_fall_left cs_anims/Fall_Left 	ACT_DIESIMPLE 1 	fps 30 {
 	walkframe 40 LX LY
 }
 
-$Sequence Die_gut cs_anims/Gut 				ACT_DIESIMPLE 1 	fps 30 {
+$Sequence Die_gut cs_anims/Gut 				ACT_DIE_GUTSHOT 1 	fps 30 {
 	{ event AE_NPC_RAGDOLL 32 }
 }
 
