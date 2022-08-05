@@ -1,7 +1,7 @@
 //Barney-like Gasmask Citizen
 //Model by Xinus, Everything else by The One Epicplayer
 
-$modelname "squad_gasdude.mdl"
+$modelname "gascit_mp5.mdl"
 
 $model citizen "gasmaskcitizen_xinus_reference.smd" {
 	eyeball righteye "Bip01 Head" -1.30 -3.02 67.64 "eyeball_r" 1.00 4 "pupil_r" 0.63

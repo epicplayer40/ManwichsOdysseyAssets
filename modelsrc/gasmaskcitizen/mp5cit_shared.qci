@@ -24,6 +24,16 @@ $sequence shoot mp5cit_usesmg frame 31 34 ACT_RANGE_ATTACK1 1 loop {
 	{ event AE_NPC_MUZZLEFLASH 0 "SMG1 MUZZLE" }
 }
 
+$sequence Walk_Unarmed mp5cit_WalkUnarmed.smd ACT_WALK_RELAXED 1 loop LX {
+	{ event 6004 2 "NPC_Citizen" }
+	{ event 6005 17 "NPC_Citizen" }
+}
+
+$sequence Run_Unarmed mp5cit_RunUnarmed.smd ACT_RUN_RELAXED 1 loop LX  frame 0 21 {
+	{ event 6004 6 "NPC_Citizen" }
+	{ event 6005 16 "NPC_Citizen" }
+}
+
 //$sequence reload reload	FPS 20 ACT_ARM 1 { event 2 7 }
 $sequence draw mp5cit_usesmg frame 0 30 ACT_ARM 1 { event 2 15 }
 $sequence flinch_small mp5cit_usesmg frame 37 42 ACT_SMALL_FLINCH 1
