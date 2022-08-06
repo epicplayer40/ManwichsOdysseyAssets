@@ -183,7 +183,7 @@
 
 @NPCClass base(BaseNPC) studio("models/monster_metropolice.mdl") = monster_metropolice : "Allied to the Combine and attacks with his MP5K rapidly dealing damage, very deadly at close/mid range, based on HL1 Barney" []
 
-@NPCClass base(BaseNPC) studio("models/squad_gasdude.mdl") = monster_gasdude : "High-HP Gasmask Citizen ally based on HL1 Barney, shoots his MP5K and can follow the player" []
+@NPCClass base(BaseNPC) studio("models/gascit_mp5.mdl") = monster_gasdude : "Gasmask Citizen ally based on HL1 Barney, shoots his MP5K and can follow the player" []
 @NPCClass base(BaseNPC) studio("models/ashdude.mdl") = monster_ashdude : "Tanky Gasmask Citizen ally with a shotgun and chainsaw and is very strong, based on the Bullsquid" []
 
 @NPCClass base(BaseNPC) studio("models/strooper.mdl") = monster_shocktrooper : "Race X Shocktrooper who shoots electric bolts and throws acid balls, based on HL1 Grunts" [
@@ -478,6 +478,27 @@
 		"models/zombie/classic_frozen.mdl" : "Frozen"
 		
 	]
+]
+
+@NPCClass base(VehicleDriverNPC) studio("models/roller.mdl") = npc_apcdriver : 
+	"NPC used to drive an APC vehicle."
+[
+	spawnflags(Flags) = 
+	[
+		32 :  "No Rocket Attacks" : 0
+		131072 : "No Gun Attacks" : 0
+	]
+
+	drivermaxspeed(float) : "Maxspeed (percentage of vehicle's maxspeed)." : 1
+	driverminspeed(float) : "MinSpeed (percentage of vehicle's maxspeed)." : 0
+
+	input SetDriversMaxSpeed(float) : "Set the Maxspeed (percentage of vehicle's maxspeed)."
+	input SetDriversMinSpeed(float) : "Set the Minspeed (percentage of vehicle's maxspeed)."
+	input StartForward(void) : "Tell the driver to start driving."
+	input Stop(void) : "Tell the driver to stop driving."
+
+	input DisableFiring(float) : "Disables firing from happening"
+	input EnableFiring(float) : "Enables firing to start. Firing is enabled by default"
 ]
 
 @NPCClass base(TalkNPC, BaseNPC, PlayerCompanion) studio("models/cvance.mdl") = npc_vance : "Captain Vance, based on HL2 Barney"
