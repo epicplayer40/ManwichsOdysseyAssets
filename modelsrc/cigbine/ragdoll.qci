@@ -1,6 +1,6 @@
 $sequence ragdoll ragdoll ACT_DIERAGDOLL 1
 
-$collisionjoints "ciggybine_physics.smd"
+$collisionjoints "combine_soldier_physics.smd"
 {
 	$mass 115
 	$inertia 10

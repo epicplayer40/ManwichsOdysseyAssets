@@ -26,6 +26,10 @@ $attachment "anim_attachment_LH" "ValveBiped.Bip01_L_Hand" 4 -0.855 -1 rotate 90
 $attachment "anim_attachment_head" "ValveBiped.Bip01_Head1" 0 0 0 rotate -90 -90 0
 $attachment "lefthand" "ValveBiped.Bip01_L_Hand" 0 0 0 rotate 0 0 0
 
+//$attachment "cigarsmoke" "ValveBiped.Bip01_Head1" -2.70 -13.00 -0.20 rotate 0 -90 -90
+$attachment "cigarsmoke" "ValveBiped.CigSmoke" 0 0 0 rotate 90 0 0
+$attachment "hat" "ValveBiped.Hat" 0 0 0 rotate 0 0 0
+
 $hboxset "default"
 $hbox 1 "ValveBiped.Bip01_Head1" -1.25 -6.5 -3.19 8.25 3.5 3.31 ""
 $hbox 4 "ValveBiped.Bip01_L_UpperArm" 0 -2.75 -2.75 12.51 1.75 2.25 ""
