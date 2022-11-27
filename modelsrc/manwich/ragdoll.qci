@@ -1,3 +1,6 @@
+$surfaceprop "flesh"
+
+$cdmaterials models\humans\male
 $collisionjoints ragdoll {
 
 	$mass 90.0
