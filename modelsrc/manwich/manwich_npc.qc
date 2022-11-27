@@ -34,13 +34,16 @@ $opaque
 
 $cdmaterials models\Conscript
 
-$ikchain rhand "valvebiped.Bip01_R_Hand" Z 0 knee 0.707 0.707 0
-$ikchain lhand "valvebiped.Bip01_L_Hand" Z 0 knee 0.707 0.707 0
-$ikchain rfoot "valvebiped.Bip01_R_Foot" Z 0 knee 0.707 -0.707 0 pad 5 center 4 0 0
-$ikchain lfoot "valvebiped.Bip01_L_Foot" Z 0 knee 0.707 -0.707 0 pad 5 center 4 0 0
 
-$ikautoplaylock rfoot 1.0 0.1
-$ikautoplaylock lfoot 1.0 0.1
+$surfaceprop "flesh"
+$bbox -13 -13 0  13 13 72
+$include "standardhierarchy.qci"
+$include "standardikchains.qci"
+$alwayscollapse "Male_01"
+$alwayscollapse "XSISceneRoot"
+$include "commonbones.qci"
+$unlockdefinebones
+
 
 $includemodel humans/male_shared.mdl
 $includemodel humans/male_ss.mdl
