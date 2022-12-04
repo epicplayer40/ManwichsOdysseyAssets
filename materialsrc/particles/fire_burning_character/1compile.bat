@@ -1,0 +1,2 @@
+"C:\Program Files (x86)\Steam\steamapps\common\Source SDK Base 2013 Singleplayer\bin\mksheet.exe" fire_burning_character_plasma.mks fire_burning_character_plasma.sht fire_burning_character_plasma.tga
+pause
