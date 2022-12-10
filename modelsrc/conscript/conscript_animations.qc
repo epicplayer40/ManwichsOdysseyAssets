@@ -434,6 +434,13 @@ $Sequence anshoot anshoot ACT_BLINDFIRE 1 {
 $Sequence anidle anidle
 $Sequence anshout anshout
 
+$sequence Dropship_Deploy Dropship_Deploy fps 30 {
+    walkframe 12 LX LY LZ
+    walkframe 34 LX LY LZ
+    walKframe 60 LX LY LZ
+    walkalign 72 "Idle1" LX LY LZ 0 80
+}  
+
 $popd
 
 $keyvalues
