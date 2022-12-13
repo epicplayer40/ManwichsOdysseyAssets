@@ -1,8 +1,8 @@
 $controller 0 "bip01 head" XR -30 30
 
 //$poseparameter "XR"
-$poseparameter "aim_pitch"
-//$poseparameter "aim_yaw"
+//$poseparameter "aim_pitch"
+$poseparameter "aim_pitch" -90 90 loop 360
 
 $surfaceprop "flesh"
 
@@ -41,7 +41,7 @@ $sequence flinch_small mp5cit_usesmg frame 37 42 ACT_SMALL_FLINCH 1
 $animation aim_ref mp5cit_usesmg frame 34 34
 $animation aim_straight mp5cit_usesmg frame 34 34 subtract aim_ref 0
 $animation aim_down mp5cit_usesmg frame 35 35 subtract aim_ref 0
-$animation aim_up mp5cit_usesmg frame 36 37 subtract aim_ref 0
+$animation aim_up mp5cit_usesmg frame 36 36 subtract aim_ref 0
 
 $sequence Aim_all  {
 	aim_up
