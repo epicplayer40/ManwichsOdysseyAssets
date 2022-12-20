@@ -64,11 +64,11 @@ $keyvalues
 		"passenger_zombie"		 
 		{
 			"target_attachment"			"passenger_zombie1"
-			"entry"			 
+/*			"entry"			 
 			{
 				"priority"				"1"
 				"animation"				"buggy_fast_dynamic01"
-			}
+			}*/
 			"exit"			 
 			{
 				"priority"				"1"
@@ -80,7 +80,7 @@ $keyvalues
 				"priority"				"1"
 				"animation"				"buggy_enter1"
 			}
-			"entry"			 
+/*			"entry"			 
 			{
 				"priority"				"1"
 				"animation"				"buggy_enter_back_left"
@@ -89,7 +89,7 @@ $keyvalues
 			{
 				"priority"				"1"
 				"animation"				"buggy_enter_back_right"
-			}
+			}*/
 			"entry"			 
 			{
 				"priority"				"1"
@@ -102,12 +102,12 @@ $keyvalues
 			}
 			"entry"			 
 			{
-				"priority"				"1"
+				"priority"				"2"
 				"animation"				"buggy_enter_left"
 			}
 			"entry"			 
 			{
-				"priority"				"1"
+				"priority"				"2"
 				"animation"				"buggy_enter_right"
 			}
 			"metadata"			 
@@ -159,8 +159,8 @@ $attachment passenger_zombie1 "Rig_Buggy.Frame" 13.4 6.31 57.31 rotate 90 90 0
 //$attachment cargo "Rig_Buggy.Frame" 0 9.5 -119 rotate 90 0 0
 //$attachment headlight_r "Rig_Buggy.Frame" -36 -5.5 112 rotate -90 0 0
 //$attachment headlight_l "Rig_Buggy.Frame" 36 -5.5 112 rotate -90 0 0
-$attachment rearlight_r "Rig_Buggy.Frame" -34 18.5 -102 rotate 90 0 0
-$attachment rearlight_l "Rig_Buggy.Frame" 34 18.5 -102 rotate 90 0 0
+//$attachment rearlight_r "Rig_Buggy.Frame" -34 18.5 -102 rotate 90 0 0
+//$attachment rearlight_l "Rig_Buggy.Frame" 34 18.5 -102 rotate 90 0 0
 //$attachment controlpanel0_ll "Rig_Buggy.Frame" 2.2 3.69 39.45 rotate 0 -180 169
 //$attachment controlpanel0_ur "Rig_Buggy.Frame" -3.55 9.13 40.45 rotate 0 -180 169
 
@@ -170,6 +170,8 @@ $attachment exhaust "Rig_Buggy.Frame" -26.00 40.00 24.90 rotate -90 -90 0
 $attachment cargo "Rig_Buggy.Frame" 0 9.5 -89 rotate 90 0 0
 $attachment headlight_r "Rig_Buggy.Frame" -40.00 9.50 103.00 rotate -90 -0 0
 $attachment headlight_l "Rig_Buggy.Frame" -40.00 9.50 103.00 rotate -90 -0 0
+$attachment rearlight_r "Rig_Buggy.Frame" -21.00 30.50 -25.00 rotate 90 -0 0
+$attachment rearlight_l "Rig_Buggy.Frame" 19.50 30.50 -25.00 rotate 90 -0 0
 $attachment headlight "Rig_Buggy.Frame" -40.00 9.50 103.00 rotate -90 -90 0
 $attachment controlpanel0_ll "Rig_Buggy.Frame" 2.2 1.69 37.45 rotate 0 -180 169
 $attachment controlpanel0_ur "Rig_Buggy.Frame" -3.55 7.13 38.45 rotate 0 -180 169
