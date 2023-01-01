@@ -1,0 +1,10 @@
+
+//--------------  Plaza ----------------------
+
+$sequence bustdoor "Plaza_bustdoor01" snap {
+{ event 1003 4 1 }
+{ event 1003 222 2 }
+{ event 1003 222 3 }
+{ event 1003 238 4 }
+{ event 1003 260 5 }
+}

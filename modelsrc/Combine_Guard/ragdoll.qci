@@ -1,0 +1,81 @@
+$sequence ragdoll ragdoll fps 30 ACT_DIERAGDOLL 1
+
+$collisionjoints "cguardphys.smd" { //This needs a LOT of improvement. If you kill him by launching a prop_physics at him he gets sent FLYING.
+	$concave
+	//$maxconvexpieces 200
+	$mass 400.0
+	$inertia 5.00
+	$damping 0.01
+	$rotdamping 1.50
+	$rootbone "Bip01 Pelvis"
+
+	$jointmerge "Bip01 Pelvis" "Bip01"
+
+	$jointconstrain "bip01 spine2" x limit -35.00 35.00 0.00
+	$jointconstrain "bip01 spine2" y limit -30.00 30.00 0.00
+	$jointconstrain "bip01 spine2" z limit -35.00 75.00 0.00
+
+	$jointconstrain "bip01 l upperarm" x limit -90.00 60.00 0.00
+	$jointconstrain "bip01 l upperarm" y limit -19.00 25.00 0.00
+	$jointconstrain "bip01 l upperarm" z limit -12.00 39.00 0.00
+
+	$jointconstrain "bip01 r upperarm" x limit -59.00 90.00 0.00
+	$jointconstrain "bip01 r upperarm" y limit -26.00 40.00 0.00
+	$jointconstrain "bip01 r upperarm" z limit -19.00 48.00 0.00
+
+	$jointconstrain "bip01 r forearm" x limit -48.00 45.00 0.00
+	$jointconstrain "bip01 r forearm" y limit -3.00 3.00 0.00
+	$jointconstrain "bip01 r forearm" z limit -140.00 12.00 0.00
+
+	$jointconstrain "bip01 r hand" x limit -37.00 37.00 0.00
+	$jointconstrain "bip01 r hand" y limit -15.00 17.00 0.00
+	$jointconstrain "bip01 r hand" z limit -60.00 50.00 0.00
+
+	$jointconstrain "bip01 l forearm" x limit -46.00 48.00 0.00
+	$jointconstrain "bip01 l forearm" y limit -3.00 3.00 0.00
+	$jointconstrain "bip01 l forearm" z limit -120.00 12.00 0.00
+
+	$jointconstrain "bip01 l thigh" x limit -60.00 60.00 0.00
+	$jointconstrain "bip01 l thigh" y limit -35.00 65.00 0.00
+	$jointconstrain "bip01 l thigh" z limit -30.00 120.00 0.00
+
+	$jointconstrain "bip01 l calf" x limit -15.00 15.00 0.00
+	$jointconstrain "bip01 l calf" y limit -6.00 6.00 0.00
+	$jointconstrain "bip01 l calf" z limit -95.00 12.00 0.00
+
+	$jointconstrain "bip01 l hand" x limit -37.00 37.00 0.00
+	$jointconstrain "bip01 l hand" y limit -15.00 17.00 0.00
+	$jointconstrain "bip01 l hand" z limit -17.00 50.00 0.00
+
+	$jointconstrain "bip01 r thigh" x limit -60.00 60.00 0.00
+	$jointconstrain "bip01 r thigh" y limit -65.00 35.00 0.00
+	$jointconstrain "bip01 r thigh" z limit -30.00 120.00 0.00
+
+	$jointconstrain "bip01 r calf" x limit -15.00 15.00 0.00
+	$jointconstrain "bip01 r calf" y limit -6.00 6.00 0.00
+	$jointconstrain "bip01 r calf" z limit -95.00 12.00 0.00
+
+	$jointconstrain "bip01 r foot" x limit -25.00 30.00 0.00
+	$jointconstrain "bip01 r foot" y limit -15.00 35.00 0.00
+	$jointconstrain "bip01 r foot" z limit -40.00 40.00 0.00
+
+	$jointconstrain "bip01 l foot" x limit -35.00 25.00 0.00
+	$jointconstrain "bip01 l foot" y limit -35.00 15.00 0.00
+	$jointconstrain "bip01 l foot" z limit -40.00 40.00 0.00
+
+	$jointconstrain "bip01 neck2" x limit -60.00 60.00 0.00
+	$jointconstrain "bip01 neck2" y limit -75.00 75.00 0.00
+	$jointconstrain "bip01 neck2" z limit -110.00 110.00 0.00
+
+	$jointconstrain "bip01 neck3" x limit -35.00 35.00 0.00
+	$jointconstrain "bip01 neck3" y limit -32.00 32.00 0.00
+	$jointconstrain "bip01 neck3" z limit -65.00 85.00 0.00
+
+	$jointconstrain "bip01 neck4" x limit -36.00 35.00 0.00
+	$jointconstrain "bip01 neck4" y limit -45.00 45.00 0.00
+	$jointconstrain "bip01 neck4" z limit -50.00 85.00 0.00
+
+	$jointconstrain "bip01 head" x limit -70.00 70.00 0.00
+	$jointconstrain "bip01 head" y limit -40.00 40.00 0.00
+	$jointconstrain "bip01 head" z limit -35.00 85.00 0.00
+}
