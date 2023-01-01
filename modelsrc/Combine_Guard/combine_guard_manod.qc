@@ -147,35 +147,35 @@ studio "Guard_Dismantled_Gibs_f.smd"
 $bodygroup lower_torso
 {
 blank
-studio "Guard_Dismantled_Gibs_k.smd"
+studio "Guard_Dismantled_Gibs_k_manod.smd"
 }
 
 //Right Thigh
 $bodygroup right_thigh
 {
 blank
-studio "Guard_Dismantled_Gibs_g.smd"
+studio "Guard_Dismantled_Gibs_g_manod.smd"
 }
 
 //Left Thigh
 $bodygroup left_thigh
 {
 blank
-studio "Guard_Dismantled_Gibs_h.smd"
+studio "Guard_Dismantled_Gibs_h_manod.smd"
 }
 
 //Right Shin
 $bodygroup right_shin
 {
 blank
-studio "Guard_Dismantled_Gibs_i.smd"
+studio "Guard_Dismantled_Gibs_i_manod.smd"
 }
 
 //Left Shin
 $bodygroup left_shin
 {
 blank
-studio "Guard_Dismantled_Gibs_j.smd"
+studio "Guard_Dismantled_Gibs_j_manod.smd"
 }
 
 $sequence idle01 "Idle01" loop FPS 30 activity ACT_IDLE 1 node 1
@@ -219,8 +219,8 @@ $sequence punch02 "punch02" fps 30 activity ACT_MELEE_ATTACK1 1 {
 { event 11 24 }
 }
 
-$sequence physrecover "Phys_hit_recover" fps 30 LX activity ACT_COMBINEGUARD_CLOBBERED 1 { event 20 15 } { event 21 30 } { event 20 77 }
-$sequence physgetup "Phys_hit_getup" fps 30 LX activity ACT_COMBINEGUARD_GETUP 1 alignto idle01 { event 23 9 } { event 20 53 }
+$sequence physrecover "Phys_hit_recover" activity ACT_COMBINEGUARD_CLOBBERED 1 { event 20 15 } { event 21 30 } { event 20 77 } walkframe 8 lx walkframe 15 lx walkframe 25 lx walkframe 31 lx walkframe 38 lx walkframe 64 lx walkframe 71 lx walkframe 85 lx
+$sequence physgetup "Phys_hit_getup" activity ACT_COMBINEGUARD_GETUP 1 alignto idle01 { event 23 9 } { event 20 53 } walkframe 30 lx walkframe 38 lx walkframe 45 lx walkframe 60 lx
 $sequence physfall "Phys_hit_fall" fps 30 LX activity ACT_COMBINEGUARD_TOPPLE 1 { event 22 22 }
 $sequence physdeath "Phys_hit_death" fps 30 LX activity ACT_COMBINEGUARD_HELPLESS 1 alignto idle01 { event 24 0 } frame 0 58
 
