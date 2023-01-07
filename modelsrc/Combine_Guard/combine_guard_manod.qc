@@ -203,7 +203,7 @@ $lod 160
 	//bonetreecollapse "Bip 01 L Hand"
 	nofacial
 }
-
+/* //These LODs cause crashes when reloading the model in certain circumstances, so disabling for now.
 $lod 190 
 {
 	replacemodel "guard_reference" "guard_lod_5"
@@ -219,7 +219,7 @@ $lod 220
 	//bonetreecollapse "Bip 01 L Hand"
 	nofacial
 }
-
+*/
 $sequence idle01 "Idle01" loop FPS 30 activity ACT_IDLE 1 node 1
 
 //
