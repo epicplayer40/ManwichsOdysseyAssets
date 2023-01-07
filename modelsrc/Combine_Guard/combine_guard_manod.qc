@@ -178,6 +178,48 @@ blank
 studio "Guard_Dismantled_Gibs_j_manod.smd"
 }
 
+$lod 80 
+{
+	replacemodel "guard_reference" "guard_lod_1"
+	
+}
+
+$lod 120 
+{
+	replacemodel "guard_reference" "guard_lod_2"
+	
+}
+
+$lod 135 
+{
+	replacemodel "guard_reference" "guard_lod_3"
+
+}
+
+$lod 160 
+{
+	replacemodel "guard_reference" "guard_lod_4"
+	//bonetreecollapse "Bip 01 R Hand"
+	//bonetreecollapse "Bip 01 L Hand"
+	nofacial
+}
+
+$lod 190 
+{
+	replacemodel "guard_reference" "guard_lod_5"
+	//bonetreecollapse "Bip 01 R Hand"
+	//bonetreecollapse "Bip 01 L Hand"
+	nofacial
+}
+
+$lod 220 
+{
+	replacemodel "guard_reference" "guard_lod_6"
+	//bonetreecollapse "Bip 01 R Hand"
+	//bonetreecollapse "Bip 01 L Hand"
+	nofacial
+}
+
 $sequence idle01 "Idle01" loop FPS 30 activity ACT_IDLE 1 node 1
 
 //
@@ -239,45 +281,3 @@ $pushd scripted_sequences
 $include scripted_sequences/ss.qci
 $popd
 
-
-$lod 80 
-{
-	replacemodel "guard_reference" "guard_lod_1"
-	
-}
-
-$lod 120 
-{
-	replacemodel "guard_reference" "guard_lod_2"
-	
-}
-
-$lod 135 
-{
-	replacemodel "guard_reference" "guard_lod_3"
-
-}
-
-$lod 160 
-{
-	replacemodel "guard_reference" "guard_lod_4"
-	//bonetreecollapse "Bip 01 R Hand"
-	//bonetreecollapse "Bip 01 L Hand"
-	nofacial
-}
-
-$lod 190 
-{
-	replacemodel "guard_reference" "guard_lod_5"
-	//bonetreecollapse "Bip 01 R Hand"
-	//bonetreecollapse "Bip 01 L Hand"
-	nofacial
-}
-
-$lod 220 
-{
-	replacemodel "guard_reference" "guard_lod_6"
-	//bonetreecollapse "Bip 01 R Hand"
-	//bonetreecollapse "Bip 01 L Hand"
-	nofacial
-}
