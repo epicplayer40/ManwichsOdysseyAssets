@@ -2,7 +2,7 @@
 ==============================================================================
 
 M60 Machine Gun
-Original m60 model by Sgt Stacker, mesh fixes by Xinus, QC edits by The One Epicplayer
+Original m60 model by Sgt Stacker, mesh fixes by Xinus, QC edits by The One Epicplayer and Akis_02
 
 ==============================================================================
 */
@@ -17,17 +17,76 @@ $body studio "M60_reference.smd"
 $origin 0 0 68
 
 //Muzzle flash
-$attachment 0 "Bip01 R Hand" 24 2 8.5
+$attachment muzzle "Bip01 R Hand" 24 2 8.5
  
 //Shell eject
 $attachment 1 "Bip01 R Hand" 10.0 2 6.0 rotate -25 -90 0
 
 $sequence AR2_idle "Idle01" loop fps 30 ACT_VM_IDLE 1 node 0
 
-$sequence AR2_primary_fire "Fire01" fps 30 snap activity ACT_VM_PRIMARYATTACK 1 { event 5001 0 "0" } { event 6001 0 "1" }
-$sequence AR2_primary_fire2 "Fire02" fps 30 snap activity ACT_VM_HITLEFT 1 { event 5001 0 "0" } { event 6001 0 "1" }
-$sequence AR2_primary_fire3 "Fire03" fps 30 snap activity ACT_VM_HITLEFT2 1 { event 5001 0 "0" } { event 6001 0 "1" }
-$sequence AR2_primary_fire4 "Fire04" fps 30 snap activity ACT_VM_HITRIGHT 1 { event 5001 0 "0" } { event 6001 0 "1" }
+$Sequence "AR2_primary_fire" {
+	"fire01"
+	activity "ACT_VM_PRIMARYATTACK" 1
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event 6001 0 "1" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "AR2_primary_fire2" {
+	"fire02"
+	activity "ACT_VM_HITLEFT" 1
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event 6001 0 "1" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "AR2_primary_fire3" {
+	"fire03"
+	activity "ACT_VM_HITLEFT2" 1
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event 6001 0 "1" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
+
+$Sequence "AR2_primary_fire4" {
+	"fire04"
+	activity "ACT_VM_HITRIGHT" 1
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "SHOTGUN MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
+	{ event 6001 0 "1" }
+	fadein 0.2
+	fadeout 0.2
+	snap
+	fps 30
+}
 
 $sequence AR2_primary_dry "Fire01_dry" fps 30 snap activity ACT_VM_DRYFIRE 1 node 0
 //$sequence AR2_secondary_fire "alt_fire01" fps 30 snap activity ACT_VM_SECONDARYATTACK 1 { event 5001 0 "2" } node 0
