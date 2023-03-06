@@ -3,7 +3,7 @@
 
 Missile launcher
 Fully modelled ML Mesh by ???? (Used in Metapatch/build)
-QC edits by The One Epicplayer
+QC edits and animations by The One Epicplayer
 ==============================================================================
 */
 
@@ -30,4 +30,5 @@ $sequence fire "Idle01" frame 51 70 fps 30 snap activity ACT_VM_PRIMARYATTACK 1 
 //$sequence down_to_up "down_to_up" fps 30 ACT_VM_LOWERED_TO_IDLE 1 transition Low Idle
 //$sequence down_idle "down_idle" loop fps 30 ACT_VM_IDLE_LOWERED 1 node Low
 
-$sequence holster "Idle01" frame 100 150 fps 30 activity ACT_VM_DROP_WEAPON 1 node Idle {event 3104 50}
+$sequence drop "Idle01" frame 100 150 fps 30 activity ACT_VM_DROP_WEAPON 1 node Idle { event 3104 49 }
+$sequence holster "Holster" fps 45 activity ACT_VM_HOLSTER 1 node Idle

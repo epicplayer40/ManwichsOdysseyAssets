@@ -34,10 +34,7 @@ $Sequence "AR2_primary_fire" {
 	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
 	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
 	{ event 6001 0 "1" }
-	fadein 0.2
-	fadeout 0.2
 	snap
-	fps 30
 }
 
 $Sequence "AR2_primary_fire2" {
@@ -50,10 +47,7 @@ $Sequence "AR2_primary_fire2" {
 	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
 	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
 	{ event 6001 0 "1" }
-	fadein 0.2
-	fadeout 0.2
 	snap
-	fps 30
 }
 
 $Sequence "AR2_primary_fire3" {
@@ -66,10 +60,7 @@ $Sequence "AR2_primary_fire3" {
 	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
 	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
 	{ event 6001 0 "1" }
-	fadein 0.2
-	fadeout 0.2
 	snap
-	fps 30
 }
 
 $Sequence "AR2_primary_fire4" {
@@ -82,10 +73,7 @@ $Sequence "AR2_primary_fire4" {
 	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
 	{ event AE_MUZZLEFLASH 0 "357 MUZZLE" }
 	{ event 6001 0 "1" }
-	fadein 0.2
-	fadeout 0.2
 	snap
-	fps 30
 }
 
 $sequence AR2_primary_dry "Fire01_dry" fps 30 snap activity ACT_VM_DRYFIRE 1 node 0
