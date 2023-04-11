@@ -1,0 +1,9 @@
+version 1
+nodes
+0 "blender_implicit" -1
+1 "root" -1
+2 "merkava.yaw" 1
+3 "merkava.pitch" 2
+4 "merkava.muzzle" 3
+end
+skeleton
