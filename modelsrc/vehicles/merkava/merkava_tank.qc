@@ -37,12 +37,12 @@ $attachment "gun_ref" "merkava.pitch" 0.00 100.00 0.00 rotate -0 90 -180
 
 //For vehicle stuff
 $attachment "raytrace_fr" "merkava.body" -60.00 -30.00 80.00 rotate -0 -180 -0
-$attachment "raytrace_fr" "merkava.body" 60.00 -30.00 80.00 rotate -0 -180 -0
+$attachment "raytrace_fl" "merkava.body" 60.00 -30.00 80.00 rotate -0 -180 -0
 $attachment "raytrace_rl" "merkava.body" 60.00 -30.00 -100.00 rotate -0 -180 -0
 $attachment "raytrace_rr" "merkava.body" -60.00 -30.00 -100.00 rotate -0 -180 0
 
 $attachment "wheel_fr" "merkava.body" -60.00 -30.00 80.00 rotate -0 -180 -0
-$attachment "wheel_fr" "merkava.body" 60.00 -30.00 80.00 rotate -0 -180 -0
+$attachment "wheel_fl" "merkava.body" 60.00 -30.00 80.00 rotate -0 -180 -0
 $attachment "wheel_rl" "merkava.body" 60.00 -30.00 -100.00 rotate -0 -180 -0
 $attachment "wheel_rr" "merkava.body" -60.00 -30.00 -100.00 rotate -0 -180 0
 
@@ -51,6 +51,7 @@ $attachment "smokepoint1" "merkava.body" 30.00 20.00 100.00 rotate 0 90 0
 $attachment "smokepoint2" "merkava.body" -58.00 34.00 -50.00 rotate 0 90  0
 $attachment "smokepoint3" "merkava.body" -30.00 26.00 -130.00 rotate 0 90 0 
 $attachment "firepoint" "merkava.body" 30.00 10.00 -150.00 rotate 0 90 0
+$attachment "maw" "merkava.body" 0.00 32.00 -10.00 rotate 0 90 0
 
 //----- Pose Parameters -----
 
