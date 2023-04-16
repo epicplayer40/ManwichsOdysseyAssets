@@ -36,15 +36,15 @@ $attachment "gun_ref" "merkava.pitch" 0.00 100.00 0.00 rotate -0 90 -180
 
 
 //For vehicle stuff
-$attachment "raytrace_fr" "merkava.body" -60.00 -30.00 80.00 rotate -0 -180 -0
-$attachment "raytrace_fl" "merkava.body" 60.00 -30.00 80.00 rotate -0 -180 -0
-$attachment "raytrace_rl" "merkava.body" 60.00 -30.00 -100.00 rotate -0 -180 -0
-$attachment "raytrace_rr" "merkava.body" -60.00 -30.00 -100.00 rotate -0 -180 0
+$attachment "raytrace_fr" "merkava.body" -60.00 -20.00 80.00 rotate -0 -180 -0
+$attachment "raytrace_fl" "merkava.body" 60.00 -20.00 80.00 rotate -0 -180 -0
+$attachment "raytrace_rl" "merkava.body" 60.00 -20.00 -100.00 rotate -0 -180 -0
+$attachment "raytrace_rr" "merkava.body" -60.00 -20.00 -100.00 rotate -0 -180 0
 
-$attachment "wheel_fr" "merkava.body" -60.00 -30.00 80.00 rotate -0 -180 -0
-$attachment "wheel_fl" "merkava.body" 60.00 -30.00 80.00 rotate -0 -180 -0
-$attachment "wheel_rl" "merkava.body" 60.00 -30.00 -100.00 rotate -0 -180 -0
-$attachment "wheel_rr" "merkava.body" -60.00 -30.00 -100.00 rotate -0 -180 0
+$attachment "wheel_fr" "merkava.body" -60.00 -20.00 80.00 rotate -0 -180 -0
+$attachment "wheel_fl" "merkava.body" 60.00 -20.00 80.00 rotate -0 -180 -0
+$attachment "wheel_rl" "merkava.body" 60.00 -20.00 -100.00 rotate -0 -180 -0
+$attachment "wheel_rr" "merkava.body" -60.00 -20.00 -100.00 rotate -0 -180 0
 
 //These MUST be next to each other
 $attachment "smokepoint1" "merkava.body" 30.00 20.00 100.00 rotate 0 90 0
