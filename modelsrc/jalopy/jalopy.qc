@@ -36,7 +36,7 @@ blank
 
 $lod 18
 {
-//	replacemodel "buggy_reference" "buggy_lod_1"
+	replacemodel "jalopy_reference" "jalopy_lod_1"
 	//replacebone "rig_buggy.lid" "rig_buggy.frame"
 	replacebone "rig_buggy.latch" "rig_buggy.frame"
 	replacebone "rig_buggy.speedo" "rig_buggy.frame"
@@ -52,7 +52,7 @@ $lod 18
 
 $lod 40
 {
-//	replacemodel "buggy_reference" "buggy_lod_2"
+	replacemodel "jalopy_reference" "jalopy_lod_2"
 	replacebone "rig_buggy.lid" "rig_buggy.frame"
 	replacebone "rig_buggy.latch" "rig_buggy.frame"
 	replacebone "rig_buggy.speedo" "rig_buggy.frame"
@@ -72,7 +72,7 @@ $lod 40
 
 $lod 80
 {
-//	replacemodel "buggy_reference" "buggy_lod_3"
+//	replacemodel "jalopy_reference" "jalopy_lod_3"
 	replacebone "rig_buggy.lid" "rig_buggy.frame"
 	replacebone "rig_buggy.latch" "rig_buggy.frame"
 	replacebone "rig_buggy.speedo" "rig_buggy.frame"
@@ -92,7 +92,7 @@ $lod 80
 
 $lod 110
 {
-//	replacemodel "buggy_reference" "buggy_lod_4"
+	replacemodel "jalopy_reference" "jalopy_lod_4"
 	replacebone "rig_buggy.lid" "rig_buggy.frame"
 	replacebone "rig_buggy.latch" "rig_buggy.frame"
 	replacebone "rig_buggy.speedo" "rig_buggy.frame"
@@ -112,7 +112,7 @@ $lod 110
 
 $shadowlod
 {
-//	replacemodel "buggy_reference" "buggy_lod_4"
+	replacemodel "jalopy_reference" "jalopy_lod_4"
 	replacebone "rig_buggy.lid" "rig_buggy.frame"
 	replacebone "rig_buggy.latch" "rig_buggy.frame"
 	replacebone "rig_buggy.speedo" "rig_buggy.frame"
