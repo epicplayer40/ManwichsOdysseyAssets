@@ -41,10 +41,17 @@ $attachment "raytrace_fl" "merkava.body" 60.00 -22.00 80.00 rotate -0 -180 -0
 $attachment "raytrace_rl" "merkava.body" 60.00 -22.00 -100.00 rotate -0 -180 -0
 $attachment "raytrace_rr" "merkava.body" -60.00 -22.00 -100.00 rotate -0 -180 0
 
-$attachment "wheel_fr" "merkava.body" -60.00 -22.00 80.00 rotate -0 -180 -0
+$attachment "wheel_fr" "merkava.body" -60.00 -22.00 80.00 rotate -0 -180 -0	
 $attachment "wheel_fl" "merkava.body" 60.00 -22.00 80.00 rotate -0 -180 -0
 $attachment "wheel_rl" "merkava.body" 60.00 -22.00 -100.00 rotate -0 -180 -0
 $attachment "wheel_rr" "merkava.body" -60.00 -22.00 -100.00 rotate -0 -180 0
+
+/*
+$attachment "oblique_fr" "merkava.body" -60.00 -22.00 130.00 rotate -0 0 -50
+$attachment "oblique_fl" "merkava.body" 60.00 -22.00 130.00 rotate -0 0 -50
+$attachment "oblique_rl" "merkava.body" 60.00 -22.00 -100.00 rotate -0 -180 -0
+$attachment "oblique_rr" "merkava.body" -60.00 -22.00 -100.00 rotate -0 -180 0
+*/
 
 //These MUST be next to each other
 $attachment "smokepoint1" "merkava.body" 30.00 20.00 100.00 rotate 0 90 0
@@ -53,6 +60,12 @@ $attachment "smokepoint3" "merkava.body" -30.00 26.00 -130.00 rotate 0 90 0
 $attachment "firepoint" "merkava.body" 30.00 10.00 -150.00 rotate 0 90 0
 $attachment "maw" "merkava.body" 0.00 32.00 -10.00 rotate 0 90 0
 
+$attachment "turret_gib_spawn" "merkava.yaw" 0.00 0.00 77.00 absolute
+
+$collisiontext
+{
+	break	{	model 	vehicles/merkava_tank_turret_gib.mdl	velocity 0 0 200 }
+}
 //----- Pose Parameters -----
 
 $poseparameter "vehicle_weapon_yaw" -180 180 wrap
@@ -83,7 +96,7 @@ $sequence weapon_yaw { aim_back aim_right aim_front aim_left aim_back blendwidth
 
 //----- Physbox -----
 $collisionmodel "merkava_tank_phys.smd" {
-     $Mass 58967
+     $Mass 10000
  	 $concave
 	 $drag 0.3
 }
