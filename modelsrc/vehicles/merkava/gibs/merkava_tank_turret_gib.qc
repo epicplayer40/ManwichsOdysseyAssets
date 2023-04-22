@@ -16,7 +16,7 @@ $sequence idle "merkava_tank_turret_gib" fps 30
 
 //----- Physbox -----
 $collisionmodel "merkava_tank_turret_gib_phys.smd" {
-     $Mass 58967
+     $automass
  	 $concave
 	 $drag 0.3
 }
