@@ -30,87 +30,85 @@ $keyvalues
 		"exit6"	"upsidedown"
 	}
 	
-	"vehicle_npc_passengers" 
+		// The following list comprises the animations to be played by NPCs taking passenger roles in the vehicle
+	"vehicle_npc_passengers"
 	{
-		"passenger"		 
+		// Passenger seat position
+		"passenger"
 		{
-			"target_attachment"			"vehicle_feet_passenger1"
-			"entry"			 
+			"target_attachment"		"vehicle_feet_passenger1"		// Attachment when seated
+			
+			// Passenger side
+			"entry"
 			{
-				"priority"				"1"
-				"animation"				"buggy_enter1"
-			}
-			"exit"			 
-			{
-				"priority"				"1"
-				"animation"				"buggy_exit1"
-			}
-			"exit"			 
-			{
-				"priority"				"2"
-				"animation"				"buggy_exit3"
-			}
-			"entry"			 
-			{
-				"priority"				"2"
-				"animation"				"buggy_enter2"
-			}
-			"exit"			 
-			{
-				"priority"				"2"
-				"animation"				"buggy_exit2"
-			}
-		}
-		"passenger_zombie"		 
-		{
-			"target_attachment"			"passenger_zombie1"
-/*			"entry"			 
-			{
-				"priority"				"1"
-				"animation"				"buggy_fast_dynamic01"
-			}*/
-			"exit"			 
-			{
-				"priority"				"1"
-				"animation"				"buggy_dismount"
+				"priority"			"1"	// Ranked priority for the entry
+				"animation"			"buggy_enter1"
 			}
 			
-			"entry"			 
+			"exit"
 			{
-				"priority"				"1"
-				"animation"				"buggy_enter1"
+				"priority"			"1"	// Ranked priority for the entry
+				"animation"			"buggy_exit1"			
 			}
-/*			"entry"			 
-			{
-				"priority"				"1"
-				"animation"				"buggy_enter_back_left"
+			
+			"exit"
+				{
+				"priority"			"2"	// Ranked priority for the front exit
+				"animation"			"buggy_exit3"			
 			}
-			"entry"			 
+			
+
+			// Driver's side
+			"entry"
 			{
-				"priority"				"1"
-				"animation"				"buggy_enter_back_right"
-			}*/
-			"entry"			 
-			{
-				"priority"				"1"
-				"animation"				"buggy_enter_front_left"
+				"priority"			"2"	// Ranked priority for the entry
+				"animation"			"buggy_enter2"
 			}
-			"entry"			 
+			
+			"exit"
 			{
-				"priority"				"1"
-				"animation"				"buggy_enter_front_right"
+				"priority"			"2"	// Ranked priority for the entry
+				"animation"			"buggy_exit2"			
 			}
-			"entry"			 
+		}
+
+		// Zombie passenger
+		"passenger_zombie"
+		{
+			"target_attachment"		"passenger_zombie1"		// Attachment when seated
+			
+			"entry"
 			{
-				"priority"				"2"
-				"animation"				"buggy_enter_left"
-			}
-			"entry"			 
+				"priority"			"1"	// Ranked priority for the entry
+				"animation"			"buggy_enter1"
+			}	
+			"entry"
 			{
-				"priority"				"2"
-				"animation"				"buggy_enter_right"
+				"priority"			"2"
+				"animation"			"buggy_enter_right"
+			}	
+			"entry"
+			{
+				"priority"			"2"
+				"animation"			"buggy_enter_left"
+			}	
+			//"entry"
+			//{
+			//	"priority"			"1"
+			//	"animation"			"buggy_fast_dynamic01"
+			//}	
+			"entry"
+			{
+				"priority"			"2"
+				"animation"			"buggy_enter_front_right"
+			}	
+			"exit"
+			{
+				"priority"			"1"	// Ranked priority for the entry
+				"animation"			"buggy_dismount"
 			}
-			"metadata"			 
+		
+			"metadata"
 			{
 				"side"				"front"
 			}
