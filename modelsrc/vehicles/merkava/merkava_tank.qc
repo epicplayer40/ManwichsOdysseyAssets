@@ -26,6 +26,14 @@ studio "merkava_tank_turret.smd"
 blank
 }
 
+//Different Skins
+$texturegroup "Merkava_Skins"
+{
+	{ "metaltank001f" "metaltank001g" "metaltank001e" }
+	{ "metaltank001c" "metaltank001d" "metaltank001e" }
+	{ "metaltank001a" "metaltank001b" "metaltank001e" }
+	{ "metaltank001f_snow" "metaltank001g_snow" "metaltank001e_snow" }
+}
 
 $attachment "muzzle" "merkava.muzzle" 0.00 0.00 0.00 rotate -0 90 -180
 $attachment "muzzle_static" "merkava.muzzle_static" 0.00 300.00 0.00 rotate -0 90 -180

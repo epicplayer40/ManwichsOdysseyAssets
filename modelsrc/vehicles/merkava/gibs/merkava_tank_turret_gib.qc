@@ -21,6 +21,15 @@ $collisionmodel "merkava_tank_turret_gib_phys.smd" {
 	 $drag 0.3
 }
 
+//Different Skins
+$texturegroup "Merkava_Skins"
+{
+	{ "metaltank001f" "metaltank001g" }
+	{ "metaltank001c" "metaltank001d" }
+	{ "metaltank001a" "metaltank001b" }
+	{ "metaltank001f_snow" "metaltank001g_snow" }
+}
+
 $keyvalues
 {
 	prop_data
