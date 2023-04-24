@@ -33,6 +33,7 @@ $texturegroup "Merkava_Skins"
 	{ "metaltank001c" "metaltank001d" "metaltank001e" }
 	{ "metaltank001a" "metaltank001b" "metaltank001e" }
 	{ "metaltank001f_snow" "metaltank001g_snow" "metaltank001e_snow" }
+	{ "metaltank001c_desert" "metaltank001d_desert" "metaltank001e_desert" }
 }
 
 $attachment "muzzle" "merkava.muzzle" 0.00 0.00 0.00 rotate -0 90 -180

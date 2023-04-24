@@ -28,6 +28,7 @@ $texturegroup "Merkava_Skins"
 	{ "metaltank001c" "metaltank001d" }
 	{ "metaltank001a" "metaltank001b" }
 	{ "metaltank001f_snow" "metaltank001g_snow" }
+	{ "metaltank001c_desert" "metaltank001d_desert" }
 }
 
 $keyvalues
