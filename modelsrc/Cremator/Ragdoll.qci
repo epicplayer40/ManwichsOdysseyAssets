@@ -1,0 +1,53 @@
+
+/*
+----------------------------
+Ragdoll_body
+----------------------------
+*/
+
+$surfaceprop "default"
+
+$collisionjoints "ragdoll_body.smd" {
+	$mass 400.0
+	$inertia 5.00
+	$damping 0.01
+	$rotdamping 1.50
+	$rootbone "Bip01 Spine"
+
+	$jointconstrain "RFront Flapa" x limit -6.00 6.00
+
+	$jointconstrain "RBack Flapa" x limit -6.00 6.00
+
+	$jointconstrain "LBack Flapa" x limit -6.00 6.00
+
+	$jointconstrain "Bip01 R Thigh" x limit 0.00 0.00
+	$jointconstrain "Bip01 R Thigh" y limit -5.00 5.00
+	$jointconstrain "Bip01 R Thigh" z limit -6.00 -1.00
+
+	$jointconstrain "Bip01 R Calf" z limit -15.00 3.00
+
+	$jointconstrain "Bip01 L Thigh" y limit -5.00 5.00
+	$jointconstrain "Bip01 L Thigh" z limit -6.00 1.00
+
+	$jointconstrain "Bip01 L Calf" z limit -15.00 3.00
+
+	$jointconstrain "Bip01 Spine2" x limit -6.00 6.00
+	$jointconstrain "Bip01 Spine2" z limit -22.00 31.00
+
+	$jointconstrain "Bip01 R UpperArm" y limit -6.00 6.00
+	$jointconstrain "Bip01 R UpperArm" z limit -30.00 30.00
+
+	$jointconstrain "Bip01 R Forearm" z limit -50.00 0.00
+
+	$jointconstrain "Bip01 L UpperArm" y limit -6.00 6.00
+	$jointconstrain "Bip01 L UpperArm" z limit -30.00 30.00
+
+	$jointconstrain "Bip01 L Forearm" z limit -50.00 0.00
+
+	$jointconstrain "Bip01 L Hand" z limit 0.00 20.00
+
+	$jointconstrain "Bip01 R Hand" z limit 0.00 20.00
+
+	$jointconstrain "LFront Flapa" x limit -8.00 8.00
+}
+$sequence ragdoll 		"Ragdoll_body_idle" 		FPS 30 		activity ACT_DIERAGDOLL 1

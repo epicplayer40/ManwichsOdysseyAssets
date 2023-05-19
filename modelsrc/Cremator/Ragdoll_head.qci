@@ -1,0 +1,18 @@
+
+/*
+----------------------------
+Ragdoll_head
+----------------------------
+*/
+
+$surfaceprop "metal"
+
+$collisionmodel "Ragdoll_head.smd" {
+	$mass 20.0
+}
+
+
+
+$sequence Ragdoll "ragdoll_pose" fps 30
+
+
