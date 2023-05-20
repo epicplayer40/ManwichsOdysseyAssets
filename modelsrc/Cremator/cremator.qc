@@ -86,8 +86,8 @@ $sequence run {
 
 //$sequence limp1			"limp01" loop LX fps 30		ACT_RUN_HURT 1
 $sequence gunjam		"gunjam01" fps 30			ACT_CREMATOR_GUN_JAM 1 cmdlist lockfeetandlefthand
-$sequence flich1		"flinch01" fps 30			ACT_SMALL_FLINCH 1 ikrule rfoot footstep ikrule lfoot footstep range .. .. 0 7 ikrule lfoot footstep range 10 16 92 103 ikrule lfoot footstep range 108 112 .. ..
-$sequence fireinout		"fireinout01" fps 30 {
+$sequence flich1		"flinch01" fps 30			ACT_BIG_FLINCH 1 ikrule rfoot footstep ikrule lfoot footstep range .. .. 0 7 ikrule lfoot footstep range 10 16 92 103 ikrule lfoot footstep range 108 112 .. ..
+$sequence fireinout		"fireinout01" fps 30 ACT_SPECIAL_ATTACK1 1 {
 	blendlayer Aim_firing 18 36 200 227 spline
 	ikrule rfoot footstep range .. .. 17 20
 	ikrule rfoot footstep range 26 29 203 206
@@ -101,7 +101,7 @@ $sequence fireinout		"fireinout01" fps 30 {
 }
 $sequence fireupleft	"fireupleft" fps 30
 $sequence fireupright	"fireupright" fps 30
-$sequence fireinoutsw	"fireinoutsweep" fps 30 {
+$sequence fireinoutsw	"fireinoutsweep" fps 30 ACT_SPECIAL_ATTACK2 1 {
 	ikrule rfoot footstep range .. .. 17 20
 	ikrule rfoot footstep range 26 29 238 241
 	ikrule rfoot footstep range 244 246 .. ..
