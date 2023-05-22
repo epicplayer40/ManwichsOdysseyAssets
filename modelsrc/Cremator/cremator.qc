@@ -28,16 +28,16 @@ $eyeposition 0 0 95.5
 
 //$attachment 0 "muzzle" 0 0 0
 //$attachment 1 "Bip01 Head" 0 0 0
-$attachment "eyes" "Bip01 Head" -0.01 -7.09 88.25 absolute
-$attachment "mouth" "Bip01 Head" 3 5.80 -0.15 rotate 0 -80 -90
+$Attachment "eyes" "Bip01 Head" -0.01 -7.09 88.25 absolute
+$Attachment "mouth" "Bip01 Head" 3 5.80 -0.15 rotate 0 -80 -90
 $Attachment "anim_attachment_RH" "ValveBiped.Bip01_R_Hand" 0 0 0 rotate -90 -90 0
 
 //=====================================
 //	Pose Parameters
 //=====================================
 
-$poseparameter "aim_pitch" -90 90
-$poseparameter "aim_yaw" -90 90
+$poseparameter "aim_pitch"
+$poseparameter "aim_yaw"
 $poseparameter "move_yaw" -180 180 wrap
 
 //======================================
@@ -98,6 +98,11 @@ $sequence fireinout		"fireinout01" fps 30 ACT_SPECIAL_ATTACK1 1 {
 	ikrule lfoot footstep range 224 226 .. ..
 	
 	ikrule lhand touch "Bip01 R Hand"
+	
+	{ event 2050 15 }	
+	{ event 2051 28 }
+	{ event 2050 226 }	
+	{ event 2051 211 }
 }
 $sequence fireupleft	"fireupleft" fps 30
 $sequence fireupright	"fireupright" fps 30
@@ -109,12 +114,21 @@ $sequence fireinoutsw	"fireinoutsweep" fps 30 ACT_SPECIAL_ATTACK2 1 {
 	ikrule lfoot footstep range .. .. 4 7
 	ikrule lfoot footstep range 14 17 249 253
 	ikrule lfoot footstep range 259 261 .. ..
+	{ event 2050 15 }	
+	{ event 2051 28 }
+	{ event 2050 260 }	
+	{ event 2051 245 }
 }
 $sequence breathing		"breathing01" fps 30 ACT_IDLE 1 node idle cmdlist lockfeet
 //$sequence firebreathing1 "firebreathing01" fps 30	ACT_IDLE 1
 $sequence firebreathing2 "firebreathing01" fps 30	ACT_IDLE_ANGRY 1 addlayer Aim_firing node flaming cmdlist lockfeetandlefthand
 
-$sequence walk walk01 LX loop ACT_WALK 1 ikrule lfoot footstep range 54 60 29 46 ikrule rfoot footstep range 24 28 0 14
+$sequence walk walk01 LX loop ACT_WALK 1 {
+ikrule lfoot footstep range 54 60 29 46 
+ikrule rfoot footstep range 24 28 0 14
+	{ event 2051 26 }
+	{ event 2050 58 }
+}
 
 $animation limp_S	"limpback01"	loop LX fps 30 startloop 19 ikrule rfoot footstep range 19 23 0 3 ikrule lfoot footstep range 30 33 22 25 ikrule lhand touch "Bip01 R Hand"
 $animation limp_W	"limpleft01"	loop LY fps 30 startloop 5 ikrule rfoot footstep range 19 23 0 3 ikrule lfoot footstep range 30 33 22 25 ikrule lhand touch "Bip01 R Hand"
@@ -123,6 +137,8 @@ $animation limp_E	"limprt01"		loop LY  fps 30 startloop 18 ikrule rfoot footstep
 $sequence limp {
 	limp_S limp_E limp_N limp_W limp_S
 	blendwidth 5 blend move_yaw -180 180 loop ACT_RUN_HURT 1 
+	{ event 2051 21 }
+	{ event 2050 32 }
 }
 
 //New Manod Sequences
@@ -135,6 +151,9 @@ $sequence firein		"fireinout01" {
 	ikrule lfoot footstep range .. .. 4 7
 	ikrule lfoot footstep range 14 17 .. ..
 	ikrule lhand touch "Bip01 R Hand"
+	{ event 2050 15 }	
+	{ event 2051 28 }
+
 } 
 $sequence fireout		"fireinout01" {
 	frame 200 240 
@@ -145,8 +164,11 @@ $sequence fireout		"fireinout01" {
 	ikrule lfoot footstep range .. .. 15 21
 	ikrule lfoot footstep range 25 27 .. ..
 	ikrule lhand touch "Bip01 R Hand"
+	{ event 2050 27 }	
+	{ event 2051 12 }
 }
 
+$animation aim_ref firebreathing01 frame 45 45
 $animation aim_straight firebreathing01 frame 45 45 subtract firebreathing2 0
 $animation aim_left fireinoutsweep frame 180 180 subtract firebreathing2 0
 $animation aim_right fireinoutsweep frame 140 140 subtract firebreathing2 0
@@ -158,8 +180,12 @@ $sequence Aim_firing  {
 		    aim_up_left aim_up_straight aim_up_right 
 		    aim_left aim_straight aim_right 
 		    aim_left aim_straight aim_right 
-			blend "body_yaw" -45 45   
-			blend "body_Pitch" -45 45 
+			blendref aim_ref 
+			blendcenter aim_straight
+			blendwidth 3
+			blend "aim_yaw" -45 45   
+			blend "aim_Pitch" -45 45 
+			//blendwidth 3 calcblend aim_yaw "anim_attachment_RH" ZR calcblend aim_pitch "anim_attachment_RH" YR
 			delta }
 			
 $sequence fire "fireinout01" frame 78 90 fps 30	ACT_RANGE_ATTACK1 1 addlayer Aim_firing node flaming cmdlist lockfeetandlefthand
