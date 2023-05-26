@@ -220,7 +220,28 @@ $lod 220
 	nofacial
 }
 */
-$sequence idle01 "Idle01" loop FPS 30 activity ACT_IDLE 1 node 1
+
+//======================================
+// IK Rules
+//======================================
+$ikchain lfoot "Bip01 L Foot" Z 0 knee 1 0 0  pad 8 center 4 0 0
+$ikchain rfoot "Bip01 R Foot" Z 0 knee 1 0 0  pad 8 center 4 0 0
+$ikchain lhand "Bip01 L Hand" Z 0 knee 0 0.707 0
+$ikchain rhand "Bip01 R Hand" Z 0 knee 0 0.707 0
+
+
+$cmdlist lockfeet {
+	ikrule lfoot footstep
+	ikrule rfoot footstep
+}
+
+$cmdlist lockfeetandlefthand {
+	ikrule lfoot footstep
+	ikrule rfoot footstep
+	ikrule lhand touch "Bip01 R Hand"
+}
+
+$sequence idle01 "Idle01" loop FPS 30 activity ACT_IDLE 1 node 1 cmdlist lockfeet
 
 //
 // Aim blending
@@ -247,30 +268,80 @@ $sequence gunaim a_upL a_up a_upR a_left a_center a_right a_downL a_down a_downR
 
 //
 
-$sequence actidle01 "Action_Idle01" loop FPS 30 activity ACT_IDLE_ANGRY 1 node 2 //addlayer gunaim
+$sequence actidle01 "Action_Idle01" loop FPS 30 activity ACT_IDLE_ANGRY 1 node 2 cmdlist lockfeetandlefthand //addlayer gunaim
 
-$sequence walk "Walk" loop fps 30 LX activity ACT_WALK 1 { event 20 3 } { event 21 20 } node 1
-$sequence run "Run" loop fps 30 LX activity ACT_RUN 1 { event 20 8 } { event 21 19 } node 1
+$sequence walk "Walk" loop fps 30 LX activity ACT_WALK 1 { event 20 3 } { event 21 20 } node 1 {
+	ikrule lfoot footstep range 17 20 30 5
+	ikrule rfoot footstep range 0 4 12 19
+}
+$sequence run "Run" loop fps 30 LX activity ACT_RUN 1 { event 20 8 } { event 21 19 } node 1 {
+	ikrule lfoot footstep range 6 8 9 14
+	ikrule rfoot footstep range 17 19 1 4
+}
 
 $sequence punch01 "punch01" fps 30 activity ACT_MELEE_ATTACK1 2 {
-{ event 11 10 }
-//{ event 13 10 }
+	{ event 11 10 }
+//	{ event 13 10 }
+	ikrule lfoot footstep
+	ikrule rfoot footstep range .. .. 5 8
+	ikrule rfoot footstep range 29 35 .. ..
+	ikrule lhand touch "Bip01 R Hand"
 }
 
 $sequence punch02 "punch02" fps 30 activity ACT_MELEE_ATTACK1 1 {
-{ event 11 24 }
+	{ event 11 24 }
+	cmdlist lockfeet
 }
 
-$sequence physrecover "Phys_hit_recover" activity ACT_COMBINEGUARD_CLOBBERED 1 { event 20 15 } { event 21 30 } { event 20 77 } walkframe 8 lx walkframe 15 lx walkframe 25 lx walkframe 31 lx walkframe 38 lx walkframe 64 lx walkframe 71 lx walkframe 85 lx
-$sequence physgetup "Phys_hit_getup" activity ACT_COMBINEGUARD_GETUP 1 alignto idle01 { event 23 9 } { event 20 53 } walkframe 30 lx walkframe 38 lx walkframe 45 lx walkframe 60 lx
-$sequence physfall "Phys_hit_fall" fps 30 LX activity ACT_COMBINEGUARD_TOPPLE 1 { event 22 22 }
-$sequence physdeath "Phys_hit_death" fps 30 LX activity ACT_COMBINEGUARD_HELPLESS 1 alignto idle01 { event 24 0 } frame 0 58
+$sequence physrecover "Phys_hit_recover" activity ACT_COMBINEGUARD_CLOBBERED 1  { 
+	{ event 20 15 } 
+	{ event 21 30 } 
+	{ event 20 77 } 
+	walkframe 8 lx 
+	walkframe 15 lx 
+	walkframe 25 lx 
+	walkframe 31 lx 
+	walkframe 38 lx 
+	walkframe 64 lx 
+	walkframe 71 lx 
+	walkframe 85 lx
+	ikrule lfoot footstep range .. .. 0 2
+	ikrule lfoot footstep range 12 15 69 74
+	ikrule lfoot footstep range 76 78 .. ..
+	ikrule rfoot footstep range .. .. 25 27
+	ikrule rfoot footstep range 29 31 .. ..
+}
+$sequence physgetup "Phys_hit_getup" activity ACT_COMBINEGUARD_GETUP 1 alignto idle01 { 
+	{ event 23 9 } 
+	{ event 20 53 } 
+	walkframe 30 lx 
+	walkframe 38 lx 
+	walkframe 45 lx 
+	walkframe 60 lx
+	ikrule rfoot footstep range 0 11 .. ..
+	ikrule lfoot footstep range 51 54 .. ..
+}
+$sequence physfall "Phys_hit_fall" fps 30 LX activity ACT_COMBINEGUARD_TOPPLE 1 { event 22 22 } {
+	ikrule rfoot footstep range 0 0 10 14
+	ikrule lfoot footstep range 0 0 16 19
+}
+$sequence physdeath "Phys_hit_death" fps 30 LX activity ACT_COMBINEGUARD_HELPLESS 1 alignto idle01 { event 24 0 } ikrule rfoot footstep range 0 11 51 55 frame 0 58
 
-$sequence idleact "Idle_to_action" FPS 30 ACT_CGUARD_IDLE_TO_ANGRY 1 transition 1 2 addlayer gunaim { event 21 6 } { event 20 17 }
-
+$sequence idleact "Idle_to_action" FPS 30 ACT_CGUARD_IDLE_TO_ANGRY 1 transition 1 2  {
+//	addlayer gunaim 
+	blendlayer gunaim  10 25 35 35 spline
+	{ event 21 6 } 
+	{ event 20 17 }
+	ikrule rfoot footstep range .. .. 0 3
+	ikrule rfoot footstep range 4 7 .. ..
+	ikrule lfoot footstep range .. .. 7 10
+	ikrule lfoot footstep range 14 17 .. ..
+	ikrule lhand touch "Bip01 R Hand"
+}
 $sequence fire "Fire" fps 15 activity ACT_RANGE_ATTACK1 1 node 2 addlayer gunaim {
-{ event 13 0 }
-{ event 12 30 }
+	{ event 13 0 }
+	{ event 12 30 }
+	cmdlist lockfeetandlefthand
 }
 
 $sequence aim9 "aim_9_directions" fps 30
