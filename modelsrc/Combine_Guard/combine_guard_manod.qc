@@ -12,9 +12,9 @@ $eyeposition 0 0 72
 
 $surfaceprop "metal"
 
-$cdmaterials models\combine_guard models\props_combine
+$cdmaterials models\combine_guard //models\props_combine
 
-$bbox -15 -15 0 15 15 75
+//$bbox -15 -15 0 15 15 75
 
 //Reference points
 $attachment "muzzle" "muzzle" 8 0 0
@@ -105,42 +105,42 @@ studio "Gun_reference_reuv.smd"
 $bodygroup right_shoulder
 {
 blank
-studio "Guard_Dismantled_Gibs_a.smd"
+studio "Guard_Dismantled_Gibs_a_manod.smd"
 }
 
 //Left Shoulder
 $bodygroup left_shoulder
 {
 blank
-studio "Guard_Dismantled_Gibs_b.smd"
+studio "Guard_Dismantled_Gibs_b_manod.smd"
 }
 
 //Head
 $bodygroup head
 {
 blank
-studio "Guard_Dismantled_Gibs_c.smd"
+studio "Guard_Dismantled_Gibs_c_manod.smd"
 }
 
 //Right Arm
 $bodygroup right_arm
 {
 blank
-studio "Guard_Dismantled_Gibs_d.smd"
+studio "Guard_Dismantled_Gibs_d_manod.smd"
 }
 
 //Left Arm
 $bodygroup left_arm
 {
 blank
-studio "Guard_Dismantled_Gibs_e.smd"
+studio "Guard_Dismantled_Gibs_e_manod.smd"
 }
 
 //Torso
 $bodygroup torso
 {
 blank
-studio "Guard_Dismantled_Gibs_f.smd"
+studio "Guard_Dismantled_Gibs_f_manod.smd"
 }
 
 //Lower Torso
