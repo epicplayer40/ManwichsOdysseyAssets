@@ -4,7 +4,12 @@ $modelname Synth.mdl
 $body studio "synth_reference.smd"
 $cdmaterials models/synth
 
+$eyeposition 0 0 100
+$Attachment "muzzle" "Box04" -53.00 -11.50 -1.00 rotate 0 180 90
+
 $animblocksize 32
+
+$poseparameter "move_yaw" -180 180 wrap
 
 //$weightlist gunonly "Bip02" 0 "Bip02 Spine1" 1 "Bip02 L Clavicle" 0 "Bip02 R Clavicle" 0 "Box10" 0
 $weightlist gunonly "Bip02" 0 "Bone06" 1 "Bone09" 1 "Bone01" 1 "Bone10" 1 "Bone04" 1 "Box02" 1
@@ -126,7 +131,7 @@ $animation walk_SW	"walkback45lt01" fps 30  LX LY startloop 19 rotate -7.82 alig
 
 $sequence walkall {
 	walk_s walk_se walk_e walk_ne walk_n walk_nw walk_w walk_sw walk_s
-	blendwidth 9 blend ZR -180 180 loop ACT_WALK 1
+	blendwidth 9 blend move_yaw -180 180 loop ACT_WALK 1
 }
 
 $animation walk_N_gun	"walk01" fps 30  LX alignto "idle01" loop
@@ -135,7 +140,7 @@ $sequence walk_gunlayer walk01 weightlist gunonly
 
 $sequence walkall_gun {
 	walk_s walk_se walk_e walk_ne walk_N_gun walk_nw walk_w walk_sw walk_s
-	blendwidth 9 blend ZR -180 180 loop addlayer walk_gunlayer ACT_WALK_AIMING 1 node planted
+	blendwidth 9 blend move_yaw -180 180 loop addlayer walk_gunlayer ACT_WALK_AIMING 1 node planted
 }
 
 $animation run_S	"runback01" fps 30 alignto "idle01" LX loop
@@ -149,5 +154,5 @@ $animation run_SW	"runbacklt4501" fps 30  LX LY rotate -7.82 alignto "idle01" lo
 
 $sequence runall {
 	run_s run_se run_e run_ne run_n run_nw run_w run_sw run_s
-	blendwidth 9 blend ZR -180 180 loop ACT_RUN 1
+	blendwidth 9 blend move_yaw -180 180 loop ACT_RUN 1
 }
