@@ -28,6 +28,7 @@ $sequence Idle01 idle ACT_IDLE 1 loop
 $sequence Walk walk ACT_WALK 1 loop lx 	{ event 6004 2 "NPC_Citizen" } { event 6004 23 "NPC_Citizen" }
 $sequence Claw1 attack1 ACT_MELEE_ATTACK1 1 { event 20 5 } { event 1 20 }
 $sequence Claw2 attack2 ACT_MELEE_ATTACK1 1 { event 20 10 } { event 2 20 }
+$sequence Break_Trough_Window breakthroughwindow
 
 $include hitbox.qci
 $include ragdoll.qci
