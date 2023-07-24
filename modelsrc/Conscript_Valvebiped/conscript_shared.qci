@@ -1,0 +1,520 @@
+
+$weightlist upperbodyreplace "Valvebiped.bip01_spine" 1.0
+$weightlist Lowerbodyreplace "valvebiped.bip01_Pelvis" 1.0 "valvebiped.bip01_spine1" 0.0
+$weightlist pelvisonly "Valvebiped.bip01_Pelvis" 1.0 "Valvebiped.bip01_Spine" 0.0 "ValveBiped.Bip01_L_Thigh" 0.0 "ValveBiped.Bip01_R_Thigh" 0.0 
+
+$cmdlist locklefthand { ikrule lhand touch "ValveBiped.Bip01_R_Hand" usesource }
+
+$pushd "conscript_animations"
+
+//=======================  IDLE ANIMATIONS  =============================================
+
+$Sequence Idle01 		Idle01 		ACT_IDLE 1 					loop
+$Sequence Idle02 		Idle02 		ACT_IDLE 1 					loop
+$Sequence Idle_Angry 	Idle01 		ACT_IDLE_ANGRY 1 			loop fps 1
+
+$Sequence Idle_Pistol 	Pistol_idle01 		ACT_IDLE_PISTOL 1 				loop
+$Sequence Idle1 		Pistol_idle01 		ACT_IDLE_AR2 1 					loop fps 15
+$Sequence IdleAR1 		Pistol_idle01 		ACT_IDLE_AR1 1 					loop fps 15
+$Sequence IdleSMG 		Pistol_idle01 		ACT_CONSCRIPT_IDLE_SMG1 1 		loop fps 24
+$Sequence IdleSG 		Pistol_idle01 		ACT_CONSCRIPT_IDLE_SHOTGUN 1 	loop
+$Sequence IdleRPG 		Pistol_idle01 		ACT_IDLE_RPG 1 					loop
+
+$Sequence AngrySMG1 	Pistol_shoot 		ACT_CONSCRIPT_IDLE_ANGRY_SMG1 1 loop frame 2 2
+$Sequence AngrySG 		Pistol_shoot 		ACT_IDLE_ANGRY_SHOTGUN 1 		loop frame 2 2
+$Sequence Angry_AR1 	Pistol_shoot 		ACT_IDLE_ANGRY_AR1 1 			loop frame 2 2
+$Sequence Angry_pistol 	Pistol_shoot 		ACT_IDLE_ANGRY_PISTOL 1 		loop frame 2 2
+
+//====================  WALKING ANIMATIONS  =============================================
+
+// walking, no weapon
+$animation a_WalkS WalkS loop LX LY startloop 18 rotateto -180 {
+	alignto Idle01
+//	ikrule lfoot footstep range 18 21 2 2 //contact 22
+//	ikrule rfoot footstep range 1 5 15 19 //contact 7
+	ikrule lfoot footstep range 0 3 12 17 contact 5
+	ikrule rfoot footstep range 13 17 28 3 contact 20
+}
+$animation a_WalkSE WalkSE loop LX LY startloop 15 rotateto -135 {
+	alignto Idle01
+//	ikrule lfoot footstep range 15 17 2 4  //contact 11
+//	ikrule rfoot footstep range 1 5 12 16  //contact 7
+	ikrule lfoot footstep range 0 3 12 17 contact 5
+	ikrule rfoot footstep range 13 17 28 3 contact 20
+}
+$animation a_WalkE WalkE loop LX LY startloop 13 rotateto -90 {
+	alignto Idle01
+//	ikrule lfoot footstep range 12 15 22 28 //contact 16
+//	ikrule rfoot footstep range 26 30 8 14 //contact 0
+	ikrule lfoot footstep range 0 3 12 17 contact 5
+	ikrule rfoot footstep range 13 17 28 3 contact 20
+}
+$animation a_WalkNE WalkNE loop LX LY startloop 15 rotateto -45 {
+	alignto Idle01
+//	ikrule lfoot footstep range 15 17 28 3 //contact 19
+//	ikrule rfoot footstep range 1 4 9 16 //contact 9
+	ikrule lfoot footstep range 0 3 12 17 contact 5
+	ikrule rfoot footstep range 13 17 28 3 contact 20
+}
+$animation a_WalkN WalkN_restored loop LX LY startloop 0 rotateto 0 {
+	alignto Idle01
+	ikrule lfoot footstep range 0 3 12 17 contact 5
+	ikrule rfoot footstep range 13 17 28 3 contact 20
+}
+$animation a_WalkNW WalkNW loop LX LY startloop 14 rotateto 45 {
+	alignto Idle01
+//	ikrule lfoot footstep range 14 16 24 30 //contact 17
+//	ikrule rfoot footstep range 0 2 12 15 //contact 5
+	ikrule lfoot footstep range 0 3 12 17 contact 5
+	ikrule rfoot footstep range 13 17 28 3 contact 20
+}
+$animation a_WalkW WalkW loop LX LY startloop 2 rotateto 90 {
+	alignto Idle01
+//	ikrule lfoot footstep range 1 5 15 17 //contact 6
+//	ikrule rfoot footstep range 17 21 0 3 //contact 23
+	ikrule lfoot footstep range 0 3 12 17 contact 5
+	ikrule rfoot footstep range 13 17 28 3 contact 20
+}
+$animation a_WalkSW WalkSW loop LX LY startloop 2 rotateto 135 {
+	alignto Idle01
+//	ikrule lfoot footstep range 1 4 13 17 //contact 5
+//	ikrule rfoot footstep range 15 17 2 4 //contact 19
+	ikrule lfoot footstep range 0 3 12 17 contact 5
+	ikrule rfoot footstep range 13 17 28 3 contact 20
+}
+
+$sequence Walk_all {
+	a_walkS a_walkSE a_walkE
+	a_walkNE a_walkN a_walkNW
+	a_walkW a_walkSW a_walkS
+	blendwidth 9 blend move_yaw -180 180
+	ACT_WALK 1
+	node "walking"
+	{ event 6004 3 "NPC_Citizen" }
+	{ event 6005 17 "NPC_Citizen" }
+}
+
+// Walk N, holding a Rifle
+$sequence layer_walk_holding_rifle "conscript_run" frame 14 14 worldspace weightlist weapongesture_armsonly hidden cmdlist locklefthand 
+
+// Run N, holding a Rifle
+$sequence layer_run_holding_rifle "conscript_run" worldspace weightlist weapon_UpperbodyBlend hidden cmdlist locklefthand 
+
+$Sequence Walk 			WalkN 					loop {
+	{ event 6004 5 "NPC_MetroPolice" }
+	{ event 6005 20 "NPC_MetroPolice" }
+	LX
+}
+/*
+$Sequence Walk_Rifle 	WalkN ACT_WALK_RIFLE 1 		loop {
+	{ event 6004 5 "NPC_MetroPolice" }
+	{ event 6005 20 "NPC_MetroPolice" }
+	LX
+}
+*/
+
+$sequence Walk_Rifle {
+	a_walkS a_walkSE a_walkE
+	a_walkNE a_walkN a_walkNW
+	a_walkW a_walkSW a_walkS
+	blendwidth 9 blend move_yaw -180 180
+	addlayer layer_walk_holding_rifle
+	ACT_WALK_RIFLE 1
+	node "walking"
+	{ event 6004 3 "NPC_Citizen" }
+	{ event 6005 17 "NPC_Citizen" }
+}
+
+$Sequence WalkPistol 	WalkN 	ACT_WALK_PISTOL 1 			loop fps 32 {
+	{ event 6004 5 "NPC_MetroPolice" }
+	{ event 6005 20 "NPC_MetroPolice" }
+	LX
+}
+$Sequence WalkSG 		WalkN 		ACT_CONSCRIPT_WALK_SHOTGUN 1 loop {
+	{ event 6004 5 "NPC_MetroPolice" }
+	{ event 6005 20 "NPC_MetroPolice" }
+	LX
+}
+$Sequence WalkSMG 		WalkN 	ACT_CONSCRIPT_WALK_SMG1 1 	loop fps 40 {
+	{ event 6004 5 "NPC_MetroPolice" }
+	{ event 6005 20 "NPC_MetroPolice" }
+	LX
+}
+$Sequence WalkAR1 		WalkN_Weaponshoulder 	ACT_CONSCRIPT_WALK_AR1 1 	loop fps 24 {
+	{ event 6004 8 "NPC_MetroPolice" }
+	{ event 6005 24 "NPC_MetroPolice" }
+	LX
+}
+$Sequence WalkRPG 		WalkN 	ACT_WALK_RPG 1 				loop {
+	{ event 6004 8 "NPC_MetroPolice" }
+	{ event 6005 24 "NPC_MetroPolice" }
+	LX
+}
+
+//====================  RUNNING ANIMATIONS  =============================================
+
+$animation a_RunN RunN loop LX LY startloop 0 rotateto 0 {
+	alignto Idle01
+//	ikrule lfoot footstep range 0 3 12 17 contact 5
+//	ikrule rfoot footstep range 13 17 28 3 contact 20
+}
+
+$Sequence Run_armcorrection Stand_to_run frame 30 30 alignto Idle01 subtract a_RunN 0 weightlist weapongesture_armsonly delta hidden
+$Sequence Run_armcorrection2 run_to_Stand frame 0 0 alignto Idle01 subtract a_RunN 11 weightlist weapongesture_armsonly delta hidden
+
+$Sequence Run 			conscript_run 		ACT_RUN_RIFLE 1 					loop {
+//	{ event 6004 8 "NPC_MetroPolice" }
+//	{ event 6005 19 "NPC_MetroPolice" }
+	LX
+}
+$Sequence Run2 			conscript_run			loop fps 35 {
+//	{ event 6004 8 "NPC_MetroPolice" }
+//	{ event 6005 19 "NPC_MetroPolice" }
+	LX
+}
+$Sequence RunPistol 	RunN 	ACT_RUN_PISTOL 1 			loop {
+//	{ event 6004 7 "NPC_MetroPolice" }
+//	{ event 6005 16 "NPC_MetroPolice" }
+	LX
+}
+$Sequence RunSMG 		conscript_run 		ACT_CONSCRIPT_RUN_SMG1 1 	loop fps 36 {
+//	{ event 6004 8 "NPC_MetroPolice" }
+//	{ event 6005 19 "NPC_MetroPolice" }
+	LX
+}
+$Sequence RunAR1 		conscript_run 		ACT_RUN_AR1 1 				loop {
+//	{ event 6004 8 "NPC_MetroPolice" }
+//	{ event 6005 19 "NPC_MetroPolice" }
+	LX
+}
+$Sequence RunSG 		conscript_run 		ACT_CONSCRIPT_RUN_SHOTGUN 1 loop fps 32 {
+//	{ event 6004 8 "NPC_MetroPolice" }
+//	{ event 6005 19 "NPC_MetroPolice" }
+	LX
+}
+$Sequence RunRPG 		conscript_run 		ACT_RUN_RPG 1 				loop {
+//	{ event 6004 8 "NPC_MetroPolice" }
+//	{ event 6005 19 "NPC_MetroPolice" }
+	LX
+}
+$Sequence RunUnarmed 	RunN 		ACT_RUN 1 					loop {
+//	{ event 6004 8 "NPC_MetroPolice" }
+//	{ event 6005 19 "NPC_MetroPolice" }
+	blendlayer Run_armcorrection 12 18 18 19
+	blendlayer Run_armcorrection .. .. 0 5
+	blendlayer Run_armcorrection2 4 10 10 14
+	LX
+}
+
+$sequence Stand_to_run Stand_to_run walkframe 21 LX walkframe 30 LX
+$sequence Run_to_stand Run_to_stand {
+	alignto a_RunN 
+	walkalign 23 idle01 LX LY LZR 0 36
+}
+$sequence Stand_to_walk Stand_to_walk {
+	walkframe 19 LX walkframe 32 LX
+	// transition "standing" "walking"
+}
+$sequence Walk_to_stand Walk_to_stand {
+	alignto a_WalkN
+	walkalignto 24 idle01 LX LY LZR //0 35
+	// transition "walking" "standing"
+}
+
+//======================  DEATH ANIMATIONS  =============================================
+/*
+$Sequence Die_simple 	Die_simple 	ACT_DIESIMPLE 1 			fps 50 {
+	{ event 2001 28 }
+	{ event AE_NPC_RAGDOLL 37 }
+	LX LY
+}
+$Sequence Die_simple2 	Die_simple2 ACT_DIE_GUTSHOT 2 {
+	{ event 2001 8 }
+	{ event AE_NPC_RAGDOLL 14 }
+	LX
+}
+$Sequence Die_simple3 	Die_simple3 ACT_DIE_BACKSHOT 2 {
+	{ event 2001 26 }
+	{ event AE_NPC_RAGDOLL 55 }
+	LX LY
+}
+$Sequence Die_simple4 	Die_simple4 ACT_DIE_GUTSHOT 2 {
+	{ event 2001 23 }
+	{ event AE_NPC_RAGDOLL 20 }
+}
+
+$Sequence Die_fast 		Die_simple 	ACT_DIESIMPLE 1 			fps 50 {
+//	frame 0 10
+	{ event AE_NPC_RAGDOLL 15 }
+}
+$Sequence Die_fast2 	Die_simple3 ACT_DIESIMPLE 1 			fps 50 {
+//	frame 0 34
+	{ event AE_NPC_RAGDOLL 44 }
+	LX LY
+}
+$Sequence Die_fast3 	Die_simple3 ACT_DIE_HEADSHOT 1 {
+//	frame 0 10
+	{ event AE_NPC_RAGDOLL 15 }
+}
+$Sequence Die_fast4 	Die_simple4 ACT_DIESIMPLE 1 {
+//	frame 0 10
+	{ event AE_NPC_RAGDOLL 15 }
+}
+$Sequence Die_fast5 	di_zombie_fight1 ACT_DIE_HEADSHOT 1 fps 25 {
+	frame 13 36
+	{ event AE_NPC_RAGDOLL 20 }
+	walkframe 22 LX
+}
+
+$Sequence Die_fall_left cs_anims/Fall_Left 	ACT_DIE_GUTSHOT 1 	fps 30 {
+	{ event 2001 43 }
+	{ event AE_NPC_RAGDOLL 49 }
+	walkframe 7 LX LY
+	walkframe 25 X Y
+	walkframe 40 LX LY
+}
+
+$Sequence Die_gut cs_anims/Gut 				ACT_DIE_GUTSHOT 1 	fps 30 {
+	{ event AE_NPC_RAGDOLL 32 }
+}
+*/
+//=====================  FIRING ANIMATIONS  =============================================
+
+$Sequence 	shootPistol Pistol_shoot ACT_RANGE_ATTACK_PISTOL 1 	fps 20
+$Sequence 	shootAR1 	Pistol_shoot 	ACT_CONSCRIPT_SHOOT_AR1 1 	loop fps 240
+$Sequence 	shootSMG1 	Pistol_shoot 	ACT_CONSCRIPT_SHOOT_SMG1 1 	loop fps 180
+$Sequence 	shootSR 	Pistol_shoot 	ACT_CONSCRIPT_SHOOT_SNIPER_RIFLE 1 loop fps 24
+$Sequence 	shootSG 	Pistol_shoot 	ACT_RANGE_ATTACK_SHOTGUN 1 	fps 22 {
+//	{ event 5001 0 "21" }
+	{ event 3 0 }
+//	{ event AE_CL_PLAYSOUND 11 "Weapon_Shotgun.Special1" }
+}
+$Sequence 	shootSG2 	Pistol_shoot 	ACT_RANGE_ATTACK_SHOTGUN 2 	fps 24 {
+//	{ event 5001 0 "21" }
+	{ event 3 0 }
+//	{ event AE_CL_PLAYSOUND 11 "Weapon_Shotgun.Special1" }
+}
+$Sequence 	shootSG3 	Pistol_shoot 	ACT_RANGE_ATTACK_SHOTGUN 3 	fps 27 {
+//	{ event 5001 0 "21" }
+	{ event 3 0 }
+//	{ event AE_CL_PLAYSOUND 11 "Weapon_Shotgun.Special1" }
+	fps 27
+}
+/*
+$Sequence shootblendAR2 {
+	"shootblendAR2_0_0"
+	"shootblendAR2_1_0"
+	activity ACT_RANGE_ATTACK_AR2 1
+	blend "XR" -50 50
+	blendwidth 2
+	{ event 3 0 }
+	fps 45
+}
+$Sequence shootblendAR1 {
+	"shootblendAR1_0_0"
+	"shootblendAR1_1_0"
+	activity ACT_RANGE_ATTACK_AR1 1
+	blend "XR" -50 50
+	blendwidth 2
+	{ event 3 0 }
+	fps 40
+}
+$Sequence shootblendHMG1 {
+	"shootblendHMG1_0_0"
+	"shootblendHMG1_1_0"
+	activity ACT_RANGE_ATTACK_HMG1 1
+	blend "XR" -50 50
+	blendwidth 2
+	{ event 3 0 }
+	fps 50
+}
+$Sequence shootblendSR1 {
+	"shootblendSR1_0_0"
+	"shootblendSR1_1_0"
+	activity ACT_RANGE_ATTACK_SNIPER_RIFLE 1
+	blend "XR" -50 50
+	blendwidth 2
+	{ event 3 0 }
+	fps 6
+}
+$Sequence shootblendRPG {
+	"shootblendRPG"
+	"shootblendRPG_2"
+	activity ACT_RANGE_ATTACK_ML 1
+	blend "XR" -50 50
+	blendwidth 2
+	{ event 3 0 }
+}
+*/
+//=====================  RELOAD ANIMATIONS  =============================================
+
+$Sequence reload_low 	Pistol_reload ACT_RELOAD_LOW 1 		{ event 1 0 }
+$Sequence reload_med 	Pistol_reload 		ACT_RELOAD_MED 1 		fps 40 { event 1 0 }
+$Sequence reloaddef 	Pistol_reload 		ACT_RELOAD 1 {
+	{ event 1 0 }
+//	{ event 3015 70 }
+}
+$Sequence reloadAR2 	Pistol_reload 		ACT_CONSCRIPT_RELOAD_AR2 1 {
+	{ event 1 0 }
+//	{ event 3015 70 }
+}
+$Sequence reloadSG 		Pistol_reload 		ACT_RELOAD_SHOTGUN 1 	fps 20 {
+	{ event 1 0 }
+	{ event 3015 5 }
+//	{ event AE_CL_PLAYSOUND 7 "Weapon_Shotgun.NPC_Reload" }
+//	{ event AE_CL_PLAYSOUND 14 "Weapon_Shotgun.NPC_Reload" }
+//	{ event AE_CL_PLAYSOUND 21 "Weapon_Shotgun.NPC_Reload" }
+//	{ event AE_CL_PLAYSOUND 28 "Weapon_Shotgun.NPC_Reload" }
+//	{ event AE_CL_PLAYSOUND 35 "Weapon_Shotgun.NPC_Reload" }
+//	{ event AE_CL_PLAYSOUND 46 "Weapon_Shotgun.NPC_Reload" }
+//	{ event AE_CL_PLAYSOUND 52 "Weapon_Shotgun.Special1" }
+}
+$Sequence reloadPistol Pistol_reload ACT_RELOAD_PISTOL 1 		fps 24 {
+	{ event 1 0 }
+	{ event 3015 5 }
+}
+$Sequence reloadSMG 	Pistol_reload 	ACT_CONSCRIPT_RELOAD_SMG1 1 fps 22 {
+	{ event 1 0 }
+	{ event 3015 5 }
+}
+
+//================  MISC COMBAT ANIMATIONS  =============================================
+/*
+$Sequence Gesture_Move 	Gesture_Move 	ACT_CONSCRIPT_AIM 1 	fps 25
+
+$Sequence RPGLoad 		RPGLoad 	ACT_CONSCRIPT_LOAD_RPG 1 	fps 24
+
+$Sequence Signal3Shit 	Signal3Shit ACT_SIGNAL3 1 				fps 900
+
+$Sequence draw23 		draw23 			ACT_ARM 1 				{ event 2 0 }
+$Sequence draw 			draw 			ACT_ARM 1 				{ event 2 7 }
+$Sequence disarm disarm ACT_DISARM 1 { event 4 0 }
+
+$Sequence alyx_zombie_fight1 di_zombie_fight1 ACT_DI_ALYX_ZOMBIE_MELEE 1 {
+	{ event AE_NPC_WEAPON_FIRE 63 "0" }
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 63 "ACT_RANGE_ATTACK1" }
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 65 "ACT_RANGE_ATTACK1" }
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 67 "ACT_RANGE_ATTACK1" }
+}
+
+$Sequence alyx_zombie_fight2 di_zombie_fight2 ACT_DI_ALYX_ZOMBIE_MELEE 1 {
+	{ event AE_NPC_WEAPON_FIRE 74 "0" }
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 74 "ACT_RANGE_ATTACK1" }
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 76 "ACT_RANGE_ATTACK1" }	
+	{ event AE_NPC_WEAPON_SET_ACTIVITY 77 "ACT_RANGE_ATTACK1" }
+
+}
+*/
+//=======================  MISC ANIMATIONS  =============================================
+
+//$Sequence turn_left 	turn_left 		ACT_TURN_LEFT 1
+//$Sequence turn_right 	turn_right 		ACT_TURN_RIGHT 1
+
+$animation a_jump_holding_hit "jump_down" frames 25 25
+
+$sequence Jump_Start {
+	"jump_down"
+	frames 7 20
+	align a_jump_holding_hit X Y Z 0 0
+	walkalignto 13 a_jump_holding_hit LX LY LZ LQ
+	activity ACT_JUMP 1
+}
+
+
+$sequence Jump_Hold {
+	"jump_down"
+	frames 20 25
+	align a_jump_holding_hit X Y Z 0 0
+	walkalignto 5 a_jump_holding_hit LX LY LZ
+	fixuploop -2 2
+	fps 5
+	activity ACT_GLIDE 1
+}
+
+
+$sequence Jump_Land {
+	fadein 0.15
+	"jump_down"
+	frames 28 56
+	activity ACT_LAND 1
+	cmdlist	lockfeet
+	fps 45
+{ event 6009 0 }
+{ event 6009 2 }
+}
+
+$Sequence ClimbUp 		Ladder_climb_up 	ACT_CLIMB_UP 1 				loop fps 35 {
+	{ event 5004 23 "MetalGrate.StepRight" }
+	{ event 5004 10 "MetalGrate.StepLeft" }
+	LZ align idle1 lz 0 0
+}
+
+$Sequence ClimbDown 	Ladder_climb_down 	ACT_CLIMB_DOWN 1 			loop fps 35 {
+	{ event 5004 23 "MetalGrate.StepRight" }
+	{ event 5004 10 "MetalGrate.StepLeft" }
+	LZ align idle1 lz 0 0
+}
+
+$Sequence barnaclehit 	Neutral_to_Choked_Barnacle 		ACT_BARNACLE_HIT 1 	fps 25
+$Sequence barnaclepull 	Choked_Barnacle 		ACT_BARNACLE_PULL 1 loop fps 45
+$Sequence barnaclecrunch Crushed_Barnacle 	ACT_BARNACLE_CHOMP 1
+$Sequence barnaclechew  Crushed_Barnacle 		ACT_BARNACLE_CHEW 1 frame 144 144 loop fps 5
+/*
+$Sequence Sm_flinch 	Sm_flinch 	ACT_SMALL_FLINCH 1
+
+$Sequence flinch_head 	flinch_head 		ACT_FLINCH_HEAD 1 fps 12
+$Sequence flinch_chest 	flinch_chest 		ACT_FLINCH_CHEST 1
+$Sequence flinch_gut 	flinch_gut 			ACT_FLINCH_STOMACH 1
+$Sequence flinch_leftarm flinch_lefthand 	ACT_FLINCH_LEFTARM 1
+$Sequence flinch_rightarm flinch_righthand 	ACT_FLINCH_RIGHTARM 1
+$Sequence flinch_leftleg flinch_leftleg 	ACT_FLINCH_LEFTLEG 1
+$Sequence flinch_leftleg2 flinch_leftleg 	ACT_FLINCH_LEFTLEG 1 fps 23
+$Sequence flinch_rightleg flinch_rightleg 	ACT_FLINCH_RIGHTLEG 1
+$Sequence flinch_rightleg2 flinch_rightleg 	ACT_FLINCH_RIGHTLEG 1 fps 23
+
+$Sequence flinch_gesture_head 	flinch_head					ACT_GESTURE_FLINCH_HEAD 1 subtract flinch_gesture_head 1 fps 20 weightlist chestonly delta
+$Sequence flinch_gesture_chest 	flinch_chest				ACT_GESTURE_FLINCH_CHEST 1 subtract flinch_gesture_chest 1 weightlist chestonly delta
+$Sequence flinch_gesture_gut 	flinch_gesture_gut			ACT_GESTURE_FLINCH_STOMACH 1 subtract flinch_gesture_gut 1 delta
+$Sequence flinch_gesture_leftarm flinch_gesture_lefthand 	ACT_GESTURE_FLINCH_LEFTARM 1 subtract flinch_gesture_leftarm 1 delta
+$Sequence flinch_gesture_rightarm flinch_gesture_righthand 	ACT_GESTURE_FLINCH_RIGHTARM 1 subtract flinch_gesture_rightarm 1 delta
+$Sequence flinch_gesture_leftleg flinch_gesture_leftleg 	ACT_GESTURE_FLINCH_LEFTLEG 1 subtract flinch_gesture_leftleg 1 delta
+$Sequence flinch_gesture_rightleg flinch_gesture_rightleg 	ACT_GESTURE_FLINCH_RIGHTLEG 1 subtract flinch_gesture_rightleg 1 delta
+
+$Sequence Cower			Jump_Land	ACT_COWER 1					fps 10
+$Sequence ragdoll ragdoll ACT_DIERAGDOLL 1
+*/
+//==================  CROUCHING ANIMATIONS  =============================================
+/*
+$Sequence shoot_low 	shoot_low 		ACT_RANGE_ATTACK1_LOW 1 loop fps 45 { event 1 0 }
+$Sequence cover_crouch_low cover_crouch_low ACT_COVER_LOW 1 	loop node "crouching"
+$Sequence cover_crouch_med cover_crouch_med ACT_COVER_MED 1 	loop node "crouching"
+$Sequence cover_crouch 	cover_crouch ACT_COVER 1 				loop
+
+$Sequence ToCover ToCover ACT_TRANSITION 1 fps 20 transition "standing" "crouching"
+*/
+
+$sequence Dropship_Deploy Dropship_Deploy fps 30 {
+    walkframe 12 LX LY LZ
+    walkframe 34 LX LY LZ
+    walKframe 60 LX LY LZ
+    walkalign 72 "Idle1" LX LY LZ 0 80
+}  
+
+$popd
+
+$keyvalues
+{
+	dynamic_interactions 
+	{
+		"conscript_v_zombie_180deg_64"		 
+		{
+			"trigger"			"auto_in_combat"
+			"origin_relative"			"64 0 0"
+			"angles_relative"			"0 180 0"
+			"activity"			"ACT_DI_ALYX_ZOMBIE_MELEE"
+			"delay"			"10.0"
+			"needs_weapon"			"ME"
+			"weapon_mine"			"weapon_oicw"
+		}
+	}
+}
