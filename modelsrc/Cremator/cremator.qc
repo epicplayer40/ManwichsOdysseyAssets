@@ -60,6 +60,12 @@ $cmdlist lockfeetandlefthand {
 	ikrule lhand touch "Bip01 R Hand"
 }
 
+
+//Animation Events:
+//
+// AE_CREMATOR_TURNONHOSE
+// AE_CREMATOR_TURNOFFHOSE
+
 //$sequence Idle01 "idle01" loop FPS 30 
 //$sequence walk1 "Fastwalk01" loop LX fps 30 ACT_WALK 1
 /*
@@ -101,6 +107,8 @@ $sequence fireinout		"fireinout01" fps 30 ACT_SPECIAL_ATTACK1 1 {
 	
 	{ event 2050 15 }	
 	{ event 2051 28 }
+	{ event AE_CREMATOR_TURNONHOSE 34 }
+	{ event AE_CREMATOR_TURNOFFHOSE 207 }
 	{ event 2050 226 }	
 	{ event 2051 211 }
 }
@@ -116,6 +124,8 @@ $sequence fireinoutsw	"fireinoutsweep" fps 30 ACT_SPECIAL_ATTACK2 1 {
 	ikrule lfoot footstep range 259 261 .. ..
 	{ event 2050 15 }	
 	{ event 2051 28 }
+	{ event AE_CREMATOR_TURNONHOSE 30 }
+	{ event AE_CREMATOR_TURNOFFHOSE 260 }
 	{ event 2050 260 }	
 	{ event 2051 245 }
 }
@@ -188,7 +198,7 @@ $sequence Aim_firing  {
 			//blendwidth 3 calcblend aim_yaw "anim_attachment_RH" ZR calcblend aim_pitch "anim_attachment_RH" YR
 			delta }
 			
-$sequence fire "fireinout01" frame 78 90 fps 30	ACT_RANGE_ATTACK1 1 addlayer Aim_firing node flaming cmdlist lockfeetandlefthand
+$sequence fire "fireinout01" frame 78 90 fps 30	ACT_RANGE_ATTACK1 1 addlayer Aim_firing node flaming cmdlist lockfeetandlefthand 	{ event AE_CREMATOR_TURNONHOSE 1 }
 $animation fire_gesture "fireinout01" frame 78 90 subtract fireinout 90 fixuploop -3 0 fps 50
 $sequence gesture_fire fire_gesture ACT_GESTURE_RANGE_ATTACK1 1 delta ikrule lhand touch "Bip01 R Hand"
 
