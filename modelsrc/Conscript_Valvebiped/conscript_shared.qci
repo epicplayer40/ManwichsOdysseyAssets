@@ -35,14 +35,14 @@ $animation a_WalkS WalkS loop LX LY startloop 18 rotateto -180 {
 	ikrule lfoot footstep range 0 3 12 17 contact 5
 	ikrule rfoot footstep range 13 17 28 3 contact 20
 }
-$animation a_WalkSE WalkSE loop LX LY startloop 15 rotateto -135 {
+$animation a_WalkSE WalkSE_conscript loop LX LY startloop 15 rotateto -135 {
 	alignto Idle01
 //	ikrule lfoot footstep range 15 17 2 4  //contact 11
 //	ikrule rfoot footstep range 1 5 12 16  //contact 7
 	ikrule lfoot footstep range 0 3 12 17 contact 5
 	ikrule rfoot footstep range 13 17 28 3 contact 20
 }
-$animation a_WalkE WalkE loop LX LY startloop 13 rotateto -90 {
+$animation a_WalkE WalkE_conscript loop LX LY startloop 13 rotateto -90 {
 	alignto Idle01
 //	ikrule lfoot footstep range 12 15 22 28 //contact 16
 //	ikrule rfoot footstep range 26 30 8 14 //contact 0
@@ -61,14 +61,14 @@ $animation a_WalkN WalkN_restored loop LX LY startloop 0 rotateto 0 {
 	ikrule lfoot footstep range 0 3 12 17 contact 5
 	ikrule rfoot footstep range 13 17 28 3 contact 20
 }
-$animation a_WalkNW WalkNW loop LX LY startloop 14 rotateto 45 {
+$animation a_WalkNW WalkNW_conscript loop LX LY startloop 14 rotateto 45 {
 	alignto Idle01
 //	ikrule lfoot footstep range 14 16 24 30 //contact 17
 //	ikrule rfoot footstep range 0 2 12 15 //contact 5
 	ikrule lfoot footstep range 0 3 12 17 contact 5
 	ikrule rfoot footstep range 13 17 28 3 contact 20
 }
-$animation a_WalkW WalkW loop LX LY startloop 2 rotateto 90 {
+$animation a_WalkW WalkW_conscript loop LX LY startloop 2 rotateto 90 {
 	alignto Idle01
 //	ikrule lfoot footstep range 1 5 15 17 //contact 6
 //	ikrule rfoot footstep range 17 21 0 3 //contact 23
@@ -83,6 +83,49 @@ $animation a_WalkSW WalkSW loop LX LY startloop 2 rotateto 135 {
 	ikrule rfoot footstep range 13 17 28 3 contact 20
 }
 
+
+// running, no weapon
+$animation a_RunS RunS loop LX LY startloop 0 rotateto -180 fps 31 {
+	alignto Idle01
+	ikrule lfoot footstep range .. 5 11 .. contact 8
+	ikrule rfoot footstep range .. 14 3 .. contact 17
+}
+$animation a_RunSE RunSE loop LX LY startloop 0 rotateto -135 fps 29 {
+	alignto Idle01
+	ikrule lfoot footstep range .. 5 12 .. contact 8
+	ikrule rfoot footstep range .. 14 3 .. contact 17
+}
+$animation a_RunE RunE loop LX LY startloop 0 rotateto -90 fps 31 {
+	alignto Idle01
+	ikrule lfoot footstep range .. 4 9 .. contact 6
+	ikrule rfoot footstep range .. 13 1 .. contact 14
+}
+$animation a_RunNE RunNE loop LX LY startloop 0 rotateto -45 fps 29 {
+	alignto Idle01
+	ikrule lfoot footstep range .. 5 9 .. contact 6
+	ikrule rfoot footstep range .. 14 0 .. contact 16
+}
+$animation a_sprint sprint loop LX LY rotateto 0 { 
+	alignto Idle01
+	ikrule lfoot footstep range .. 6 9 ..
+	ikrule rfoot footstep range .. 14 1 ..
+}
+$animation a_RunNW RunNW loop LX LY startloop 0 rotateto 45 fps 28 {
+	alignto Idle01
+	ikrule lfoot footstep range .. 5 11 .. contact 8
+	ikrule rfoot footstep range .. 15 0 .. contact 16
+}
+$animation a_RunW RunW loop LX LY startloop 0 rotateto 90 fps 32 {
+	alignto Idle01
+	ikrule lfoot footstep range .. 5 10 .. contact  6
+	ikrule rfoot footstep range .. 13 3 .. contact 15
+}
+$animation a_RunSW RunSW loop LX LY startloop 0 rotateto 135 fps 31 {
+	alignto Idle01
+	ikrule lfoot footstep range .. 5 11 .. contact 9
+	ikrule rfoot footstep range .. 13 2 .. contact 17
+}
+
 $sequence Walk_all {
 	a_walkS a_walkSE a_walkE
 	a_walkNE a_walkN a_walkNW
@@ -95,10 +138,11 @@ $sequence Walk_all {
 }
 
 // Walk N, holding a Rifle
-$sequence layer_walk_holding_rifle "conscript_run" frame 14 14 worldspace weightlist weapongesture_armsonly hidden cmdlist locklefthand 
+$sequence layer_walk_holding_rifle "Walk_Easy_N" weightlist weapongesture_armsonly hidden cmdlist locklefthand 
 
 // Run N, holding a Rifle
-$sequence layer_run_holding_rifle "conscript_run" worldspace weightlist weapon_UpperbodyBlend hidden cmdlist locklefthand 
+//$sequence layer_run_holding_rifle "conscript_run" worldspace weightlist weapon_UpperbodyBlend hidden cmdlist locklefthand 
+$sequence layer_run_holding_rifle "conscript_run" worldspace weightlist weapon_UpperbodyBlend startloop 3 hidden cmdlist locklefthand 
 
 $Sequence Walk 			WalkN 					loop {
 	{ event 6004 5 "NPC_MetroPolice" }
@@ -157,12 +201,14 @@ $animation a_RunN RunN loop LX LY startloop 0 rotateto 0 {
 	alignto Idle01
 //	ikrule lfoot footstep range 0 3 12 17 contact 5
 //	ikrule rfoot footstep range 13 17 28 3 contact 20
+	ikrule lfoot footstep range .. 6 9 ..
+	ikrule rfoot footstep range .. 14 1 ..
 }
 
 $Sequence Run_armcorrection Stand_to_run frame 30 30 alignto Idle01 subtract a_RunN 0 weightlist weapongesture_armsonly delta hidden
 $Sequence Run_armcorrection2 run_to_Stand frame 0 0 alignto Idle01 subtract a_RunN 11 weightlist weapongesture_armsonly delta hidden
 
-$Sequence Run 			conscript_run 		ACT_RUN_RIFLE 1 					loop {
+$Sequence Run 			conscript_run 					loop {
 //	{ event 6004 8 "NPC_MetroPolice" }
 //	{ event 6005 19 "NPC_MetroPolice" }
 	LX
@@ -197,13 +243,30 @@ $Sequence RunRPG 		conscript_run 		ACT_RUN_RPG 1 				loop {
 //	{ event 6005 19 "NPC_MetroPolice" }
 	LX
 }
-$Sequence RunUnarmed 	RunN 		ACT_RUN 1 					loop {
+$Sequence RunUnarmed 	a_runN 					loop {
 //	{ event 6004 8 "NPC_MetroPolice" }
 //	{ event 6005 19 "NPC_MetroPolice" }
+	{ event 6004 6 "NPC_Citizen" }
+	{ event 6005 15 "NPC_Citizen" }
 	blendlayer Run_armcorrection 12 18 18 19
 	blendlayer Run_armcorrection .. .. 0 5
 	blendlayer Run_armcorrection2 4 10 10 14
 	LX
+}
+
+$sequence RunUnarmed_all {
+	a_runS a_runSE a_runE a_runNE a_sprint a_runNW a_runW a_runSW a_runS
+	blendwidth 9 blend move_yaw -180 180 ACT_RUN 1 node "running"
+	{ event 6004 6 "NPC_Citizen" }
+	{ event 6005 15 "NPC_Citizen" }
+}
+
+$sequence RunRifle_all {
+	a_runS a_runSE a_runE a_runNE a_runN a_runNW a_runW a_runSW a_runS
+	blendwidth 9 blend move_yaw -180 180 ACT_RUN_RIFLE 1 node "running"
+	addlayer layer_run_holding_rifle
+	{ event 6004 6 "NPC_Citizen" }
+	{ event 6005 15 "NPC_Citizen" }
 }
 
 $sequence Stand_to_run Stand_to_run walkframe 21 LX walkframe 30 LX
