@@ -30,7 +30,8 @@ $eyeposition 0 0 95.5
 //$attachment 1 "Bip01 Head" 0 0 0
 $Attachment "eyes" "Bip01 Head" -0.01 -7.09 88.25 absolute
 $Attachment "mouth" "Bip01 Head" 3 5.80 -0.15 rotate 0 -80 -90
-$Attachment "anim_attachment_RH" "ValveBiped.Bip01_R_Hand" 0 0 0 rotate -90 -90 0
+$Attachment "anim_attachment_RH" "ValveBiped.Bip01_R_Hand" 0.00 -0.00 0.00 rotate 0 0 -180
+//$Attachment "anim_attachment_RH" "Bip01 R Hand" 0.00 0.00 0.00 rotate 0 0 0
 
 //=====================================
 //	Pose Parameters
@@ -92,8 +93,8 @@ $sequence run {
 
 //$sequence limp1			"limp01" loop LX fps 30		ACT_RUN_HURT 1
 $sequence gunjam		"gunjam01" fps 30			ACT_CREMATOR_GUN_JAM 1 cmdlist lockfeetandlefthand
-$sequence flich1		"flinch01" fps 30			ACT_BIG_FLINCH 1 ikrule rfoot footstep ikrule lfoot footstep range .. .. 0 7 ikrule lfoot footstep range 10 16 92 103 ikrule lfoot footstep range 108 112 .. ..
-$sequence fireinout		"fireinout01" fps 30 ACT_SPECIAL_ATTACK1 1 {
+$sequence flinch1		"flinch01" fps 30			ACT_BIG_FLINCH 1 ikrule rfoot footstep ikrule lfoot footstep range .. .. 0 7 ikrule lfoot footstep range 10 16 92 103 ikrule lfoot footstep range 108 112 .. ..
+$sequence fireinout		"fireinout01" fps 30 ACT_SPECIAL_ATTACK1 1 node idle {
 	blendlayer Aim_firing 18 36 200 227 spline
 	ikrule rfoot footstep range .. .. 17 20
 	ikrule rfoot footstep range 26 29 203 206
@@ -107,14 +108,14 @@ $sequence fireinout		"fireinout01" fps 30 ACT_SPECIAL_ATTACK1 1 {
 	
 	{ event 2050 15 }	
 	{ event 2051 28 }
-	{ event AE_CREMATOR_TURNONHOSE 34 }
-	{ event AE_CREMATOR_TURNOFFHOSE 207 }
+	{ event AE_CREMATOR_TURNONHOSE 38 }
+	{ event AE_CREMATOR_TURNOFFHOSE 200 }
 	{ event 2050 226 }	
 	{ event 2051 211 }
 }
 $sequence fireupleft	"fireupleft" fps 30
 $sequence fireupright	"fireupright" fps 30
-$sequence fireinoutsw	"fireinoutsweep" fps 30 ACT_SPECIAL_ATTACK2 1 {
+$sequence fireinoutsw	"fireinoutsweep" fps 30 ACT_SPECIAL_ATTACK2 1 node idle {
 	ikrule rfoot footstep range .. .. 17 20
 	ikrule rfoot footstep range 26 29 238 241
 	ikrule rfoot footstep range 244 246 .. ..
@@ -125,7 +126,7 @@ $sequence fireinoutsw	"fireinoutsweep" fps 30 ACT_SPECIAL_ATTACK2 1 {
 	{ event 2050 15 }	
 	{ event 2051 28 }
 	{ event AE_CREMATOR_TURNONHOSE 30 }
-	{ event AE_CREMATOR_TURNOFFHOSE 260 }
+	{ event AE_CREMATOR_TURNOFFHOSE 240 }
 	{ event 2050 260 }	
 	{ event 2051 245 }
 }
@@ -179,6 +180,7 @@ $sequence fireout		"fireinout01" {
 }
 
 $animation aim_ref firebreathing01 frame 45 45
+/*
 $animation aim_straight firebreathing01 frame 45 45 subtract firebreathing2 0
 $animation aim_left fireinoutsweep frame 180 180 subtract firebreathing2 0
 $animation aim_right fireinoutsweep frame 140 140 subtract firebreathing2 0
@@ -198,6 +200,38 @@ $sequence Aim_firing  {
 			//blendwidth 3 calcblend aim_yaw "anim_attachment_RH" ZR calcblend aim_pitch "anim_attachment_RH" YR
 			delta }
 			
+*/
+
+$sequence aim_straightfixer Aim_9_directions frame 4 4 subtract aim_ref 0 hidden delta
+
+//**standard aimblend elements
+$animation a_aim_stand_neutral Aim_9_directions frame 4 4
+$animation a_aim_stand_down_left Aim_9_directions frame 0 0 subtract a_aim_stand_neutral 0
+$animation a_aim_stand_down_center Aim_9_directions frame 1 1 subtract a_aim_stand_neutral 0
+$animation a_aim_stand_down_right Aim_9_directions frame 2 2 subtract a_aim_stand_neutral 0
+$animation a_aim_stand_mid_left Aim_9_directions frame 3 3 subtract a_aim_stand_neutral 0
+$animation a_aim_stand_mid_center Aim_9_directions frame 4 4 subtract a_aim_stand_neutral 0
+$animation a_aim_stand_mid_right Aim_9_directions frame 5 5 subtract a_aim_stand_neutral 0
+$animation a_aim_stand_up_left Aim_9_directions frame 6 6 subtract a_aim_stand_neutral 0
+$animation a_aim_stand_up_center Aim_9_directions frame 7 7 subtract a_aim_stand_neutral 0
+$animation a_aim_stand_up_right Aim_9_directions frame 8 8 subtract a_aim_stand_neutral 0
+$animation a_aim_stand_straightup Aim_9_directions frame 9 9 subtract a_aim_stand_neutral 0
+
+$sequence Aim_firing  {
+			a_aim_stand_straightup a_aim_stand_straightup a_aim_stand_straightup
+			a_aim_stand_up_right a_aim_stand_up_center a_aim_stand_up_left 
+		    a_aim_stand_mid_right a_aim_stand_mid_center a_aim_stand_mid_left 
+			a_aim_stand_down_right a_aim_stand_down_center a_aim_stand_down_left 
+//			weightlist nolowerbody 
+			blendref a_aim_stand_neutral 
+			blendcenter a_aim_stand_mid_center
+			blendwidth 3 calcblend aim_yaw "anim_attachment_RH" ZR calcblend aim_pitch "anim_attachment_RH" YR
+			iklock lfoot 1 0 iklock rfoot 1 0
+			hidden
+			delta 
+			addlayer aim_straightfixer }
+
+
 $sequence fire "fireinout01" frame 78 90 fps 30	ACT_RANGE_ATTACK1 1 addlayer Aim_firing node flaming cmdlist lockfeetandlefthand 	{ event AE_CREMATOR_TURNONHOSE 1 }
 $animation fire_gesture "fireinout01" frame 78 90 subtract fireinout 90 fixuploop -3 0 fps 50
 $sequence gesture_fire fire_gesture ACT_GESTURE_RANGE_ATTACK1 1 delta ikrule lhand touch "Bip01 R Hand"
