@@ -13,7 +13,7 @@ $sequence "idle" "largeboxbrounds_reference" fps 5 loop
 
 $collisionmodel "largeboxbrounds_physbox.smd" {
      // Mass in kilograms
-     $Mass 5
+     $Mass 30
      $concave
 }
 
