@@ -373,8 +373,10 @@ $sequence Walk_to_stand Walk_to_stand {
 
 //Fall backwards (Currently temp)
 $Sequence Die_simple 	die_torsoshot_collapse 	ACT_DIESIMPLE 1 			fps 60 {
+//	frame 5 120
+	frame 5 250
 //	{ event 2001 28 }
-	frame 5 120
+	{ event AE_NPC_RAGDOLL 130 }
 	walkframe 30 LX LY
 	walkframe 65 LX LY
 	walkframe 115 LX LY
@@ -382,20 +384,26 @@ $Sequence Die_simple 	die_torsoshot_collapse 	ACT_DIESIMPLE 1 			fps 60 {
 
 //Stumble backwards
 $Sequence Die_gutshot 	die_bodyshot_fallback ACT_DIE_GUTSHOT 2 fps 60 {
-//	{ event 2001 8 }
-	frame 10 76
+//	frame 10 76
+	frame 10 130
+	//	{ event 2001 8 }
+	{ event AE_NPC_RAGDOLL 90 }
+
 	LX LY
 }
 
 //Fall forwards (Currently temp)
 $Sequence Die_backshot 	die_bodyshot_fallback ACT_DIE_BACKSHOT 2 fps 60 {
 	{ event 2001 92 }
+	{ event AE_NPC_RAGDOLL 130 }
 	LX LY
 }
 
 //Collapse forwards, clutching torso (Currently temp)
 $Sequence Die_gutshot2 	die_torsoshot_collapse ACT_DIE_GUTSHOT 2 fps 60 {
-	frame 5 80
+//	frame 5 80
+	frame 5 250
+	{ event AE_NPC_RAGDOLL 85 }
 	walkframe 30 LX LY
 	walkframe 65 LX LY
 	walkframe 80 LX LY
@@ -403,16 +411,18 @@ $Sequence Die_gutshot2 	die_torsoshot_collapse ACT_DIE_GUTSHOT 2 fps 60 {
 
 //Flick head up, fall backwards
 $Sequence Die_headshot 	die_headshot_collapse ACT_DIE_HEADSHOT 1 fps 60 {
-	frame 0 42
-//	{ event AE_NPC_RAGDOLL 15 }
+//	frame 0 42
+	frame 0 130
+	{ event AE_NPC_RAGDOLL 62 }
 	LX LY
 }
 
 //Twist and fall, hands reach to face
 $Sequence Die_headshot2 	die_faceshot_collapse ACT_DIE_HEADSHOT 1 fps 60 {
-	frame 6 51
-//	{ event AE_NPC_RAGDOLL 20 }
-	walkframe 30 LX walkframe 45 LX
+//	frame 6 51
+	frame 6 130
+	{ event AE_NPC_RAGDOLL 60 }
+	walkframe 30 LX walkframe 55 LX
 }
 /*
 
