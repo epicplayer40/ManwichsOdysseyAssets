@@ -66,6 +66,9 @@ $cmdlist lockfeetandlefthand {
 //
 // AE_CREMATOR_TURNONHOSE
 // AE_CREMATOR_TURNOFFHOSE
+// 2050 - NPC_EVENT_LEFTFOOT
+// 2051 - NPC_EVENT_RIGHTFOOT
+// 3105 - EVENT_WEAPON_REFILL
 
 //$sequence Idle01 "idle01" loop FPS 30 
 //$sequence walk1 "Fastwalk01" loop LX fps 30 ACT_WALK 1
@@ -106,7 +109,9 @@ $sequence fireinout		"fireinout01" fps 30 ACT_SPECIAL_ATTACK1 1 node idle {
 	
 	ikrule lhand touch "Bip01 R Hand"
 	
-	{ event 2050 15 }	
+	{ event AE_CREMATOR_TURNOFFHOSE 0 }
+	{ event 2050 15 }
+	{ event AE_CL_PLAYSOUND 26 "Weapon_Immolator.Start" }	
 	{ event 2051 28 }
 	{ event AE_CREMATOR_TURNONHOSE 38 }
 	{ event AE_CREMATOR_TURNOFFHOSE 200 }
@@ -123,8 +128,11 @@ $sequence fireinoutsw	"fireinoutsweep" fps 30 ACT_SPECIAL_ATTACK2 1 node idle {
 	ikrule lfoot footstep range .. .. 4 7
 	ikrule lfoot footstep range 14 17 249 253
 	ikrule lfoot footstep range 259 261 .. ..
+
+	{ event AE_CREMATOR_TURNOFFHOSE 0 }
 	{ event 2050 15 }	
 	{ event 2051 28 }
+	{ event AE_CL_PLAYSOUND 26 "Weapon_Immolator.Start" }
 	{ event AE_CREMATOR_TURNONHOSE 30 }
 	{ event AE_CREMATOR_TURNOFFHOSE 240 }
 	{ event 2050 260 }	
@@ -164,6 +172,7 @@ $sequence firein		"fireinout01" {
 	ikrule lhand touch "Bip01 R Hand"
 	{ event 2050 15 }	
 	{ event 2051 28 }
+	{ event AE_CL_PLAYSOUND 31 "Weapon_Immolator.Start" }
 
 } 
 $sequence fireout		"fireinout01" {
@@ -175,6 +184,7 @@ $sequence fireout		"fireinout01" {
 	ikrule lfoot footstep range .. .. 15 21
 	ikrule lfoot footstep range 25 27 .. ..
 	ikrule lhand touch "Bip01 R Hand"
+	{ event AE_CREMATOR_TURNOFFHOSE 0 }
 	{ event 2050 27 }	
 	{ event 2051 12 }
 }
@@ -236,7 +246,7 @@ $sequence fire "fireinout01" frame 78 90 fps 30	ACT_RANGE_ATTACK1 1 addlayer Aim
 $animation fire_gesture "fireinout01" frame 78 90 subtract fireinout 90 fixuploop -3 0 fps 50
 $sequence gesture_fire fire_gesture ACT_GESTURE_RANGE_ATTACK1 1 delta ikrule lhand touch "Bip01 R Hand"
 
-$sequence reload		"gunjam01" fps 40 ACT_RELOAD 1 { event 2 50 } cmdlist lockfeetandlefthand
+$sequence reload		"gunjam01" fps 40 ACT_RELOAD 1 { event AE_CREMATOR_TURNOFFHOSE 0} { event 3105 50 } cmdlist lockfeetandlefthand
 
 $include "ragdoll.qci"
 
