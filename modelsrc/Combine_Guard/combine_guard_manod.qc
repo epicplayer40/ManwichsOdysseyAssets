@@ -290,7 +290,7 @@ $sequence punch01 "punch01" fps 30 activity ACT_MELEE_ATTACK1 2 {
 	ikrule lhand touch "Bip01 R Hand"
 }
 
-$sequence punch02 "punch02" fps 30 activity ACT_MELEE_ATTACK1 1 {
+$sequence punch02 "punch02" fps 45 activity ACT_MELEE_ATTACK1 1 {
 	{ event 11 24 }
 	cmdlist lockfeet
 }
