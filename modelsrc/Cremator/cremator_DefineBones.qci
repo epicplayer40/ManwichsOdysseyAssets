@@ -64,3 +64,27 @@ $definebone "Object08" "Bip01 R Hand" 4.004549 6.047379 1.789425 6.986763 121.00
 $definebone "ValveBiped.Bip01_R_Hand" "Bip01 R Hand" 3.409092 -0.252527 -0.318714 -3.510228 34.326369 176.794572 0.000000 0.000000 -0.000000 0.000003 -0.000020 0.000006
 
 $bonemerge "ValveBiped.Bip01_R_Hand"
+
+$definemacro maketurngesture gesturename filename Angle Apex Accent LastFrame Inner Outer \\
+$animation @$gesturename$zero $filename$ frame 0 0 \\
+$sequence $gesturename$default $filename$ frame $Apex$ $Apex$ rotate $Angle$ alignto @$gesturename$zero subtract @$gesturename$zero 0 delta hidden noautoik \\
+$sequence $gesturename$inDelta $filename$ frame 0 $Apex$ lineardelta delta hidden noautoik \\
+$sequence $gesturename$outDelta $filename$ frame $Apex$ $LastFrame$ lineardelta delta hidden noautoik \\
+\\
+$sequence $gesturename$ { \\
+  $filename$ noanimation numframes $LastFrame$ \\
+  blendlayer $gesturename$default 0 $Apex$ $Apex$ $Apex$ \\
+  blendlayer $gesturename$default $Apex$ $Apex$ $Apex$ $LastFrame$ spline \\
+  blendlayer $gesturename$inDelta 0 0 $Apex$ $Apex$ \\
+  blendlayer $gesturename$outDelta $Apex$ $Apex$ $Apex$ $LastFrame$ spline \\
+  ikrule $Inner$ release range 0 .. .. $Apex$ \\
+  ikrule $Outer$ release range $Apex$ .. $Accent$ $Accent$ \\
+  // HACK ik rules until abs footsteps can be added \\
+  //iklock $Inner$ 1 0 \\
+  //ikrule $Inner$ footstep range 0 $Apex$ $Accent$ $Accent$ usesource \\
+  //iklock rhand 0 0 \\
+  noautoik \\
+} \\
+$continue $gesturename$
+
+//end

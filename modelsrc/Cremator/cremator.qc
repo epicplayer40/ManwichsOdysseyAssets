@@ -91,6 +91,8 @@ $sequence run {
 	blendwidth 9 blend move_yaw -180 180 loop ACT_RUN 1
 	{ event 2051 17 }
 	{ event 2050 38 }
+	{ event AE_CL_PLAYSOUND 3 "NPC_Cremator.CloakSwish" }
+	{ event AE_CL_PLAYSOUND 26 "NPC_Cremator.CloakSwish" }
 }
 
 
@@ -111,7 +113,7 @@ $sequence fireinout		"fireinout01" fps 30 ACT_SPECIAL_ATTACK1 1 node idle {
 	
 	{ event AE_CREMATOR_TURNOFFHOSE 0 }
 	{ event 2050 15 }
-	{ event AE_CL_PLAYSOUND 26 "Weapon_Immolator.Start" }	
+	{ event AE_CL_PLAYSOUND 26 "NPC_Cremator.Immolator_Start" }	
 	{ event 2051 28 }
 	{ event AE_CREMATOR_TURNONHOSE 38 }
 	{ event AE_CREMATOR_TURNOFFHOSE 200 }
@@ -132,13 +134,13 @@ $sequence fireinoutsw	"fireinoutsweep" fps 30 ACT_SPECIAL_ATTACK2 1 node idle {
 	{ event AE_CREMATOR_TURNOFFHOSE 0 }
 	{ event 2050 15 }	
 	{ event 2051 28 }
-	{ event AE_CL_PLAYSOUND 26 "Weapon_Immolator.Start" }
+	{ event AE_CL_PLAYSOUND 26 "NPC_Cremator.Immolator_Start" }
 	{ event AE_CREMATOR_TURNONHOSE 30 }
 	{ event AE_CREMATOR_TURNOFFHOSE 240 }
 	{ event 2050 260 }	
 	{ event 2051 245 }
 }
-$sequence breathing		"breathing01" fps 30 ACT_IDLE 1 node idle cmdlist lockfeet
+$sequence breathing		"breathing01" fps 30 ACT_IDLE 1 node idle cmdlist lockfeetandlefthand
 //$sequence firebreathing1 "firebreathing01" fps 30	ACT_IDLE 1
 $sequence firebreathing2 "firebreathing01" fps 30	ACT_IDLE_ANGRY 1 addlayer Aim_firing node flaming cmdlist lockfeetandlefthand
 
@@ -147,6 +149,8 @@ ikrule lfoot footstep range 54 60 29 46
 ikrule rfoot footstep range 24 28 0 14
 	{ event 2051 26 }
 	{ event 2050 58 }
+	{ event AE_CL_PLAYSOUND 7 "NPC_Cremator.CloakSwish" }
+	{ event AE_CL_PLAYSOUND 41 "NPC_Cremator.CloakSwish" }
 }
 
 $animation limp_S	"limpback01"	loop LX fps 30 startloop 19 ikrule rfoot footstep range 19 23 0 3 ikrule lfoot footstep range 30 33 22 25 ikrule lhand touch "Bip01 R Hand"
@@ -158,6 +162,7 @@ $sequence limp {
 	blendwidth 5 blend move_yaw -180 180 loop ACT_RUN_HURT 1 
 	{ event 2051 21 }
 	{ event 2050 32 }
+	{ event AE_CL_PLAYSOUND 22 "NPC_Cremator.CloakSwish" }
 }
 
 //New Manod Sequences
@@ -172,7 +177,7 @@ $sequence firein		"fireinout01" {
 	ikrule lhand touch "Bip01 R Hand"
 	{ event 2050 15 }	
 	{ event 2051 28 }
-	{ event AE_CL_PLAYSOUND 31 "Weapon_Immolator.Start" }
+	{ event AE_CL_PLAYSOUND 31 "NPC_Cremator.Immolator_Start" }
 
 } 
 $sequence fireout		"fireinout01" {
@@ -246,7 +251,35 @@ $sequence fire "fireinout01" frame 78 90 fps 30	ACT_RANGE_ATTACK1 1 addlayer Aim
 $animation fire_gesture "fireinout01" frame 78 90 subtract fireinout 90 fixuploop -3 0 fps 50
 $sequence gesture_fire fire_gesture ACT_GESTURE_RANGE_ATTACK1 1 delta ikrule lhand touch "Bip01 R Hand"
 
-$sequence reload		"gunjam01" fps 40 ACT_RELOAD 1 { event AE_CREMATOR_TURNOFFHOSE 0} { event 3105 50 } cmdlist lockfeetandlefthand
+$sequence reload		"gunjam01" fps 30 ACT_RELOAD 1 { 
+	{ event AE_CREMATOR_TURNOFFHOSE 0 }
+	{ event 3105 50 }
+	{ event AE_CL_PLAYSOUND 15 "NPC_Cremator.Confused" }
+	{ event AE_CL_PLAYSOUND 22 "NPC_Cremator.Unjam" }
+	cmdlist lockfeetandlefthand
+}
+
+$weightlist nobones "Bip01" 0.0
+
+$sequence turnleft "idle01" FPS 30 frames 0 50 ACT_GESTURE_TURN_LEFT 1 {
+	// foot release only rules
+	ikrule lfoot unlatch range 1 9 16 26 usesource
+	ikrule rfoot unlatch range 26 33 39 45 usesource
+	weightlist nobones
+}
+
+$sequence turnright "idle01" FPS 30 frames 0 50 ACT_GESTURE_TURN_RIGHT 1 {
+	// foot release only rules
+	ikrule lfoot unlatch range 20 25 33 39 usesource
+	ikrule rfoot unlatch range 0 4 15 20 usesource
+	weightlist nobones
+}
+
+$maketurngesture  gesture_turn_left_45 "turn_left_45" -45 22 38 50 lfoot rfoot fps 60 ACT_GESTURE_TURN_LEFT45 1 
+$maketurngesture  gesture_turn_left_90 "turn_left" -90 22 38 50 lfoot rfoot fps 50 ACT_GESTURE_TURN_LEFT90 1
+$maketurngesture  gesture_turn_right_45 "turn_right_45" 45 22 35 50 rfoot lfoot fps 60 ACT_GESTURE_TURN_RIGHT45 1
+$maketurngesture  gesture_turn_right_90 "turn_right" 90 22 35 50 rfoot lfoot fps 50 ACT_GESTURE_TURN_RIGHT90 1
+
 
 $include "ragdoll.qci"
 
