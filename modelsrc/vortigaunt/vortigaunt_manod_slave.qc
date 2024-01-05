@@ -52,7 +52,7 @@ $attachment "1" "ValveBiped.hand1_L" 0 0 0 rotate 0 0 0
 
 $bbox -18.9 -18.45 -0.273 20.461 22.168 67.514
 
-$sequence Idle01 Idle01 ACT_IDLE 1 node "node0" loop
+$sequence Idle01 Idle01 node "node0" loop
 
 $sequence ActionIdle ActionIdle ACT_IDLE 6 node "node1" loop
 
