@@ -9,6 +9,8 @@ $attachment "mouth" "Bip01 Head" 0.8 -5.8 -0.15 rotate 0 -80 -90
 $attachment "anim_attachment_RH" "ValveBiped.Bip01_R_Hand" 0 0 0 rotate -90 -90 0
 $eyeposition 0 0 67
 
+$bbox -13 -13 0  13 13 72
+
 $controller 0 "Bip01 Head" XR -60 60
 
 $poseparameter "XR" -50 50 loop 0
