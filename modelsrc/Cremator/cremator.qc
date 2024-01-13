@@ -289,7 +289,12 @@ Scripted Sequences
 ----------------------------
 */
 
-
+$sequence Dropship_Deploy Dropship_Deploy fps 30 {
+    walkframe 12 LX LY LZ
+    walkframe 34 LX LY LZ
+    walKframe 60 LX LY LZ
+    walkalign 110 "fireout" LX LY LZ 0 110
+}
 
 // =========================== cables ===============================
 
