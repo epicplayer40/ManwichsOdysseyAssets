@@ -8,3 +8,20 @@ $sequence bustdoor "Plaza_bustdoor01" snap {
 { event 1003 238 4 }
 { event 1003 260 5 }
 }
+
+//-------------  Misc NPC --------------------
+
+$sequence Dropship_Deploy Dropship_Deploy fps 30 {
+    walkframe 12 LX LY LZ
+    walkframe 34 LX LY LZ
+    walKframe 69 LX LY LZ
+    walkalign 80 "actidle01" LX LY LZ 0 100
+	{ event AE_CL_PLAYSOUND 14 "NPC_CombineGuard.FootstepRight" }
+	{ event AE_CL_PLAYSOUND 43 "NPC_CombineGuard.FootstepRight" }
+	{ event AE_CL_PLAYSOUND 28 "NPC_CombineGuard.FootstepLeft" }
+	{ event AE_CL_PLAYSOUND 63 "NPC_CombineGuard.FootstepLeft" }
+	{ event AE_CL_PLAYSOUND 30 "NPC_CombineGuard.PhysGetup" }
+	{ event 20 80 } { event 21 82 }
+	ikrule lfoot footstep range 82 82 84 100
+	ikrule rfoot footstep range 79 79 80 100
+}
