@@ -5,7 +5,7 @@ Ragdoll Main
 ----------------------------
 */
 
-$surfaceprop "default"
+$surfaceprop "default_leak"
 
 $collisionjoints "ragdoll_body.smd" {
 	$mass 400.0

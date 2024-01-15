@@ -2,14 +2,18 @@
 ----------------------------
 Cremator
 ----------------------------
+Cremator head fix (goes crazy) from Akis_02
+----------------------------
 */
 
 $modelname cremator.mdl
 
-$body studio "cremator_manod_reference.smd"
+$body studio "cremator_manod_reference_fix.smd"
 $opaque
 $cdmaterials models/cremator
+
 $include cremator_definebones.qci
+$include cremator_hitboxes.qci
 
 //Rigging is changed so legs have better weights on the coat, removing helper bones - epicplayer
 $alwayscollapse "LFront Flapa"

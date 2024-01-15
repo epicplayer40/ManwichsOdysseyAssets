@@ -1,0 +1,400 @@
+// Created by Crowbar 0.74
+
+  Compiling "cremator.qc" ...
+    Output from compiler "D:\SteamLibrary\steamapps\common\GarrysMod\bin\studiomdl.exe": 
+      mount.cfg adding path: 'D:\SteamLibrary\steamapps\common\Counter-Strike Source\cstrike'
+      mount.cfg adding path: 'D:\SteamLibrary\steamapps\sourcemods\hl2_leak_content_loader\'
+      qdir:    "d:\steamlibrary\steamapps\sourcemods\manwichsodysseyassets\modelsrc\cremator\"
+      gamedir: "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\"
+      g_path:  "cremator.qc"
+      Building binary model files...
+      Working on "cremator.qc"
+      SMD MODEL cremator_manod_reference_fix.smd
+      SMD MODEL fastwalkback01.smd
+      SMD MODEL fastwalkleftback01.smd
+      SMD MODEL fastwalkleft01.smd
+      SMD MODEL fastwalkltfront01.smd
+      SMD MODEL Fastwalk01.smd
+      SMD MODEL fastwalkrtfront01.smd
+      SMD MODEL fastwalkrt01.smd
+      SMD MODEL fastwalkrtback01.smd
+      SMD MODEL gunjam01.smd
+      SMD MODEL flinch01.smd
+      SMD MODEL fireinout01.smd
+      SMD MODEL fireupleft.smd
+      SMD MODEL fireupright.smd
+      SMD MODEL fireinoutsweep.smd
+      SMD MODEL breathing01.smd
+      SMD MODEL firebreathing01.smd
+      SMD MODEL walk01.smd
+      SMD MODEL limpback01.smd
+      SMD MODEL limpleft01.smd
+      SMD MODEL limp01.smd
+      SMD MODEL limprt01.smd
+      SMD MODEL Aim_9_directions.smd
+      SMD MODEL idle01.smd
+      SMD MODEL turn_left_45.smd
+      SMD MODEL turn_left.smd
+      SMD MODEL turn_right_45.smd
+      SMD MODEL turn_right.smd
+      SMD MODEL ragdoll_body.smd
+      SMD MODEL Ragdoll_body_idle.smd
+      SMD MODEL Dropship_Deploy.smd
+      Processing LOD for material: cremsuit
+      Processing LOD for material: shoes
+      Processing LOD for material: ball
+      Processing LOD for material: arm
+      Processing LOD for material: hands
+      Processing LOD for material: head
+      Processing LOD for material: face
+      run_S : 0 - 38 : -50.0 0.0 0.0 root: Bip01
+      run_SW : 0 - 38 : -40.5 40.5 0.0 root: Bip01
+      run_W : 0 - 38 : 0.0 46.8 0.0 root: Bip01
+      run_NW : 0 - 38 : 38.7 38.7 0.0 root: Bip01
+      run_N : 0 - 38 : 51.4 0.0 0.0 root: Bip01
+      run_NE : 0 - 38 : 41.4 -41.4 0.0 root: Bip01
+      run_E : 0 - 38 : 0.0 -39.7 0.0 root: Bip01
+      run_SE : 0 - 38 : -35.5 -35.5 0.0 root: Bip01
+      @walk : 0 - 60 : 44.0 0.0 0.0 root: Bip01
+      limp_S : 0 - 39 : -51.6 0.0 0.0 root: Bip01
+      limp_W : 0 - 38 : 0.0 46.7 0.0 root: Bip01
+      limp_N : 0 - 38 : 51.4 0.0 0.0 root: Bip01
+      limp_E : 0 - 38 : 0.0 -39.9 0.0 root: Bip01
+      @Dropship_Deploy : 0 - 12 : 6.8 0.8 0.0 root: Bip01
+      @Dropship_Deploy : 12 - 34 : 25.1 1.2 0.0 root: Bip01
+      @Dropship_Deploy : 34 - 60 : 60.3 -1.1 0.0 root: Bip01
+      @Dropship_Deploy : 60 - 110 : 140.9 -0.9 0.0 root: Bip01
+      Aim_firing : aim_yaw -31.18   0.00  54.73
+      Aim_firing : aim_pitch -83.00 -47.44  -0.00  50.32
+      Processing jointed collision model
+      Bip01                    ( 72 verts, 1 convex elements) volume: 4238.21
+      Bip01 Spine2             ( 75 verts, 1 convex elements) volume: 9275.18
+      Bip01 L UpperArm         ( 26 verts, 1 convex elements) volume: 35.26
+      Bip01 L Forearm          ( 32 verts, 1 convex elements) volume: 105.95
+      Bip01 L Hand             ( 35 verts, 1 convex elements) volume: 256.79
+      Bip01 R UpperArm         ( 26 verts, 1 convex elements) volume: 31.48
+      Bip01 R Forearm          ( 32 verts, 1 convex elements) volume: 105.95
+      Bip01 R Hand             ( 35 verts, 1 convex elements) volume: 190.14
+      Bip01 L Thigh            (140 verts, 1 convex elements) volume: 6215.79
+      Bip01 L Calf             ( 68 verts, 1 convex elements) volume: 1665.90
+      Bip01 R Thigh            (140 verts, 1 convex elements) volume: 8217.04
+      Bip01 R Calf             ( 68 verts, 1 convex elements) volume: 1671.14
+      Collision model completed.
+      ---------------------
+      writing D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator.mdl:
+      bones        14388 bytes (56)
+         animation       x       y       ips    angle
+             run_S  -49.98    0.00 :   39.46 ( 180.00) 1.3
+            run_SW  -40.49   40.50 :   45.21 ( 135.00) 1.3
+             run_W    0.00   46.81 :   36.95 (  90.00) 1.3
+            run_NW   38.65   38.65 :   43.15 (  45.00) 1.3
+             run_N   51.43    0.00 :   40.60 (   0.00) 1.3
+            run_NE   41.36  -41.36 :   46.18 ( -45.00) 1.3
+             run_E    0.00  -39.70 :   31.34 ( -90.00) 1.3
+            run_SE  -35.48  -35.48 :   39.61 (-135.00) 1.3
+           @gunjam    0.00    0.00 :    0.00 (   0.00) 5.2
+          @flinch1    0.00    0.00 :    0.00 (   0.00) 5.2
+        @fireinout    0.00    0.00 :    0.00 (   0.00) 8.0
+       @fireupleft    0.00    0.00 :    0.00 (   0.00) 0.0
+      @fireupright    0.00    0.00 :    0.00 (   0.00) 0.0
+      @fireinoutsw    0.00    0.00 :    0.00 (   0.00) 9.2
+        @breathing    0.00    0.00 :    0.00 (   0.00) 3.3
+      @firebreathing2    0.00    0.00 :    0.00 (   0.00) 5.2
+             @walk   44.01    0.00 :   22.00 (   0.00) 2.0
+            limp_S  -51.56    0.00 :   39.66 ( 180.00) 1.3
+            limp_W    0.00   46.66 :   36.83 (  90.00) 1.3
+            limp_N   51.37    0.00 :   40.55 (   0.00) 1.3
+            limp_E    0.00  -39.86 :   31.47 ( -90.00) 1.3
+           @firein    0.00    0.00 :    0.00 (   0.00) 1.3
+          @fireout    0.00    0.00 :    0.00 (   0.00) 1.3
+           aim_ref    0.00    0.00 :     inf (   0.00) 0.0
+      @aim_straightfixer    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_neutral    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_down_left    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_down_center    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_down_right    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_mid_left    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_mid_center    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_mid_right    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_up_left    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_up_center    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_up_right    0.00    0.00 :     inf (   0.00) 0.0
+      a_aim_stand_straightup    0.00    0.00 :     inf (   0.00) 0.0
+             @fire    0.00    0.00 :    0.00 (   0.00) 0.4
+      fire_gesture    0.00    0.00 :    0.00 (   0.00) 0.2
+           @reload    0.00    0.00 :    0.00 (   0.00) 5.2
+         @turnleft    0.00    0.00 :    0.00 (   0.00) 1.7
+        @turnright    0.00    0.00 :    0.00 (   0.00) 1.7
+      @gesture_turn_left_45zero    0.00    0.00 :     inf (   0.00) 0.0
+      @gesture_turn_left_45default    0.00    0.00 :     inf (   0.00) 0.0
+      @gesture_turn_left_45inDelta    0.00    0.00 :    0.00 (   0.00) 0.7
+      @gesture_turn_left_45outDelta    0.00    0.00 :    0.00 (   0.00) 0.9
+      @gesture_turn_left_45    0.00    0.00 :    0.00 (   0.00) 0.8
+      @gesture_turn_left_90zero    0.00    0.00 :     inf (   0.00) 0.0
+      @gesture_turn_left_90default    0.00    0.00 :     inf (   0.00) 0.0
+      @gesture_turn_left_90inDelta    0.00    0.00 :    0.00 (   0.00) 0.7
+      @gesture_turn_left_90outDelta    0.00    0.00 :    0.00 (   0.00) 0.9
+      @gesture_turn_left_90    0.00    0.00 :    0.00 (   0.00) 1.0
+      @gesture_turn_right_45zero    0.00    0.00 :     inf (   0.00) 0.0
+      @gesture_turn_right_45default    0.00    0.00 :     inf (   0.00) 0.0
+      @gesture_turn_right_45inDelta    0.00    0.00 :    0.00 (   0.00) 0.7
+      @gesture_turn_right_45outDelta    0.00    0.00 :    0.00 (   0.00) 0.9
+      @gesture_turn_right_45    0.00    0.00 :    0.00 (   0.00) 0.8
+      @gesture_turn_right_90zero    0.00    0.00 :     inf (   0.00) 0.0
+      @gesture_turn_right_90default    0.00    0.00 :     inf (   0.00) 0.0
+      @gesture_turn_right_90inDelta    0.00    0.00 :    0.00 (   0.00) 0.7
+      @gesture_turn_right_90outDelta    0.00    0.00 :    0.00 (   0.00) 0.9
+      @gesture_turn_right_90    0.00    0.00 :    0.00 (   0.00) 1.0
+          @ragdoll    0.00    0.00 :    0.00 (   0.00) 2.0
+      @Dropship_Deploy  233.06    0.01 :   63.87 (   0.00) 3.7
+      animations  367696 bytes (63 anims) (2586 frames) [1:23]
+      sequences    12436 bytes (38 seq) 
+      ik/pose        624 bytes
+      eyeballs         0 bytes (0 eyeballs)
+      flexes           0 bytes (0 flexes)
+      textures       468 bytes
+      keyvalues      172 bytes
+      bone transforms     7680 bytes
+      bone flex driver       0 bytes
+      Collision model volume 32287.46 in^3
+      collision        0 bytes
+      total       407480
+      ---------------------
+      writing D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator.vvd:
+      vertices     81648 bytes (1701 vertices)
+      tangents     27216 bytes (1701 vertices)
+      total       108928 bytes
+      ---------------------
+      Generating optimized mesh "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator.sw.vtx":
+      body parts:         8 bytes
+      models:            20 bytes
+      model LODs:        12 bytes
+      meshes:            63 bytes
+      strip groups:     175 bytes
+      strips:           189 bytes
+      verts:          15282 bytes
+      indices:        15636 bytes
+      bone changes:       8 bytes
+      everything:     31417 bytes
+      ---------------------
+      Generating optimized mesh "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator.dx80.vtx":
+      body parts:         8 bytes
+      models:            20 bytes
+      model LODs:        12 bytes
+      meshes:            63 bytes
+      strip groups:     175 bytes
+      strips:           270 bytes
+      verts:          15894 bytes
+      indices:        15636 bytes
+      bone changes:     768 bytes
+      everything:     32870 bytes
+      ---------------------
+      Generating optimized mesh "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator.dx90.vtx":
+      body parts:         8 bytes
+      models:            20 bytes
+      model LODs:        12 bytes
+      meshes:            63 bytes
+      strip groups:     175 bytes
+      strips:           189 bytes
+      verts:          15282 bytes
+      indices:        15636 bytes
+      bone changes:     616 bytes
+      everything:     32025 bytes
+      
+      Completed "cremator.qc"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator.dx80.vtx" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator.dx90.vtx" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator.mdl" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator.phy" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator.sw.vtx" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator.vvd" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+  ... Compiling "cremator.qc" finished. Check above for any errors.
+
+  Compiling "cremator_body.qc" ...
+    Output from compiler "D:\SteamLibrary\steamapps\common\GarrysMod\bin\studiomdl.exe": 
+      mount.cfg adding path: 'D:\SteamLibrary\steamapps\common\Counter-Strike Source\cstrike'
+      mount.cfg adding path: 'D:\SteamLibrary\steamapps\sourcemods\hl2_leak_content_loader\'
+      qdir:    "d:\steamlibrary\steamapps\sourcemods\manwichsodysseyassets\modelsrc\cremator\"
+      gamedir: "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\"
+      g_path:  "cremator_body.qc"
+      Building binary model files...
+      Working on "cremator_body.qc"
+      SMD MODEL cremator_body_fix.smd
+      SMD MODEL cremator_body_idle.smd
+      SMD MODEL ragdoll_body.smd
+      SMD MODEL ragdoll_pose.smd
+      Processing LOD for material: cremsuit
+      Processing LOD for material: shoes
+      Processing LOD for material: ball
+      Processing LOD for material: arm
+      Processing LOD for material: hands
+      Processing jointed collision model
+      Bip01                    ( 72 verts, 1 convex elements) volume: 4238.21
+      Bip01 Spine2             ( 75 verts, 1 convex elements) volume: 9275.19
+      Bip01 L UpperArm         ( 26 verts, 1 convex elements) volume: 35.26
+      Bip01 L Forearm          ( 32 verts, 1 convex elements) volume: 105.95
+      Bip01 L Hand             ( 35 verts, 1 convex elements) volume: 256.79
+      Bip01 R UpperArm         ( 26 verts, 1 convex elements) volume: 31.48
+      Bip01 R Forearm          ( 32 verts, 1 convex elements) volume: 105.95
+      Bip01 R Hand             ( 35 verts, 1 convex elements) volume: 190.14
+      Bip01 L Thigh            ( 36 verts, 1 convex elements) volume: 2277.27
+      Bip01 L Calf             ( 68 verts, 1 convex elements) volume: 1665.90
+      Bip01 R Thigh            ( 36 verts, 1 convex elements) volume: 2850.70
+      Bip01 R Calf             ( 68 verts, 1 convex elements) volume: 1671.14
+      LBack Flapa              ( 52 verts, 1 convex elements) volume: 510.03
+      RBack Flapa              ( 52 verts, 1 convex elements) volume: 1197.34
+      RFront Flapa             ( 52 verts, 1 convex elements) volume: 738.83
+      LFront Flapa             ( 52 verts, 1 convex elements) volume: 628.77
+      Collision model completed.
+      ---------------------
+      writing D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator_body.mdl:
+      bones        14660 bytes (60)
+         animation       x       y       ips    angle
+            @idle1    0.00    0.00 :    0.00 (   0.00) 2.0
+          @ragdoll    0.00    0.00 :    0.00 (   0.00) 2.0
+      animations     900 bytes (2 anims) (122 frames) [0:04]
+      sequences      672 bytes (2 seq) 
+      ik/pose        164 bytes
+      eyeballs         0 bytes (0 eyeballs)
+      flexes           0 bytes (0 flexes)
+      textures       336 bytes
+      keyvalues        0 bytes
+      bone transforms     8224 bytes
+      bone flex driver       0 bytes
+      Collision model volume 25778.92 in^3
+      collision        0 bytes
+      total        26556
+      ---------------------
+      writing D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator_body.vvd:
+      vertices     64368 bytes (1341 vertices)
+      tangents     21456 bytes (1341 vertices)
+      total        85888 bytes
+      ---------------------
+      Generating optimized mesh "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator_body.sw.vtx":
+      body parts:         8 bytes
+      models:            20 bytes
+      model LODs:        12 bytes
+      meshes:            45 bytes
+      strip groups:     125 bytes
+      strips:           135 bytes
+      verts:          12042 bytes
+      indices:        12624 bytes
+      bone changes:       8 bytes
+      everything:     25043 bytes
+      ---------------------
+      Generating optimized mesh "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator_body.dx80.vtx":
+      body parts:         8 bytes
+      models:            20 bytes
+      model LODs:        12 bytes
+      meshes:            45 bytes
+      strip groups:     125 bytes
+      strips:           243 bytes
+      verts:          12627 bytes
+      indices:        12624 bytes
+      bone changes:     928 bytes
+      everything:     26656 bytes
+      ---------------------
+      Generating optimized mesh "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator_body.dx90.vtx":
+      body parts:         8 bytes
+      models:            20 bytes
+      model LODs:        12 bytes
+      meshes:            45 bytes
+      strip groups:     125 bytes
+      strips:           135 bytes
+      verts:          12042 bytes
+      indices:        12624 bytes
+      bone changes:     656 bytes
+      everything:     25691 bytes
+      
+      Completed "cremator_body.qc"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_body.dx80.vtx" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_body.dx90.vtx" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_body.mdl" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_body.phy" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_body.sw.vtx" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_body.vvd" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+  ... Compiling "cremator_body.qc" finished. Check above for any errors.
+
+  Compiling "cremator_head.qc" ...
+    Output from compiler "D:\SteamLibrary\steamapps\common\GarrysMod\bin\studiomdl.exe": 
+      mount.cfg adding path: 'D:\SteamLibrary\steamapps\common\Counter-Strike Source\cstrike'
+      mount.cfg adding path: 'D:\SteamLibrary\steamapps\sourcemods\hl2_leak_content_loader\'
+      qdir:    "d:\steamlibrary\steamapps\sourcemods\manwichsodysseyassets\modelsrc\cremator\"
+      gamedir: "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\"
+      g_path:  "cremator_head.qc"
+      Building binary model files...
+      Working on "cremator_head.qc"
+      SMD MODEL cremator_head_fix.smd
+      SMD MODEL cremator_head_idle.smd
+      SMD MODEL cremator_head.smd
+      Processing LOD for material: head
+      Processing LOD for material: face
+      Model has 1 convex sub-parts
+      Collision model completed.
+      ---------------------
+      writing D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator_head.mdl:
+      bones         2480 bytes (8)
+         animation       x       y       ips    angle
+            @idle1    0.00    0.00 :    0.00 (   0.00) 2.0
+      animations     160 bytes (1 anims) (61 frames) [0:02]
+      sequences      248 bytes (1 seq) 
+      ik/pose        164 bytes
+      eyeballs         0 bytes (0 eyeballs)
+      flexes           0 bytes (0 flexes)
+      textures       136 bytes
+      keyvalues        0 bytes
+      bone transforms     1152 bytes
+      bone flex driver       0 bytes
+      Collision model volume 647.72 in^3
+      collision        0 bytes
+      total         4752
+      ---------------------
+      writing D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator_head.vvd:
+      vertices     17184 bytes (358 vertices)
+      tangents      5728 bytes (358 vertices)
+      total        22976 bytes
+      ---------------------
+      Generating optimized mesh "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator_head.sw.vtx":
+      body parts:         8 bytes
+      models:            20 bytes
+      model LODs:        12 bytes
+      meshes:            18 bytes
+      strip groups:      50 bytes
+      strips:            54 bytes
+      verts:           3222 bytes
+      indices:         3012 bytes
+      bone changes:       8 bytes
+      everything:      6428 bytes
+      ---------------------
+      Generating optimized mesh "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator_head.dx80.vtx":
+      body parts:         8 bytes
+      models:            20 bytes
+      model LODs:        12 bytes
+      meshes:            18 bytes
+      strip groups:      50 bytes
+      strips:            54 bytes
+      verts:           3222 bytes
+      indices:         3012 bytes
+      bone changes:      24 bytes
+      everything:      6444 bytes
+      ---------------------
+      Generating optimized mesh "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models/cremator_head.dx90.vtx":
+      body parts:         8 bytes
+      models:            20 bytes
+      model LODs:        12 bytes
+      meshes:            18 bytes
+      strip groups:      50 bytes
+      strips:            54 bytes
+      verts:           3222 bytes
+      indices:         3012 bytes
+      bone changes:      24 bytes
+      everything:      6444 bytes
+      
+      Completed "cremator_head.qc"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_head.dx80.vtx" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_head.dx90.vtx" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_head.mdl" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_head.phy" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_head.sw.vtx" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+    CROWBAR: Moved compiled model file "D:\SteamLibrary\steamapps\common\GarrysMod\garrysmod\models\cremator_head.vvd" to "D:\SteamLibrary\steamapps\sourcemods\ManwichsOdyssey\models"
+  ... Compiling "cremator_head.qc" finished. Check above for any errors.
