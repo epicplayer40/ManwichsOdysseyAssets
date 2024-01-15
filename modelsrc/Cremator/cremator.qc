@@ -1,14 +1,14 @@
 /*
 ----------------------------
 Cremator
-----------------------------
-Cremator head fix (goes crazy) from Akis_02
+Head fix by Akis_02
+Anim stuff and enhancements by epicplayer
 ----------------------------
 */
 
 $modelname cremator.mdl
 
-$body studio "cremator_manod_reference_fix.smd"
+$body studio "cremator_manod_reference.smd"
 $opaque
 $cdmaterials models/cremator
 

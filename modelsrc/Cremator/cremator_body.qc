@@ -2,13 +2,11 @@
 ----------------------------
 cremator_body
 ----------------------------
-Cremator head Unfix from Akis_02
-----------------------------
 */
 
 $modelname cremator_body.mdl
 
-$body studio "cremator_body_fix.smd"
+$body studio "cremator_body.smd"
 $opaque
 $cdmaterials models/cremator
 

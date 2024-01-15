@@ -2,13 +2,11 @@
 ----------------------------
 cremator_head
 ----------------------------
-Cremator head fix (goes crazy) from Akis_02
-----------------------------
 */
 
 $modelname cremator_head.mdl
 
-$body studio "cremator_head_fix.smd"
+$body studio "cremator_head.smd"
 $opaque
 $cdmaterials models/cremator
 
