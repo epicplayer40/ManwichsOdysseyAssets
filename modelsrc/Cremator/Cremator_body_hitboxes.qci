@@ -10,14 +10,14 @@ $jointsurfaceprop "Bip01 R Foot"	 "flesh"
 
 
 
-$hboxset "Body"
+$hboxset "Cremator"
 
 $hbox 3 "Bip01 Pelvis"	   -37.11   -7.07  -13.75    -2.29   13.07   13.75
 $hbox 2 "Bip01 Spine"	   -14.50   -7.93  -11.97    14.50   15.93   11.97
 $hbox 2 "Bip01 Spine2"	     0.06   -8.77  -15.80    15.95   11.43   15.80
 $hbox 8 "Bip01 Neck1"	     0.09   -6.53   -8.26     6.41    6.53    8.26
 
-$hboxset "Limbs"
+//$hboxset "Limbs"
 
 $hbox 5 "Bip01 R UpperArm"	     0.00   -1.89   -1.99    19.87    2.09    1.51
 $hbox 5 "Bip01 R Forearm"	    -4.99   -2.58   -2.01    18.25    3.01    1.91
