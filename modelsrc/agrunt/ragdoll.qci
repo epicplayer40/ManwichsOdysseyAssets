@@ -1,0 +1,69 @@
+
+//$surfaceprop "alienflesh"
+
+
+$collisionjoints ragdoll {
+
+	$mass 200.0
+	$inertia 10.00
+	$damping 0.01
+	$rotdamping 1.50
+	$rootbone "bip01"
+
+	$jointconstrain "bip01 spine1" x limit -35.00 35.00 1.00
+	$jointconstrain "bip01 spine1" y limit -25.00 25.00 1.00
+	$jointconstrain "bip01 spine1" z limit -35.00 45.00 1.00
+
+	$jointconstrain "bip01 r arm1" x limit -30.00 40.00 1.00
+	$jointconstrain "bip01 r arm1" y limit -20.00 35.00 1.00
+	$jointconstrain "bip01 r arm1" z limit -90.00 50.00 1.00
+
+	$jointconstrain "bip01 r arm2" x limit -30.00 30.00 1.00
+	$jointconstrain "bip01 r arm2" y limit -30.00 15.00 1.00
+	$jointconstrain "bip01 r arm2" z limit -65.00 30.00 1.00
+
+	$jointconstrain "bip01 l arm1" x limit -40.00 30.00 1.00
+	$jointconstrain "bip01 l arm1" y limit -35.00 20.00 1.00
+	$jointconstrain "bip01 l arm1" z limit -90.00 50.00 1.00
+
+	$jointconstrain "bip01 l arm2" x limit -30.00 30.00 1.00
+	$jointconstrain "bip01 l arm2" y limit -15.00 30.00 1.00
+	$jointconstrain "bip01 l arm2" z limit -65.00 30.00 1.00
+
+	$jointconstrain "bone07" x limit -35.00 35.00 1.00
+	$jointconstrain "bone07" y limit -50.00 50.00 1.00
+	$jointconstrain "bone07" z limit -60.00 35.00 1.00
+
+	$jointconstrain "bip01 head" x limit -20.00 20.00 1.00
+	$jointconstrain "bip01 head" y limit -15.00 15.00 1.00
+	$jointconstrain "bip01 head" z limit -15.00 5.00 1.00
+
+	$jointconstrain "bip01 r leg" x limit -25.00 40.00 1.00
+	$jointconstrain "bip01 r leg" y limit -10.00 35.00 1.00
+	$jointconstrain "bip01 r leg" z limit -50.00 50.00 1.00
+
+	$jointconstrain "bip01 r leg1" x limit -30.00 30.00 1.00
+	$jointconstrain "bip01 r leg1" y limit 0.00 0.00 1.00
+	$jointconstrain "bip01 r leg1" z limit -35.00 50.00 1.00
+
+	$jointconstrain "bone08" x limit -60.00 60.00 1.00
+	$jointconstrain "bone08" y limit -40.00 40.00 1.00
+	$jointconstrain "bone08" z limit -50.00 60.00 1.00
+
+	$jointconstrain "bip01 l leg" x limit -40.00 25.00 1.00
+	$jointconstrain "bip01 l leg" y limit -35.00 10.00 1.00
+	$jointconstrain "bip01 l leg" z limit -50.00 50.00 1.00
+
+	$jointconstrain "bip01 l leg1" x limit -30.00 30.00 1.00
+	$jointconstrain "bip01 l leg1" y limit 0.00 0.00 0.00
+	$jointconstrain "bip01 l leg1" z limit -35.00 50.00 1.00
+
+	$jointconstrain "bip01 l foot" x limit 0.00 0.00 1.00
+	$jointconstrain "bip01 l foot" y limit -25.00 25.00 1.00
+	$jointconstrain "bip01 l foot" z limit -60.00 40.00 1.00
+
+	$jointconstrain "bip01 r foot" x limit 0.00 0.00 0.00
+	$jointconstrain "bip01 r foot" y limit -25.00 25.00 1.00
+	$jointconstrain "bip01 r foot" z limit -60.00 40.00 1.00
+}
+$sequence ragdoll 		"ragdoll_pose" 		FPS 30 		activity ACT_DIERAGDOLL 1
