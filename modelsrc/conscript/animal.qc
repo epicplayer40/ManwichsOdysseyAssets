@@ -36,6 +36,7 @@ $CDMaterials "models\combine_elite\"
 
 $attachment "anim_attachment_RH" "ValveBiped.Bip01_R_Hand" 0 0 0 rotate -90 -90 0
 
+$bbox -13 -13 0  13 13 72
 
 $controller 0 "Bip01 Head" XR -60 60
 
