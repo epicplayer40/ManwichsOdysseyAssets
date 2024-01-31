@@ -8,6 +8,7 @@ World model VP70 Pistol
 
 $modelname weapons/w_vp70.mdl
 $cdmaterials models\Weapons\V_silenced_pistol
+$cdmaterials "models\Weapons\v_silencer"
 
 $body studio w_vp70_reference
 

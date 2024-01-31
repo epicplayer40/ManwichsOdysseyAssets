@@ -2,12 +2,14 @@
 ==============================================================================
 
 World model Silenced Pistol
-
+Credits:
+philmikehunt: Model textures
+Akis_02: Silencer edit
 ==============================================================================
 */
 
 $modelname weapons/w_silenced_pistol.mdl
-$cdmaterials models\Weapons\V_silenced_pistol
+$cdmaterials models\Weapons\V_silenced_pistol models\Weapons\v_silencer
 
 $body studio w_silenced_pistol_reference
 

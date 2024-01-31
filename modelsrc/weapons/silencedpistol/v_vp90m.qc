@@ -2,13 +2,16 @@
 ==============================================================================
 
 View model Silenced Pistol
+Credits:
+philmikehunt: Model textures
+The One Epicplayer: Animations
+Akis_02: Silencer edit
 
 ==============================================================================
 */
 
 $modelname weapons/v_silenced_pistol.mdl
-$cdmaterials models\Weapons\V_hand models\Weapons\V_silenced_pistol
-
+$cdmaterials models\Weapons\V_hand models\Weapons\V_silenced_pistol models\Weapons\v_silencer
 
 // whole body
 $body studio "Silenced_Pistol_reference.smd"
