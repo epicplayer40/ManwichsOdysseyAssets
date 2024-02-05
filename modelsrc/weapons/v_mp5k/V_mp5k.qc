@@ -22,15 +22,6 @@ $attachment "muzzle" "ValveBiped.muzzle" 6.10 -0.65 0.00 rotate 0 0 0
 //Shell eject
 $attachment "1" "ValveBiped.eject" 0.00 -1.00 -4.70 rotate 0 10 0
 
-//----------
-// body groups
-//----------
-$bodygroup firemode
-{
-	studio "strider_vsdog_shell.smd"
-	blank
-		
-}
 
 $sequence idle01 "Idle01" loop fps 30 activity ACT_VM_IDLE 1 node Ready
 
