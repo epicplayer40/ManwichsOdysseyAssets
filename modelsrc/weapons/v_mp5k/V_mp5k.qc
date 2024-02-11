@@ -49,7 +49,10 @@ $sequence altfire "Draw" fps 27 activity ACT_VM_SECONDARYATTACK 1 node Fire fram
 
 $sequence draw "Draw" fps 30 snap activity ACT_VM_DRAW 1 node Ready
 
-$sequence reload "Reload" fps 30 activity ACT_VM_RELOAD 1 node Ready
+$sequence reload "Reload" fps 30 activity ACT_VM_RELOAD 1 node Ready {
+{ event AE_CL_PLAYSOUND 4 "Weapon_SMG2s.Clip_out"}
+{ event AE_CL_PLAYSOUND 20 "Weapon_SMG2s.Clip_in"}
+}
 
 $sequence dryfire "Dryfire" fps 30 snap activity ACT_VM_DRYFIRE 1 node Fire
 
