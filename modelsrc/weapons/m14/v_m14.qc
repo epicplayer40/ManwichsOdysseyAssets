@@ -11,9 +11,9 @@ $cdmaterials models\Weapons\V_hand models\Weapons\V_m14 models\Weapons\V_grenade
 
 
 // whole body
-$body studio "v_m14_reference.smd" 
+$body studio "v_m14_reference_update.smd" 
 
-$origin 0 0 68
+$origin 1 2 66.5
 
 //Muzzle flash
 $attachment "0" "ValveBiped.muzzle" 0 0 0 rotate 0 -90 0
@@ -22,10 +22,11 @@ $attachment "1" "ValveBiped.garand_base" -2.90 -0.80 7.90 rotate 0 -98 0
 $sequence aim_idle01 "v_m14_anims" frames 25 55 loop fps 10 activity ACT_VM_IDLE 1 node Ready
 $sequence aim_fire "v_m14_anims" frames 56 70 snap fps 30 activity ACT_VM_PRIMARYATTACK 1 { event AE_MUZZLEFLASH 0 "AR2 muzzle" } { event 6001 0 "1" } node Fire
 $sequence aim_draw "v_m14_anims" frames 0 25 snap fps 30 activity ACT_VM_DRAW 1 node Ready
-$sequence aim_reload "v_m14_anims" frames 70 110 fps 30 activity ACT_VM_RELOAD 1 node Ready {
+$sequence aim_reload "v_m14_anims" frames 70 110 fps 25 activity ACT_VM_RELOAD 1 node Ready {
+	{ event AE_CL_PLAYSOUND 9 "Weapon_M14.Magrelease" }
 	{ event AE_CL_PLAYSOUND 12 "Weapon_M14.Magout" }
-	{ event AE_CL_PLAYSOUND 29 "Weapon_M14.Magin" }
-	{ event AE_CL_PLAYSOUND 32 "Weapon_M14.Maghit" }
+	{ event AE_CL_PLAYSOUND 28 "Weapon_M14.Magin" }
+	{ event AE_CL_PLAYSOUND 30 "Weapon_M14.Maghit" }
 }
 $sequence aim_holster "v_m14_anims" frames 110 120 fps 30 activity ACT_VM_HOLSTER 1 node Ready
 
@@ -35,10 +36,11 @@ $sequence grenade_draw "v_m14_anims" frames 121 165 fps 30 activity ACT_VM_DEPLO
 	{ event AE_CL_PLAYSOUND 19 "Weapon_M14.Grenadeattach" }
 	{ event AE_CL_PLAYSOUND 16 "Weapon_M14.Grenadepin" }
 }
-$sequence grenade_reload "v_m14_anims" frames 311 351 fps 30 activity ACT_VM_RELOAD_DEPLOYED 1 node Ready {
+$sequence grenade_reload "v_m14_anims" frames 311 351 fps 25 activity ACT_VM_RELOAD_DEPLOYED 1 node Ready {
+	{ event AE_CL_PLAYSOUND 9 "Weapon_M14.Magrelease" }
 	{ event AE_CL_PLAYSOUND 12 "Weapon_M14.Magout" }
-	{ event AE_CL_PLAYSOUND 29 "Weapon_M14.Magin" }
-	{ event AE_CL_PLAYSOUND 32 "Weapon_M14.Maghit" }
+	{ event AE_CL_PLAYSOUND 28 "Weapon_M14.Magin" }
+	{ event AE_CL_PLAYSOUND 30 "Weapon_M14.Maghit" }
 }
 $sequence grenade_attach "v_m14_anims" frames 220 264 fps 30 activity ACT_VM_DEPLOY_1 1 node Ready {
 	{ event AE_CL_PLAYSOUND 19 "Weapon_M14.Grenadeattach" }
