@@ -21,7 +21,7 @@ $attachment "0" "ValveBiped.muzzle" 0 0 0 rotate 0 -90 0
 $attachment "1" "ValveBiped.garand_base" -2.90 -0.80 7.90 rotate 0 -98 0
 
 $sequence aim_idle01 "v_m14_anims" frames 25 55 loop fps 10 activity ACT_VM_IDLE 1 node Ready
-$sequence aim_fire "v_m14_anims" frames 56 70 snap fps 30 activity ACT_VM_PRIMARYATTACK 1 { event AE_MUZZLEFLASH 0 "AR2 muzzle" } { event 6001 0 "1" } node Fire
+$sequence aim_fire "v_m14_anims" frames 56 70 snap fps 30 activity ACT_VM_PRIMARYATTACK 1 { event AE_MUZZLEFLASH 0 "AR2 0" } { event 6001 0 "1" } node Fire
 $sequence aim_draw "v_m14_anims" frames 0 25 snap fps 30 activity ACT_VM_DRAW 1 node Ready
 $sequence aim_reload "v_m14_anims" frames 70 110 fps 25 activity ACT_VM_RELOAD 1 node Ready {
 	{ event AE_CL_PLAYSOUND 9 "Weapon_M14.Magrelease" }
@@ -32,7 +32,7 @@ $sequence aim_reload "v_m14_anims" frames 70 110 fps 25 activity ACT_VM_RELOAD 1
 $sequence aim_holster "v_m14_anims" frames 110 120 fps 30 activity ACT_VM_HOLSTER 1 node Ready
 
 $sequence grenade_idle01 "v_m14_anims" frames 165 200 loop fps 20 activity ACT_VM_IDLE_DEPLOYED 1 node Ready
-$sequence grenade_fire "v_m14_anims" frames 201 220 snap fps 30 activity ACT_VM_PRIMARYATTACK_DEPLOYED 1 { event AE_MUZZLEFLASH 0 "AR2" } { event 6001 0 "1" } node Fire
+$sequence grenade_fire "v_m14_anims" frames 201 220 snap fps 30 activity ACT_VM_PRIMARYATTACK_DEPLOYED 1 { event AE_MUZZLEFLASH 0 "AR2 0" } { event 6001 0 "1" } node Fire
 $sequence grenade_draw "v_m14_anims" frames 121 165 fps 30 activity ACT_VM_DEPLOY 1 node Ready {
 	{ event AE_CL_PLAYSOUND 19 "Weapon_M14.Grenadeattach" }
 	{ event AE_CL_PLAYSOUND 16 "Weapon_M14.Grenadepin" }
