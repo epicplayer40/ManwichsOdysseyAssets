@@ -14,7 +14,7 @@ $cdmaterials models\Weapons\V_hand models\Weapons\V_Uzi models\Weapons\pistol_sh
 
 
 // whole body
-$body studio "Uzi_reference.smd"
+$body studio "uzi_cringe_reference.smd"
 
 $origin 0 0 68
 
@@ -33,7 +33,17 @@ $sequence fire3 "Fire3" snap fps 30 activity ACT_VM_RECOIL3 1 { event AE_MUZZLEF
 $sequence fireempty "Fire_empty" fps 30 activity ACT_VM_DRYFIRE 1 node 2
 $sequence draw "Draw" snap fps 30 activity ACT_VM_DRAW 1 node 0
 $sequence drawempty "Draw_empty" fps 30 node 0
-$sequence reload "uzi_anims/Reload" fps 20 activity ACT_VM_RELOAD 1 { event AE_CL_PLAYSOUND 29 "Weapon_Uzi.Charge" } node 0 //placeholder animation
+
+$sequence reload {
+	"uzi_anims/Reload"
+	fps 20 activity ACT_VM_RELOAD 1 
+	{ event AE_CL_PLAYSOUND 7 "Weapon_Uzi.Magout" }
+	{ event AE_CL_PLAYSOUND 17 "Weapon_Uzi.Magin" }
+	{ event AE_CL_PLAYSOUND 31 "Weapon_Uzi.Boltback" }
+	{ event AE_CL_PLAYSOUND 36 "Weapon_Uzi.Boltrelease" }
+	node 0 //placeholder animation
+}
+
 $sequence holster "Holster" fps 30 activity ACT_VM_HOLSTER 1 node 0
 $sequence holsterempty "Holster_empty" fps 30 activity ACT_VM_HOLSTER 1 node 0
 $sequence idletolow "idle_to_lowered" fps 30 activity ACT_VM_LOWERED_TO_IDLE 1  transition 0 1
