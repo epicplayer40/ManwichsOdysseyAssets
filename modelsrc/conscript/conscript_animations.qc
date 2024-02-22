@@ -182,7 +182,7 @@ $Sequence shootgun2 {
 	activity "ACT_RANGE_ATTACK1" 2
 	blend "XR" -50 50
 	blendwidth 2
-	{ event 5001 0 "21" }
+//	{ event 5001 0 "21" }
 	{ event 3 0 }
 }
 $Sequence shootblendSMG1 {
@@ -198,17 +198,17 @@ $Sequence 	shootAR1 	shootAR1 	ACT_CONSCRIPT_SHOOT_AR1 1 	loop fps 240
 $Sequence 	shootSMG1 	shootSMG1 	ACT_CONSCRIPT_SHOOT_SMG1 1 	loop fps 180
 $Sequence 	shootSR 	shootSR 	ACT_CONSCRIPT_SHOOT_SNIPER_RIFLE 1 loop fps 24
 $Sequence 	shootSG 	shootSG 	ACT_RANGE_ATTACK_SHOTGUN 1 	fps 22 {
-	{ event 5001 0 "21" }
+//	{ event 5001 0 "21" }
 	{ event 3 0 }
 	{ event AE_CL_PLAYSOUND 11 "Weapon_Shotgun.Special1" }
 }
 $Sequence 	shootSG2 	shootSG2 	ACT_RANGE_ATTACK_SHOTGUN 2 	fps 24 {
-	{ event 5001 0 "21" }
+//	{ event 5001 0 "21" }
 	{ event 3 0 }
 	{ event AE_CL_PLAYSOUND 11 "Weapon_Shotgun.Special1" }
 }
 $Sequence 	shootSG3 	shootSG3 	ACT_RANGE_ATTACK_SHOTGUN 3 	fps 27 {
-	{ event 5001 0 "21" }
+//	{ event 5001 0 "21" }
 	{ event 3 0 }
 	{ event AE_CL_PLAYSOUND 11 "Weapon_Shotgun.Special1" }
 	fps 27
