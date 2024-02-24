@@ -4,10 +4,14 @@ $attachment wheel_fl "apc_wheel_fl_spin" 0 0 0
 $attachment wheel_fr "apc_wheel_fr_spin" 0 0 0
 $attachment wheel_rl "apc_wheeL_rl_spin" 0 0 0
 $attachment wheel_rr "apc_wheeL_rr_spin" 0 0 0
-$attachment "vehicle_driver_eyes" "apc_body" -20.00 45.00 100.00 rotate -90 -90 0
+
+$attachment "gun_base" "apc_body" 1.48 74.02 19.00 rotate -90 -90 0
+$attachment "gun_def" "apc_turret_body" 0.00 7.48 35.00 rotate -90 -90 0
 
 $attachment "vehicle_engine" "apc_body" -15.00 -5.00 60.00 rotate -0 0 0 rigid
 $attachment "beam_damage" "apc_body" -15.00 -5.00 60.00 rotate -0 0 0 rigid
+
+$attachment "vehicle_driver_eyes" "apc_body" -20.00 45.00 100.00 rotate -90 -90 0
 
 $attachment "Muzzle_L" "apc_turret_left" 0.00 0.00 32.00 rotate -90 -90 0 rigid
 $attachment "Muzzle_R" "apc_turret_right" 0.00 -0.00 32.00 rotate -90 -90 0 rigid
@@ -76,12 +80,6 @@ $sequence "latch_open_idle" "anims/apc_latch_open" fps 10 frames 8 8
 
 $sequence "latch_close" "anims/apc_latch_close" fps 16
 
-$sequence attack1 "apc_body" fps 20 frames 0 1 activity ACT_RANGE_ATTACK1 1 {
-	{ event 5003 0 "2" } 
-	{ event 5003 0 "2" } 
-	{ event 3002 0 }
-}
-
 $animation neutral "apc_body" frames 0 0
 
 $weightlist weapon { "apc_turret_rot" 1.0 "apc_turret_left" 1.0 "apc_turret_right" 1.0 }
@@ -97,7 +95,7 @@ $animation aim_back "anims/apc_weapon_aim" frame 5 5 subtract aim_neutral 0 weig
 $animation aim_front "anims/apc_weapon_aim" frame 0 0 subtract aim_neutral 0 weightlist weapon
 
 $sequence weapon_pitch { aim_up aim_down blend "vehicle_weapon_pitch" -40 20 } weightlist weapon delta autoplay hidden
-$sequence weapon_yaw { aim_back aim_right aim_front aim_left aim_back blendwidth 5 blend "vehicle_weapon_yaw" 180 -180 } weightlist weapon delta autoplay hidden
+$sequence weapon_yaw { aim_back aim_right aim_front aim_left aim_back blendwidth 5 blend "vehicle_weapon_yaw" -180 180 } weightlist weapon delta autoplay hidden
 
 // front steering sequence
 $weightlist front_wheels { "Apc_Wheel_FL_Turn" 1.0 "Apc_Wheel_FR_Turn" 1.0 }
@@ -127,10 +125,10 @@ $weightlist wheel_fl_spin { "APC_Wheel_FL_Spin" 1.0 }
 $animation wheel_fl_spin0 "anims/apc_wheelspin" frame 0 0 subtract neutral 0 weightlist wheel_fl_spin 
 $animation wheel_fl_spin120 "anims/apc_wheelspin" frame 3 3 subtract neutral 0 weightlist wheel_fl_spin 
 $animation wheel_fl_spin240 "anims/apc_wheelspin" frame 6 6 subtract neutral 0 weightlist wheel_fl_spin 
-$sequence wheel_fl_spin { wheel_fl_spin0 wheel_fl_spin120 wheel_fl_spin240 wheel_fl_spin0 blendwidth 4 blend "vehicle_wheel_fl_spin" 180 -180 } weightlist wheel_fl_spin delta autoplay
+$sequence wheel_fl_spin { wheel_fl_spin0 wheel_fl_spin120 wheel_fl_spin240 wheel_fl_spin0 blendwidth 4 blend "vehicle_wheel_fl_spin" -180 180 } weightlist wheel_fl_spin delta autoplay
 
 // rear right
-$weightlist wheel_rr { "Apc_Axel_RR" 1.0 "Apc_Wheel_RR" 0.0 }
+$weightlist wheel_rr { "Apc_Axel_RR" 1.0 "Apc_Wheel_RR_spin" 0.0 }
 $animation wheel_rr_low "anims/apc_suspension" frame 0 0 subtract neutral 0 weightlist wheel_rr 
 $animation wheel_rr_high "anims/apc_suspension" frame 2 2 subtract neutral 0 weightlist wheel_rr 
 $sequence wheel_rr_suspension { wheel_rr_low wheel_rr_high blend "vehicle_wheel_rr_height" 0 1.0 } weightlist wheel_rr delta autoplay
@@ -142,7 +140,7 @@ $animation wheel_rr_spin240 "anims/apc_wheelspin" frame 6 6 subtract neutral 0 w
 $sequence wheel_rr_spin { wheel_rr_spin0 wheel_rr_spin120 wheel_rr_spin240 wheel_rr_spin0 blendwidth 4 blend "vehicle_wheel_rr_spin" -180 180 } weightlist wheel_rr_spin delta autoplay
 
 // rear left
-$weightlist wheel_rl { "Apc_Axel_RL" 1.0 "Apc_Wheel_RL" 0.0 }
+$weightlist wheel_rl { "Apc_Axel_RL" 1.0 "Apc_Wheel_RL_spin" 0.0 }
 $animation wheel_rl_low "anims/apc_suspension" frame 0 0 subtract neutral 0 weightlist wheel_rl 
 $animation wheel_rl_high "anims/apc_suspension" frame 2 2 subtract neutral 0 weightlist wheel_rl 
 $sequence wheel_rl_suspension { wheel_rl_low wheel_rl_high blend "vehicle_wheel_rl_height" 0 1.0 } weightlist wheel_rl delta autoplay
@@ -151,12 +149,12 @@ $weightlist wheel_rl_spin { "APC_Wheel_RL_Spin" 1.0 }
 $animation wheel_rl_spin0 "anims/apc_wheelspin" frame 0 0 subtract neutral 0 weightlist wheel_rl_spin 
 $animation wheel_rl_spin120 "anims/apc_wheelspin" frame 3 3 subtract neutral 0 weightlist wheel_rl_spin 
 $animation wheel_rl_spin240 "anims/apc_wheelspin" frame 6 6 subtract neutral 0 weightlist wheel_rl_spin 
-$sequence wheel_rl_spin { wheel_rl_spin0 wheel_rl_spin120 wheel_rl_spin240 wheel_rl_spin0 blendwidth 4 blend "vehicle_wheel_rl_spin" 180 -180 } weightlist wheel_rl_spin delta autoplay
+$sequence wheel_rl_spin { wheel_rl_spin0 wheel_rl_spin120 wheel_rl_spin240 wheel_rl_spin0 blendwidth 4 blend "vehicle_wheel_rl_spin" -180 180 } weightlist wheel_rl_spin delta autoplay
 
 
 //----- Physbox -----
 
-$collisionmodel "apc_physbox.smd" {
+$collisionmodel "phys/apc_physbox.smd" {
      // Mass in kilograms
      	$Mass 2000
 	$concave
