@@ -35,7 +35,7 @@ $sequence grenade_idle01 "v_m14_anims" frames 165 200 loop fps 20 activity ACT_V
 $sequence grenade_fire "v_m14_anims" frames 201 220 snap fps 30 activity ACT_VM_PRIMARYATTACK_DEPLOYED 1 { event AE_MUZZLEFLASH 0 "AR2 0" } { event 6001 0 "1" } node Fire
 $sequence grenade_draw "v_m14_anims" frames 121 165 fps 30 activity ACT_VM_DEPLOY 1 node Ready {
 	{ event AE_CL_PLAYSOUND 19 "Weapon_M14.Grenadeattach" }
-	{ event AE_CL_PLAYSOUND 16 "Weapon_M14.Grenadepin" }
+	{ event AE_CL_PLAYSOUND 28 "Weapon_Grenade.Pin_Pull" }
 }
 $sequence grenade_reload "v_m14_anims" frames 311 351 fps 25 activity ACT_VM_RELOAD_DEPLOYED 1 node Ready {
 	{ event AE_CL_PLAYSOUND 9 "Weapon_M14.Magrelease" }
@@ -45,7 +45,7 @@ $sequence grenade_reload "v_m14_anims" frames 311 351 fps 25 activity ACT_VM_REL
 }
 $sequence grenade_attach "v_m14_anims" frames 220 264 fps 30 activity ACT_VM_DEPLOY_1 1 node Ready {
 	{ event AE_CL_PLAYSOUND 19 "Weapon_M14.Grenadeattach" }
-	{ event AE_CL_PLAYSOUND 16 "Weapon_M14.Grenadepin" }
+	{ event AE_CL_PLAYSOUND 28 "Weapon_Grenade.Pin_Pull" }
 }
 $sequence grenade_toaim "v_m14_anims" frames 281 310 fps 25 activity ACT_VM_UNDEPLOY 1 node Ready {
 	{ event AE_CL_PLAYSOUND 8 "Weapon_M14.Grenadedetach" }
