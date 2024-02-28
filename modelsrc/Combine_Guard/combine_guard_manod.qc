@@ -270,7 +270,7 @@ $sequence gunaim a_upL a_up a_upR a_left a_center a_right a_downL a_down a_downR
 
 //
 
-$sequence actidle01 "Action_Idle01" loop FPS 30 activity ACT_IDLE_ANGRY 1 node 2 cmdlist lockfeetandlefthand //addlayer gunaim
+$sequence actidle01 "Action_Idle01" loop FPS 30 activity ACT_IDLE_ANGRY 1 node 1 cmdlist lockfeetandlefthand //addlayer gunaim
 
 $sequence walk "Walk" loop fps 30 LX activity ACT_WALK 1 { event 20 3 } { event 21 20 } node 1 {
 	ikrule lfoot footstep range 17 20 30 5
@@ -295,7 +295,7 @@ $sequence punch02 "punch02" fps 45 activity ACT_MELEE_ATTACK1 1 {
 	cmdlist lockfeet
 }
 
-$sequence physrecover "Phys_hit_recover" activity ACT_COMBINEGUARD_CLOBBERED 1  { 
+$sequence physrecover "Phys_hit_recover" activity ACT_COMBINEGUARD_CLOBBERED 1 node clobbered { 
 	{ event 20 15 } 
 	{ event 21 30 } 
 	{ event 20 77 } 
@@ -313,7 +313,7 @@ $sequence physrecover "Phys_hit_recover" activity ACT_COMBINEGUARD_CLOBBERED 1  
 	ikrule rfoot footstep range .. .. 25 27
 	ikrule rfoot footstep range 29 31 .. ..
 }
-$sequence physgetup "Phys_hit_getup" activity ACT_COMBINEGUARD_GETUP 1 alignto idle01 { 
+$sequence physgetup "Phys_hit_getup" activity ACT_COMBINEGUARD_GETUP 1 alignto idle01 node clobbered { 
 	{ event 23 9 } 
 	{ event 20 53 } 
 	walkframe 30 lx 
@@ -323,11 +323,11 @@ $sequence physgetup "Phys_hit_getup" activity ACT_COMBINEGUARD_GETUP 1 alignto i
 	ikrule rfoot footstep range 0 11 .. ..
 	ikrule lfoot footstep range 51 54 .. ..
 }
-$sequence physfall "Phys_hit_fall" fps 30 LX activity ACT_COMBINEGUARD_TOPPLE 1 { event 22 22 } {
+$sequence physfall "Phys_hit_fall" fps 30 LX activity ACT_COMBINEGUARD_TOPPLE 1 { event 22 22 } node clobbered {
 	ikrule rfoot footstep range 0 0 10 14
 	ikrule lfoot footstep range 0 0 16 19
 }
-$sequence physdeath "Phys_hit_death" fps 30 LX activity ACT_COMBINEGUARD_HELPLESS 1 alignto idle01 { event 24 0 } ikrule rfoot footstep range 0 11 51 55 frame 0 58
+$sequence physdeath "Phys_hit_death" fps 30 LX activity ACT_COMBINEGUARD_HELPLESS 1 alignto idle01 { event 24 0 } node clobbered ikrule rfoot footstep range 0 11 51 55 frame 0 58
 
 $sequence idleact "Idle_to_action" FPS 30 ACT_CGUARD_IDLE_TO_ANGRY 1 transition 1 2  {
 //	addlayer gunaim 
