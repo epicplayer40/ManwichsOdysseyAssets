@@ -11,12 +11,13 @@ $cdmaterials models\Weapons\V_hand models\Weapons\V_ar2
 
 
 // whole body
-$body studio "AR2_reference_newarms.smd"
+$body studio "AR2_reference_newarms_updateduv.smd"
 
 $origin 0 0 68
 
 //Muzzle flash
-$attachment 0 "Bip01 R Hand" 24 2 8.5
+//$attachment "0" "Bip01 R Hand" 24.00 2.00 5.20 rotate 2.5 0 0
+$attachment "0" "Bip01 R Hand" 31.00 2.00 5.20 rotate 5 0 0
  
 //Shell eject
 $attachment 1 "Bip01 R Hand" 10.0 2 6.0 rotate -25 -90 0
