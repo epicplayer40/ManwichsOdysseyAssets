@@ -90,19 +90,19 @@ $sequence crouch_aim_trip "crouch_aimdown_trip" "crouch_aimup_trip" blend XR -45
 $sequence crouch_shoot_trip "crouch_placedown_trip" "crouch_placeup_trip" blend XR -45 45 fps 16 origin 0 0 18
 // 9mm
 $sequence ref_aim_onehanded "ref_aimdown_onehanded" "ref_aimup_onehanded" blend XR -50 35 fps 12 LOOP 
-$sequence ref_shoot_onehanded "ref_shootdown_onehanded" "ref_shootup_onehanded" blend XR -50 35 fps 16 { event 5011 0 "21" }
+$sequence ref_shoot_onehanded "ref_shootdown_onehanded" "ref_shootup_onehanded" blend XR -50 35 fps 16 
 $sequence crouch_aim_onehanded "crouch_aimdown_onehanded" "crouch_aimup_onehanded" blend XR -50 35 fps 12 LOOP origin 0 0 18
-$sequence crouch_shoot_onehanded "crouch_shootdown_onehanded" "crouch_shootup_onehanded" blend XR -50 35 fps 16 { event 5011 0 "21" } origin 0 0 18
+$sequence crouch_shoot_onehanded "crouch_shootdown_onehanded" "crouch_shootup_onehanded" blend XR -50 35 fps 16 origin 0 0 18
 // python
 $sequence ref_aim_python "ref_aimdown_onehanded" "ref_aimup_onehanded" blend XR -50 35 fps 12 LOOP 
-$sequence ref_shoot_python "ref_shootdown_python" "ref_shootup_python" blend XR -50 35 fps 16  { event 5011 0 "31" }
+$sequence ref_shoot_python "ref_shootdown_python" "ref_shootup_python" blend XR -50 35 fps 16
 $sequence crouch_aim_python "crouch_aimdown_onehanded" "crouch_aimup_onehanded" blend XR -50 35 fps 12 LOOP origin 0 0 18
-$sequence crouch_shoot_python "crouch_shootdown_python" "crouch_shootup_python" blend XR -50 35 fps 16  { event 5011 0 "31" } origin 0 0 18
+$sequence crouch_shoot_python "crouch_shootdown_python" "crouch_shootup_python" blend XR -50 35 fps 16 origin 0 0 18
 // shotgun
 $sequence ref_aim_shotgun "ref_aimdown_shotgun" "ref_aimup_shotgun" blend XR -45 45 fps 12 LOOP
-$sequence ref_shoot_shotgun "ref_shootdown_shotgun" "ref_shootup_shotgun" blend XR -45 45 fps 15 { event 5021 0 "51" }
+$sequence ref_shoot_shotgun "ref_shootdown_shotgun" "ref_shootup_shotgun" blend XR -45 45 fps 15
 $sequence crouch_aim_shotgun "crouch_aimdown_shotgun" "crouch_aimup_shotgun" blend XR -45 45 fps 12 LOOP origin 0 0 18
-$sequence crouch_shoot_shotgun "crouch_shootdown_shotgun" "crouch_shootup_shotgun" blend XR -45 45 fps 15 { event 5021 0 "51" } origin 0 0 18
+$sequence crouch_shoot_shotgun "crouch_shootdown_shotgun" "crouch_shootup_shotgun" blend XR -45 45 fps 15 origin 0 0 18
 // gauss
 $sequence ref_aim_gauss "ref_aimdown_guass" "ref_aimup_guass" blend XR -45 45 fps 12 LOOP
 $sequence ref_shoot_gauss "ref_shootdown_guass" "ref_shootup_guass" blend XR -45 45 fps 15
@@ -110,9 +110,9 @@ $sequence crouch_aim_gauss "crouch_aimdown_guass" "crouch_aimup_guass" blend XR 
 $sequence crouch_shoot_gauss "crouch_shootdown_guass" "crouch_shootup_guass" blend XR -45 45 fps 15 origin 0 0 18
 // mp5
 $sequence ref_aim_mp5 "ref_aimdown_mp5" "ref_aimup_mp5" blend XR -45 45 fps 12 LOOP
-$sequence ref_shoot_mp5 "ref_shootdown_mp5" "ref_shootup_mp5" blend XR -45 45 fps 20 LOOP { event 5001 0 "40" }
+$sequence ref_shoot_mp5 "ref_shootdown_mp5" "ref_shootup_mp5" blend XR -45 45 fps 20 LOOP
 $sequence crouch_aim_mp5 "crouch_aimdown_mp5" "crouch_aimup_mp5" blend XR -30 40 fps 12 LOOP origin 0 0 18
-$sequence crouch_shoot_mp5 "crouch_shootdown_mp5" "crouch_shootup_mp5" blend XR -30 40 fps 20 LOOP { event 5001 0 "40" } origin 0 0 18
+$sequence crouch_shoot_mp5 "crouch_shootdown_mp5" "crouch_shootup_mp5" blend XR -30 40 fps 20 LOOP origin 0 0 18
 // rpg
 $sequence ref_aim_rpg "ref_aimdown_rpg" "ref_aimup_rpg" blend XR -45 40 fps 12 LOOP
 $sequence ref_shoot_rpg "ref_shootdown_rpg" "ref_shootup_rpg" blend XR -45 40 fps 18
