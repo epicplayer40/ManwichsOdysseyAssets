@@ -1,2 +1,3 @@
-Actual normal map: Jasper Carmack
-Phongmap edit: Akis_02
+Original texture: Valve
+Actual normal map: RizGBlue
+Texture edit: Akis_02
