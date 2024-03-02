@@ -44,76 +44,90 @@ $Sequence Angry_pistol 	shootPistol ACT_IDLE_ANGRY_PISTOL 1 	loop fps 2 frame 7 
 //====================  WALKING ANIMATIONS  =============================================
 
 $Sequence Walk 			Walk 		ACT_WALK 1 					loop {
-	{ event 6004 5 "NPC_MetroPolice" }
-	{ event 6005 20 "NPC_MetroPolice" }
+	{ event 6006 2 }
+	{ event 6007 18 }
 	walkframe 35 LX
 }
 $Sequence Walk2 		Walk2 		ACT_WALK 2 					loop fps 36 {
-	{ event 6004 5 "NPC_MetroPolice" }
-	{ event 6005 20 "NPC_MetroPolice" }
+	{ event 6006 2 }
+	{ event 6007 18 }
 	walkframe 35 LX
 }
 $Sequence WalkPistol 	WalkPistol 	ACT_WALK_PISTOL 1 			loop fps 32 {
-	{ event 6004 5 "NPC_MetroPolice" }
-	{ event 6005 20 "NPC_MetroPolice" }
+	{ event 6006 9 }
+	{ event 6007 24 }
 	walkframe 30 LX
 }
 $Sequence WalkSG 		WalkSG 		ACT_CONSCRIPT_WALK_SHOTGUN 1 loop {
-	{ event 6004 5 "NPC_MetroPolice" }
-	{ event 6005 20 "NPC_MetroPolice" }
+	{ event 6006 2 }
+	{ event 6007 18 }
 	walkframe 35 LX
 }
 $Sequence WalkSMG 		WalkSMG 	ACT_CONSCRIPT_WALK_SMG1 1 	loop fps 40 {
-	{ event 6004 5 "NPC_MetroPolice" }
-	{ event 6005 20 "NPC_MetroPolice" }
+	{ event 6006 2 }
+	{ event 6007 18 }
 	walkframe 35 LX
 }
 $Sequence WalkAR1 		WalkAR1 	ACT_CONSCRIPT_WALK_AR1 1 	loop fps 24 {
-	{ event 6004 8 "NPC_MetroPolice" }
-	{ event 6005 24 "NPC_MetroPolice" }
+	{ event 6006 9 }
+	{ event 6007 24 }
 	walkframe 30 LX
 }
 $Sequence WalkRPG 		WalkRPG 	ACT_WALK_RPG 1 				loop {
-	{ event 6004 8 "NPC_MetroPolice" }
-	{ event 6005 24 "NPC_MetroPolice" }
+	{ event 6006 9 }
+	{ event 6007 24 }
 	walkframe 30 LX
 }
 
 //====================  RUNNING ANIMATIONS  =============================================
 
 $Sequence Run 			Run 		ACT_RUN 1 					loop {
-	{ event 6004 8 "NPC_MetroPolice" }
-	{ event 6005 19 "NPC_MetroPolice" }
+	{ event 6004 6 "NPC_Conscript" }
+	{ event 6005 16 "NPC_Conscript" }
+	{ event 6006 6  }
+	{ event 6007 16 }
 	walkframe 21 LX
 }
 $Sequence Run2 			Run2 		ACT_RUN 2 					loop fps 36 {
-	{ event 6004 8 "NPC_MetroPolice" }
-	{ event 6005 19 "NPC_MetroPolice" }
+	{ event 6004 6 "NPC_Conscript" }
+	{ event 6005 16 "NPC_Conscript" }
+	{ event 6006 6  }
+	{ event 6007 16 }
 	walkframe 21 LX
 }
 $Sequence RunPistol 	RunPistol 	ACT_RUN_PISTOL 1 			loop {
-	{ event 6004 7 "NPC_MetroPolice" }
-	{ event 6005 16 "NPC_MetroPolice" }
+	{ event 6004 6 "NPC_Conscript" }
+	{ event 6005 15 "NPC_Conscript" }
+	{ event 6006 6 }
+	{ event 6007 15 }
 	walkframe 21 LX
 }
 $Sequence RunSMG 		RunSMG 		ACT_CONSCRIPT_RUN_SMG1 1 	loop fps 36 {
-	{ event 6004 8 "NPC_MetroPolice" }
-	{ event 6005 19 "NPC_MetroPolice" }
+	{ event 6004 6 "NPC_Conscript" }
+	{ event 6005 16 "NPC_Conscript" }
+	{ event 6006 6  }
+	{ event 6007 16 }
 	walkframe 21 LX
 }
 $Sequence RunAR1 		RunAR1 		ACT_RUN_AR1 1 				loop {
-	{ event 6004 8 "NPC_MetroPolice" }
-	{ event 6005 19 "NPC_MetroPolice" }
+	{ event 6004 6 "NPC_Conscript" }
+	{ event 6005 16 "NPC_Conscript" }
+	{ event 6006 6  }
+	{ event 6007 16 }
 	walkframe 21 LX
 }
 $Sequence RunSG 		RunSG 		ACT_CONSCRIPT_RUN_SHOTGUN 1 loop fps 32 {
-	{ event 6004 8 "NPC_MetroPolice" }
-	{ event 6005 19 "NPC_MetroPolice" }
+	{ event 6004 6 "NPC_Conscript" }
+	{ event 6005 16 "NPC_Conscript" }
+	{ event 6006 6  }
+	{ event 6007 16 }
 	walkframe 21 LX
 }
 $Sequence RunRPG 		RunRPG 		ACT_RUN_RPG 1 				loop {
-	{ event 6004 8 "NPC_MetroPolice" }
-	{ event 6005 19 "NPC_MetroPolice" }
+	{ event 6004 7 "NPC_Conscript" }
+	{ event 6005 17 "NPC_Conscript" }
+	{ event 6006 7 }
+	{ event 6007 17 }
 	walkframe 21 LX
 }
 
