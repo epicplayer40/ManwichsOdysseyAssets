@@ -1,3 +1,0 @@
-Original texture: Valve
-Actual normal map: RizGBlue
-Texture edit: Akis_02
