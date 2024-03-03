@@ -24,16 +24,16 @@ studio "fixed_mesh/Hands_reference.smd"
 $attachment "0" "ValveBiped.sniper_rifle_base" 49.10 -2.30 -6.23 rotate -1 -1 179
 $attachment "1" "ValveBiped.Bullet" 0.00 0.00 0.00 rotate 0 -90 0
 
-$sequence sniper_idle "sniper_idle01" loop fps 35 activity ACT_VM_IDLE 1 //original valve repo fps value was 30 but the 2003 leak one is 35
+$sequence sniper_idle "sniper_idle01" loop fps 30 activity ACT_VM_IDLE 1 //original valve repo fps value was 30 but the 2003 leak one is 35
 
-$sequence sniper_fire "new_anims/sniper_Fire" fps 35 snap activity ACT_VM_PRIMARYATTACK 1 {//original valve repo fps value was 40 but the 2003 leak one is 35
+$sequence sniper_fire "sniper_Fire" fps 40 snap activity ACT_VM_PRIMARYATTACK 1 {//original valve repo fps value was 40 but the 2003 leak one is 35
 { event 5001 1 "51" }
 }
 
-$sequence sniper_fire_dry "sniper_fire_dry" fps 35 snap activity ACT_VM_DRYFIRE 1 //original valve repo fps value was 30 but the 2003 leak one is 35
+$sequence sniper_fire_dry "sniper_fire_dry" fps 30 snap activity ACT_VM_DRYFIRE 1 //original valve repo fps value was 30 but the 2003 leak one is 35
 
-$sequence sniper_draw "sniper_Draw" fps 35 activity ACT_VM_DRAW 1 //original valve repo fps value was 30 but the 2003 leak one is 35
+$sequence sniper_draw "sniper_Draw" fps 30 activity ACT_VM_DRAW 1 //original valve repo fps value was 30 but the 2003 leak one is 35
 
-$sequence sniper_reload "sniper_reload" fps 30 activity ACT_VM_RELOAD 1 {//original valve repo fps value was 35 but the 2003 leak one is 30
+$sequence sniper_reload "sniper_reload" fps 35 activity ACT_VM_RELOAD 1 {//original valve repo fps value was 35 but the 2003 leak one is 30
 { event 6001 50 "1" }
 {
