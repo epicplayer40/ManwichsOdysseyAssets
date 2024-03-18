@@ -311,12 +311,13 @@ $keyvalues
 	{
 		Cable
 		{
-			StartAttachment	Cablea
-			EndAttachment Cableb
+			StartAttachment	Cableb
+			EndAttachment Cablea
 			Width 1.3
 			Material "cable/cable_lit"
 			NumSegments 12
-			Length 150			
+			Length 150
+			BreakOnDeath 1
 		}
 	}
 }
